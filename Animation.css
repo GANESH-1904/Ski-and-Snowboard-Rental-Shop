@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+h1 { margin-bottom: 10px; }
+p { margin-bottom: 30px; color: #bbb; }
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+    user-select: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.blue  { background-color: #3498db; }
+.pink  { background-color: #e91e63; }
+.green { background-color: #2ecc71; }
+
+.btn:active { 
+    transform: scale(0.8); 
+}
+
+.blue:hover { 
+    box-shadow: 0 0 30px #3498db; 
+    animation: slide 0.5s infinite alternate ease-in-out; 
+}
+.pink:hover { 
+    box-shadow: 0 0 30px #e91e63; 
+    animation: rotate 1s infinite linear; 
+}
+.green:hover { 
+    box-shadow: 0 0 30px #2ecc71; 
+    animation: jump 0.5s infinite alternate ease-in-out; 
+}
+
+@keyframes slide { 
+    from { transform: translateX(-10px); } 
+    to { transform: translateX(10px); } 
+}
+
+@keyframes rotate { 
+    from { transform: rotate(0deg); } 
+    to { transform: rotate(360deg); } 
+}
+
+@keyframes jump { 
+    from { transform: translateY(0); } 
+    to { transform: translateY(-20px); } 
+}

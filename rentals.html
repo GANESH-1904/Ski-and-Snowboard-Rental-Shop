@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipment fleet and sizing | VÉRTEX ALPS</title>
+  <meta name="description" content="Browse the 2026 VERTEX ALPS rental fleet: carving skis, powder skis, freeride boards, touring setups, junior gear and custom-fitted boots.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('vertex_theme') === 'dark') {
+          document.documentElement.classList.add('pre-dark');
+        }
+        if (localStorage.getItem('vertex_rtl') === 'true') {
+          document.documentElement.setAttribute('dir', 'rtl');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+    <style>
+      /* Rental profile/fleet image fixes */
+      #profiles .card-img-wrapper, #fleet .card-img-wrapper {
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        background: #0b1118;
+      }
+      #profiles .card-img-wrapper img, #fleet .card-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      #profiles .card:first-child .card-img-wrapper img { object-position: center; }
+      #profiles .card:nth-child(2) .card-img-wrapper img { object-position: center 55%; }
+      #profiles .card:nth-child(3) .card-img-wrapper img { object-position: center 45%; }
+      .fleet-use-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        align-items: stretch;
+      }
+      .fleet-use-grid .gallery-item {
+        min-width: 0;
+        margin: 0;
+        overflow: hidden;
+        border-radius: 18px;
+        background: #0b1118;
+      }
+      .fleet-use-grid .gallery-item:last-child {
+        grid-column: 1 / -1;
+      }
+      .fleet-use-grid .gallery-item img {
+        width: 100%;
+        height: 360px;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+      }
+      .fleet-use-grid .gallery-caption {
+        min-height: 54px;
+        display: flex;
+        align-items: center;
+        padding: 14px 18px;
+      }
+      @media (max-width: 760px) {
+        .fleet-use-grid { grid-template-columns: 1fr; gap: 18px; }
+        .fleet-use-grid .gallery-item:last-child { grid-column: auto; }
+        .fleet-use-grid .gallery-item img { height: 260px; }
+      }
+    </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ============ UNIVERSAL HEADER (identical on every public page) ============ -->
+  <header class="header">
+    <div class="container nav-bar">
+      <a href="index.html" class="brand-logo" aria-label="VERTEX ALPS home">
+        <div class="brand-badge">
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
+            <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
+            <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <div class="nav-dropdown-wrapper">
+          <a href="index.html" class="nav-link">
+            Home
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              Home 1 &mdash; Classic Depot
+              <span>Contactless locker pickup &amp; fleet</span>
+            </a>
+            <a href="home-2.html" class="dropdown-item">
+              Home 2 &mdash; Summit VIP Concierge
+              <span>Private chalet delivery &amp; heli-skiing</span>
+            </a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="rentals.html" class="nav-link active">Rentals</a>
+        <a href="lessons.html" class="nav-link">Lessons</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-toggle-btn" id="open-cart-btn" title="View gear bag" aria-label="Open rental gear bag">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-badge-count" id="cart-badge">0</span>
+        </button>
+        <button class="icon-toggle-btn" id="theme-toggle" title="Switch between light and dark" aria-label="Switch between light and dark">
+          <svg class="icon-sun" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="icon-toggle-btn" id="rtl-toggle" title="Switch text direction" aria-label="Switch text direction">RTL</button>
+        <a href="login.html" class="btn btn-secondary btn-sm">Sign in</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- SECTION 1: FLEET HERO -->
+    <section class="section page-head">
+      <div class="container grid-2" style="align-items:center;">
+        <div>
+          <span class="badge">2026 collection</span>
+          <h1 style="font-size:2.7rem; color:var(--secondary); margin-bottom:16px;">Every setup tuned the night before you ride it.</h1>
+          <p style="color:var(--text-muted); font-size:1.08rem; margin-bottom:24px;">Titanal carvers for hard mornings, wide skis for storm days, light carbon setups for the climb. Whatever you pick, it goes on the test bench and through the wax room before it reaches your locker.</p>
+          <div class="hero-cta-group">
+            <a href="#fleet" class="btn btn-primary">Browse the fleet</a>
+            <a href="#profiles" class="btn btn-secondary">Which shape suits me?</a>
+          </div>
+        </div>
+        <div class="img-hover img-tall">
+          <img src="https://en.snowell.com/coburgstrasse-53-planai-talstation-sport-2000-rankl-ski-hire-schladming_800_2.jpg" alt="Row of performance skis lined up in the snow outside the depot" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: PROFILE GUIDE -->
+    <section class="section section-bg-alt" id="profiles">
+      <div class="container">
+        <div class="section-header">
+          <h2>Camber, rocker and everything between</h2>
+          <p>The shape under your feet changes how a ski or board behaves far more than the graphics on top of it.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Groomers</span>
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Carving%20ski%20K2.jpg" alt="Close side view of a carving ski showing the traditional camber shape" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Traditional camber</h3>
+              <p>Arched underfoot with contact points near tip and tail. Maximum spring out of a turn and the best grip you can get on ice, at the cost of being demanding in soft snow.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">All mountain</span>
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Skier%20on%20a%20slope%20%28Unsplash%29.jpg" alt="Skier on an all-mountain slope in mixed alpine terrain" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Early rise hybrid</h3>
+              <p>Camber underfoot with a lifted tip and tail. Turns start easily, chopped snow feels calmer, and nothing about it punishes a mistake. The safe answer for most riders.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Deep snow</span>
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Snowboarder%20during%20turn%20while%20in%20deep%20powder-ColorTemp.jpeg" alt="Snowboarder floating through deep powder, illustrating a rockered profile" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Full rocker</h3>
+              <p>Reverse camber that keeps the tips planing without you leaning back. Effortless in bowls and trees, vaguer on hardpack, and much kinder to your legs on a storm day.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: THE FLEET -->
+    <section class="section" id="fleet">
+      <div class="container">
+        <div class="section-header">
+          <h2>The 2026 fleet</h2>
+          <p>Current season models, stone ground and hot waxed, with bindings set to your numbers at pickup.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Piste carving</span>
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/SkiCollection.jpg" alt="Selection of alpine skis showing different all-mountain shapes" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Atomic Maverick 88 Ti</h3>
+              <p class="card-meta"><span>Titanal backbone</span> <span>169 / 176 / 184cm</span></p>
+              <p>Two layers of metal keep it settled across morning corduroy and the chopped snow that follows by lunch.</p>
+              <div class="card-price">$48 <span>per day</span></div>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-block add-to-cart-btn" data-title="Atomic Maverick 88 Ti" data-price="48">Add to gear bag</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Powder</span>
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Skier-carving-a-turn.jpg" alt="Skier carving off-piste in soft snow" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Armada ARV 106</h3>
+              <p class="card-meta"><span>Twin rocker</span> <span>172 / 180 / 188cm</span></p>
+              <p>A 106mm waist that floats through bowls and tree lines and still comes back to the piste without complaint.</p>
+              <div class="card-price">$54 <span>per day</span></div>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-block add-to-cart-btn" data-title="Armada ARV 106" data-price="54">Add to gear bag</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Touring</span>
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dynafit%20Kiefersfelden-10.jpg" alt="Ski tourers ascending with touring skis in wind-drifted snow" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Dynafit Free 97 Carbon</h3>
+              <p class="card-meta"><span>Pin bindings</span> <span>1,380g per ski</span></p>
+              <p>Light enough for a long climb, stiff enough to ski properly on the way down. Mohair skins included.</p>
+              <div class="card-price">$68 <span>per day</span></div>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-block add-to-cart-btn" data-title="Dynafit Free 97 Carbon" data-price="68">Add to gear bag</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">All-mountain board</span>
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Snowboard%20pow.jpg" alt="Snowboarder riding powder on a mountain slope" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Jones Mountain Twin</h3>
+              <p class="card-meta"><span>True twin</span> <span>154 / 157 / 160W</span></p>
+              <p>Camber between the feet for hold, rocker at the ends for float. Rides switch as happily as forwards.</p>
+              <div class="card-price">$52 <span>per day</span></div>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-block add-to-cart-btn" data-title="Jones Mountain Twin" data-price="52">Add to gear bag</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Freeride board</span>
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Snowboard%20powder%20day.jpg" alt="Snowboarder enjoying fresh powder in a tree run" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Burton Flight Attendant</h3>
+              <p class="card-meta"><span>Directional camber</span> <span>156 / 159 / 162</span></p>
+              <p>Tapered tail and a stiff nose, built for charging chutes and slashing the side of the trail on the way down.</p>
+              <div class="card-price">$56 <span>per day</span></div>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-block add-to-cart-btn" data-title="Burton Flight Attendant" data-price="56">Add to gear bag</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Boots</span>
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alpine%20ski%20boots.jpg" alt="Alpine ski boots for a fitted rental setup" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Salomon S/Pro BOA 100</h3>
+              <p class="card-meta"><span>Dual dial closure</span> <span>Mondo 24.5 &ndash; 31.5</span></p>
+              <p>Even pressure across the foot instead of four hard buckle points. Liner heat-moulded during your fitting.</p>
+              <div class="card-price">$22 <span>per day</span></div>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-block add-to-cart-btn" data-title="Salomon S/Pro BOA 100" data-price="22">Add to gear bag</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: JUNIOR & FAMILY GEAR -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Gear for younger riders</h2>
+          <p>Light skis, warm liners and helmets that actually fit. Children under six ride free on a family booking.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Ages 3 to 6</span>
+              <img src="https://www.minakami-ski.jp/rental/img/1.jpg" alt="Small child in ski gear at the beginner slope" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">First tracks junior set</h3>
+              <p class="card-meta"><span>70 &ndash; 100cm skis</span> <span>Helmet included</span></p>
+              <p>Soft, short skis with low release settings and boots that a five year old can actually walk in.</p>
+              <div class="card-price">$18 <span>per day</span></div>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-block add-to-cart-btn" data-title="First tracks junior set" data-price="18">Add to gear bag</button>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Ages 7 to 12</span>
+              <img src="https://www.metropolitan.si/media/cache/upload/Photo/2023/11/21/top-razlogi-zakaj-se-odlociti-za-smucanje_biggalleryimage.jpg" alt="Young skier turning on a blue run" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Grom performance ski</h3>
+              <p class="card-meta"><span>110 &ndash; 140cm skis</span> <span>Helmet included</span></p>
+              <p>A proper camber ski for children who have outgrown wedge turns and want to keep up with their parents.</p>
+              <div class="card-price">$24 <span>per day</span></div>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-block add-to-cart-btn" data-title="Grom performance ski" data-price="24">Add to gear bag</button>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Ages 8 to 14</span>
+              <img src="https://static.wixstatic.com/media/6e6135_5a521bd8d3c24289806dcdfa25c6152a~mv2.jpg/v1/fill/w_480%2Ch_640%2Cal_c%2Cq_80%2Cenc_auto/6e6135_5a521bd8d3c24289806dcdfa25c6152a~mv2.jpg" alt="Junior snowboarder riding soft snow" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Junior snowboard set</h3>
+              <p class="card-meta"><span>120 &ndash; 145cm boards</span> <span>Helmet included</span></p>
+              <p>Forgiving flex with quick-entry bindings, so nobody spends the lesson wrestling with straps in the cold.</p>
+              <div class="card-price">$26 <span>per day</span></div>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-block add-to-cart-btn" data-title="Junior snowboard set" data-price="26">Add to gear bag</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: ACCESSORIES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Add-ons at the counter</h2>
+          <p>The small things people forget, kept in stock in every size at all three depots.</p>
+        </div>
+        <div class="grid-4">
+          <div class="card pad-card">
+            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h4 style="margin-bottom:8px;">Helmet with MIPS liner</h4>
+            <p style="margin-bottom:10px;">Sizes XS to XL, cleaned between riders.</p>
+            <strong style="color:var(--primary);">$9 per day</strong>
+          </div>
+          <div class="card pad-card">
+            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/></svg></div>
+            <h4 style="margin-bottom:8px;">Goggles with spare lens</h4>
+            <p style="margin-bottom:10px;">A low-light lens comes with every pair.</p>
+            <strong style="color:var(--primary);">$7 per day</strong>
+          </div>
+          <div class="card pad-card">
+            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20L20 4M9 4h11v11"/></svg></div>
+            <h4 style="margin-bottom:8px;">Poles</h4>
+            <p style="margin-bottom:10px;">Aluminium or carbon, 100 to 135cm.</p>
+            <strong style="color:var(--primary);">$5 per day</strong>
+          </div>
+          <div class="card pad-card">
+            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/></svg></div>
+            <h4 style="margin-bottom:8px;">Avalanche safety set</h4>
+            <p style="margin-bottom:10px;">Transceiver, probe and shovel, checked daily.</p>
+            <strong style="color:var(--primary);">$16 per day</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: BINDINGS -->
+    <section class="section section-bg-alt">
+      <div class="container grid-2" style="align-items:center;">
+        <div>
+          <span class="badge">Snowboard bindings</span>
+          <h2 style="font-size:2.1rem; color:var(--secondary); margin-bottom:16px;">Step On or straps, your choice at booking</h2>
+          <p style="color:var(--text-muted); margin-bottom:16px;">Both systems are in the fleet in every size, and swapping between them mid-week costs nothing.</p>
+          <ul class="feature-list" style="margin-bottom:22px;">
+            <li><strong>Step On:</strong> three locking points at toe and heel. You clip in standing up, off the chairlift, in a few seconds.</li>
+            <li><strong>Ratchet straps:</strong> ankle and toe straps you can tune to the millimetre, which suits riders who like a specific feel.</li>
+            <li>Highbacks and disc angles are set to your stance before the board goes into the locker.</li>
+          </ul>
+          <a href="pricing.html" class="btn btn-secondary">See package rates</a>
+        </div>
+        <div class="img-hover img-tall">
+          <img src="https://www.blauerskiandboard.com/images/rental-snowboard-s-bi-b.jpg" alt="Snowboarder clicking into bindings at the top of a run" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: SWAP STATIONS -->
+    <section class="section">
+      <div class="container grid-2" style="align-items:center;">
+        <div class="img-hover img-tall">
+          <img src="https://images.ctfassets.net/2atbvuhykqrn/4ulcApEJNQvmUWxG2qSuvM/8658924d536ee0291b69b5620fb77fd8/W24-lessons_Imagery-Rentals_Thumbnail_Image.webp" alt="Rider swapping equipment at a mid-mountain station" loading="lazy">
+        </div>
+        <div>
+          <span class="badge">Swap as often as you like</span>
+          <h2 style="font-size:2.1rem; color:var(--secondary); margin-bottom:16px;">The mountain changes, so your skis can too</h2>
+          <p style="color:var(--text-muted); margin-bottom:16px;">Hard ice at nine, 20cm of new snow by two. Ride to the mid-mountain pod and change your setup instead of riding the wrong tool all afternoon.</p>
+          <ul class="feature-list" style="margin-bottom:22px;">
+            <li>Change from carvers to wide skis, or skis to a board, with no extra charge</li>
+            <li>Buckle and footbed adjustments while you wait</li>
+            <li>Free wax touch-up between the morning and afternoon sessions</li>
+            <li>Swaps take about four minutes and need nothing but your digital pass</li>
+          </ul>
+          <a href="dashboard.html" class="btn btn-primary">Manage your booking</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: SIZING REFERENCE -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Rough sizing guide</h2>
+          <p>A starting point only. The final length is chosen with you at the counter, based on how and where you ride.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Rider height</th><th>Beginner ski</th><th>Confident ski</th><th>Snowboard</th><th>Pole length</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>140 &ndash; 150cm</td><td>125 &ndash; 135cm</td><td>135 &ndash; 145cm</td><td>128 &ndash; 138cm</td><td>100cm</td></tr>
+              <tr><td>150 &ndash; 160cm</td><td>135 &ndash; 145cm</td><td>145 &ndash; 155cm</td><td>138 &ndash; 146cm</td><td>110cm</td></tr>
+              <tr><td>160 &ndash; 170cm</td><td>145 &ndash; 155cm</td><td>155 &ndash; 165cm</td><td>146 &ndash; 152cm</td><td>115cm</td></tr>
+              <tr><td>170 &ndash; 180cm</td><td>155 &ndash; 165cm</td><td>165 &ndash; 176cm</td><td>152 &ndash; 158cm</td><td>120cm</td></tr>
+              <tr><td>180 &ndash; 190cm</td><td>165 &ndash; 175cm</td><td>176 &ndash; 184cm</td><td>157 &ndash; 162cm</td><td>130cm</td></tr>
+              <tr><td>Above 190cm</td><td>175 &ndash; 182cm</td><td>184 &ndash; 191cm</td><td>162cm and wide</td><td>135cm</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: FLEET GALLERY -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>The fleet in use</h2>
+          <p>Shot over one week in February across all three depots.</p>
+        </div>
+        <div class="gallery-grid fleet-use-grid">
+          <figure class="gallery-item">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lenzerheide%20Ski%20Slope.jpg" alt="Skier carving on a freshly groomed run" loading="lazy">
+            <figcaption class="gallery-caption">Maverick 88 on morning corduroy</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Snowboarder.jpg" alt="Snowboarder in deep powder" loading="lazy">
+            <figcaption class="gallery-caption">Mountain Twin on a storm day</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Skitourers%20beneath%20Rostocker%20Eck.jpg" alt="Touring skis at a high col" loading="lazy">
+            <figcaption class="gallery-caption">Free 97 at the summit gate</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Clamps%20and%20filings%20%282420233104%29.jpg" alt="Boots on the fitting bench" loading="lazy">
+            <figcaption class="gallery-caption">Liners moulding in the lab</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Young%20snowboarder%20on%20the%20slope%20of%20a%20ski%20resort%2C%20with%20a%20panoramic%20view%20of%20the%20mountains%2C%20at%20sunset.jpg" alt="Freeride board on a steep ridge" loading="lazy">
+            <figcaption class="gallery-caption">Flight Attendant above the north bowl</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: FAQ -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>About the gear</h2>
+          <p>What riders usually want to know before choosing a package.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button">Can I try a ski and change my mind?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Yes, as many times as you like. Swaps are part of every package and cost nothing, at any depot, on any day of your rental.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Do you keep wide boots and large sizes?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">We stock Mondo 22 to 32 and carry wide-last shells up to 104mm. If you know you are hard to fit, mention it when booking and we will set a shell aside.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">What happens if I damage something?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Edge scratches and base scuffs from normal riding are never charged. For rock damage, the $4 a day waiver covers repairs with no excess.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Can I rent for a half day?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Afternoon rentals from 12:30 are 60 percent of the day rate. Morning-only rentals run at the full day price because the gear cannot go back out.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Do you deliver to hotels?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Within the resort, yes, for $15 per booking. Chalet fitting and daily rotation are part of the summit concierge service instead.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SNOW REPORT SIGN-UP -->
+    <section class="section">
+      <div class="container">
+        <div class="newsletter-box">
+          <div class="newsletter-copy">
+            <h3>Get the 6am snow report</h3>
+            <p>One short email each morning of the season: overnight snowfall, groomed runs, lift status and which skis our techs are handing out that day.</p>
+          </div>
+          <div>
+            <form class="newsletter-form" id="newsletter-form" novalidate>
+              <input type="email" id="newsletter-email" placeholder="you@email.com" aria-label="Email address" required>
+              <button type="submit" class="btn btn-primary">Send it to me</button>
+            </form>
+            <p class="newsletter-msg" id="newsletter-msg">You are on the list. First report lands tomorrow at 6am.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ GEAR BAG DRAWER ============ -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Rental gear bag">
+    <div class="cart-header">
+      <h3 style="font-size:1.2rem; color:var(--secondary);">Your slopeside gear bag</h3>
+      <button id="close-cart-btn" class="drawer-close" aria-label="Close gear bag">&times;</button>
+    </div>
+    <div class="cart-items-container" id="cart-items-container"></div>
+    <div class="cart-footer-bar">
+      <div style="display:flex; justify-content:space-between; margin-bottom:14px;">
+        <span style="font-weight:600;">Total per day</span>
+        <strong id="cart-total-price" style="color:var(--primary); font-size:1.2rem;">$0.00</strong>
+      </div>
+      <a href="dashboard.html" class="btn btn-primary btn-block">Lock in sizing &amp; dates</a>
+      <button id="clear-cart-btn" class="btn btn-secondary btn-block btn-sm" style="margin-top:10px;">Empty the bag</button>
+    </div>
+  </aside>
+
+  <!-- ============ UNIVERSAL FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color:var(--footer-text);" aria-label="VERTEX ALPS home">
+            <div class="brand-badge">
+              <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
+            <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
+            <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+            </div>
+            <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+          </a>
+          <p>Slopeside ski and snowboard rental depots. Precision-tuned gear and custom-fitted boots for mountain riders since 2012.</p>
+          <div class="footer-social-cluster">
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg></a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+            <a href="#" class="social-icon-btn" aria-label="X"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="social-icon-btn" aria-label="Facebook"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="social-icon-btn" aria-label="TikTok"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home-2.html">Summit concierge</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="rentals.html">Equipment fleet</a></li>
+            <li><a href="lessons.html">Mountain academy</a></li>
+            <li><a href="pricing.html">Package rates</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="dashboard.html">Customer dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Depot hours</h4>
+          <ul class="footer-links">
+            <li>Monday to Friday: 07:30 &ndash; 20:00</li>
+            <li>Saturday &amp; Sunday: 07:00 &ndash; 21:00</li>
+            <li>Gondola lockers: open 24 hours</li>
+            <li>Mountain support line: 24 hours</li>
+            <li>Bootfitting lab: 08:00 &ndash; 19:00</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Base station &amp; depots</h4>
+          <div class="creative-address-list">
+            <div class="address-item">
+              <svg class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div class="address-item-content">
+                <strong>Base depot alpha</strong>
+                Gondola Plaza Level 1, Suite 104
+              </div>
+            </div>
+            <div class="address-item">
+              <svg class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11"/></svg>
+              <div class="address-item-content">
+                <strong>Mountain passway</strong>
+                Glacier Peak Way 402, Summit Gateway
+              </div>
+            </div>
+            <div class="address-item">
+              <svg class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <div class="address-item-content">
+                <strong>Coordinates &amp; altitude</strong>
+                39.5801&deg; N, 105.9438&deg; W &mdash; 3,450m
+              </div>
+            </div>
+            <div class="address-item">
+              <svg class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div class="address-item-content">
+                <strong>Slopeside dispatch line</strong>
+                <a href="tel:+18005552577">+1 (800) 555-ALPS</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 V&Eacute;RTEX ALPS Rentals. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Terms &amp; conditions</a>
+          <a href="#">Rental damage waiver</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">Safety disclosures</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <div class="toast-msg" id="toast" role="status" aria-live="polite">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+    <span id="toast-text">Added to your gear bag</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

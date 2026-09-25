@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summit concierge service | VÉRTEX ALPS</title>
+  <meta name="description" content="In-chalet bootfitting, private race demo skis, valet depots and guided helicopter days from the VERTEX ALPS summit concierge team.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('vertex_theme') === 'dark') {
+          document.documentElement.classList.add('pre-dark');
+        }
+        if (localStorage.getItem('vertex_rtl') === 'true') {
+          document.documentElement.setAttribute('dir', 'rtl');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ============ UNIVERSAL HEADER (identical on every public page) ============ -->
+  <header class="header">
+    <div class="container nav-bar">
+      <a href="index.html" class="brand-logo" aria-label="VERTEX ALPS home">
+        <div class="brand-badge">
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
+            <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
+            <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <div class="nav-dropdown-wrapper">
+          <a href="index.html" class="nav-link active">
+            Home
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              Home 1 &mdash; Classic Depot
+              <span>Contactless locker pickup &amp; fleet</span>
+            </a>
+            <a href="home-2.html" class="dropdown-item active">
+              Home 2 &mdash; Summit VIP Concierge
+              <span>Private chalet delivery &amp; heli-skiing</span>
+            </a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="rentals.html" class="nav-link">Rentals</a>
+        <a href="lessons.html" class="nav-link">Lessons</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-toggle-btn" id="open-cart-btn" title="View gear bag" aria-label="Open rental gear bag">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-badge-count" id="cart-badge">0</span>
+        </button>
+        <button class="icon-toggle-btn" id="theme-toggle" title="Switch between light and dark" aria-label="Switch between light and dark">
+          <svg class="icon-sun" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="icon-toggle-btn" id="rtl-toggle" title="Switch text direction" aria-label="Switch text direction">RTL</button>
+        <a href="login.html" class="btn btn-secondary btn-sm">Sign in</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- SECTION 1: CONCIERGE HERO -->
+    <section class="hero hero-concierge">
+      <canvas id="snow-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Summit concierge &bull; private service</span>
+          <h1 class="hero-title">We bring the fitting room to your chalet.</h1>
+          <p class="hero-desc">Our fitting van parks at your door the night before you ski. Race stock from St&ouml;ckli and K&auml;stle, boots moulded by the fire, and a technician who stays with you for the week.</p>
+          <div class="hero-cta-group">
+            <a href="contact.html" class="btn btn-primary">Book a chalet fitting</a>
+            <a href="pricing.html" class="btn btn-secondary">Concierge rates</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-img-box">
+            <img src="https://images.pexels.com/photos/36325823/pexels-photo-36325823.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Private ski concierge fitting at a snowy mountain chalet" width="1000" height="700">
+          </div>
+          <div class="hero-stat-card">
+            <svg width="34" height="34" fill="var(--primary)" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <div>
+              <strong>One technician, all week</strong>
+              <p style="font-size:0.85rem; color:var(--text-muted);">Same person, same phone number, from arrival to departure</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: WHAT IS INCLUDED -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>What the concierge week includes</h2>
+          <p>Everything below is part of the service. Nothing is charged by the hour.</p>
+        </div>
+        <div class="grid-4">
+          <div class="card pad-card">
+            <div class="step-num">1</div>
+            <h4 style="margin-bottom:8px;">Evening arrival fitting</h4>
+            <p>The van reaches your residence between 17:00 and 21:00 on the night you land.</p>
+          </div>
+          <div class="card pad-card">
+            <div class="step-num">2</div>
+            <h4 style="margin-bottom:8px;">Daily gear rotation</h4>
+            <p>Tell your technician what the snow is doing and different skis appear the next morning.</p>
+          </div>
+          <div class="card pad-card">
+            <div class="step-num">3</div>
+            <h4 style="margin-bottom:8px;">Overnight tuning</h4>
+            <p>Edges and wax are refreshed each night while your gear dries in the valley workshop.</p>
+          </div>
+          <div class="card pad-card">
+            <div class="step-num">4</div>
+            <h4 style="margin-bottom:8px;">Departure collection</h4>
+            <p>Gear is picked up from your hallway on your last evening. No return trip to the depot.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PRIVATE DEMO FLEET -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>The private demo fleet</h2>
+          <p>Swiss and Austrian race stock kept aside for concierge guests, hand-waxed for the day you ride it.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Swiss race stock</span>
+              <img src="https://images.pexels.com/photos/29920625/pexels-photo-29920625.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Premium ski equipment prepared at a mountain service station" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">St&ouml;ckli Laser WRT Pro</h3>
+              <p class="card-meta"><span>Titanal core</span> <span>0.5&deg; base bevel</span></p>
+              <p>Slalom acceleration and edge grip that holds on ice, waxed for the temperature forecast that morning.</p>
+              <div class="card-price">$95 <span>per day</span></div>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-block add-to-cart-btn" data-title="St&ouml;ckli Laser WRT Pro" data-price="95">Add to gear bag</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Freeride flagship</span>
+              <img src="https://images.pexels.com/photos/10804120/pexels-photo-10804120.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Snowboarder carrying a board through a snowy alpine resort" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Jones Carbon Flagship</h3>
+              <p class="card-meta"><span>Carbon stringers</span> <span>Step On bindings</span></p>
+              <p>Built for steep couloirs and speed, with enough damping to stay calm through wind crust.</p>
+              <div class="card-price">$98 <span>per day</span></div>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-block add-to-cart-btn" data-title="Jones Carbon Flagship" data-price="98">Add to gear bag</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Big mountain</span>
+              <img src="https://images.pexels.com/photos/19696590/pexels-photo-19696590.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Skiers riding steep alpine terrain beside a mountain hut" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">K&auml;stle MX98</h3>
+              <p class="card-meta"><span>Hollowtech tip</span> <span>98mm waist</span></p>
+              <p>Quiet underfoot through variable crust and open bowls, paired with vacuum-moulded shells.</p>
+              <div class="card-price">$92 <span>per day</span></div>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-block add-to-cart-btn" data-title="K&auml;stle MX98" data-price="92">Add to gear bag</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: HELI AND GUIDES -->
+    <section class="section">
+      <div class="container grid-2" style="align-items:center;">
+        <div>
+          <span class="badge">Air and alpine operations</span>
+          <h2 style="font-size:2.1rem; color:var(--secondary); margin-bottom:16px;">Private helicopter days with IFMGA guides</h2>
+          <p style="color:var(--text-muted); margin-bottom:18px;">When the snowpack allows it, we arrange departures from the valley pad with a guide who knows which aspects held the overnight snow. Safety equipment and a pre-flight gear check come as standard.</p>
+          <ul class="feature-list" style="margin-bottom:24px;">
+            <li>One guide assigned to your group, never shared</li>
+            <li>Airbag packs, transceivers and satellite messenger provided</li>
+            <li>Boot alignment and binding check done on the tarmac</li>
+            <li>Weather call made the evening before, with a full refund if it is off</li>
+          </ul>
+          <a href="lessons.html" class="btn btn-primary">Meet the guiding team</a>
+        </div>
+        <div class="img-hover img-tall">
+          <img src="https://images.pexels.com/photos/11680706/pexels-photo-11680706.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Helicopter resting on a snowy alpine mountain for a guided ski day" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: CABANAS AND VALET -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Heated cabanas and valet depots</h2>
+          <p>Finish the day without walking through the village in ski boots.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card pad-card">
+            <h3 style="margin-bottom:8px;">Fireside valet exchange</h3>
+            <p style="margin-bottom:12px; color:var(--text-muted); font-size:0.9rem;">Gondola Village, private wing</p>
+            <p>Step off the snow into the lounge. Attendants take your skis for drying and tuning while you change into your own shoes.</p>
+          </div>
+          <div class="card pad-card">
+            <h3 style="margin-bottom:8px;">Mid-mountain pod</h3>
+            <p style="margin-bottom:12px; color:var(--text-muted); font-size:0.9rem;">Apex station, 3,200m</p>
+            <p>Change onto wider boards when a midday storm fills the bowls, without riding back down to the valley.</p>
+          </div>
+          <div class="card pad-card">
+            <h3 style="margin-bottom:8px;">Evening chalet transport</h3>
+            <p style="margin-bottom:12px; color:var(--text-muted); font-size:0.9rem;">Door to door, on call</p>
+            <p>Prefer to keep the gear with you? A four-wheel-drive van moves it to your residence each evening.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: MOBILE FITTING STUDIO -->
+    <section class="section">
+      <div class="container grid-2" style="align-items:center;">
+        <div class="img-hover img-tall">
+          <img src="https://images.pexels.com/photos/34771214/pexels-photo-34771214.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Premium ski and snowboard equipment displayed inside a rental shop" loading="lazy">
+        </div>
+        <div>
+          <span class="badge">Fireside fitting</span>
+          <h2 style="font-size:2.1rem; color:var(--secondary); margin-bottom:16px;">The fitting studio that comes to you</h2>
+          <p style="color:var(--text-muted); margin-bottom:18px;">The van carries a shell stretcher, a vacuum footbed press and the full boot wall. Everything that happens in the lab happens in your living room, with a drink in your hand.</p>
+          <div class="note-box" style="margin-bottom:20px;">
+            <strong>If a pressure point appears mid-week</strong>, your technician comes back the same day and adjusts the shell. That visit is part of the package, not an extra.
+          </div>
+          <a href="contact.html" class="btn btn-secondary">Ask about a group booking</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: A DAY WITH THE CONCIERGE -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>How a concierge day runs</h2>
+          <p>A typical Tuesday in February, from the first message to the last pair of skis collected.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-entry">
+            <span class="timeline-year">06:30</span>
+            <h4>Snow note from your technician</h4>
+            <p>A short message with the overnight total, wind on the summit and which pair of skis is waiting by the door.</p>
+          </div>
+          <div class="timeline-entry">
+            <span class="timeline-year">08:45</span>
+            <h4>Gear ready in the ski room</h4>
+            <p>Boots warmed, skis waxed, goggles wiped. Your guide meets you at the lift rather than the village.</p>
+          </div>
+          <div class="timeline-entry">
+            <span class="timeline-year">12:30</span>
+            <h4>Midday swap if the weather turns</h4>
+            <p>Message the technician from the chairlift and a different setup is waiting at the mid-mountain pod after lunch.</p>
+          </div>
+          <div class="timeline-entry">
+            <span class="timeline-year">16:15</span>
+            <h4>Valet collection</h4>
+            <p>Drop everything at the cabana, change into your shoes and walk home. The workshop handles the rest overnight.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: GUEST FEEDBACK -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Notes from concierge guests</h2>
+          <p>Shared with permission at the end of the last two seasons.</p>
+        </div>
+        <div class="grid-3">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-quote">Four of us were fitted in the chalet on Saturday evening while dinner was cooking. Nobody set foot in a rental shop all week.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">JD</div>
+              <div><strong>Julien Dupont</strong><span>Family week, February</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-quote">My right boot was tight on day two. Karl arrived at four, punched the shell in the kitchen, and it was perfect the next morning.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SH</div>
+              <div><strong>Sophia Hart</strong><span>Returning guest</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-quote">They called off the heli day for wind and refunded it before I asked. That is the reason we book again.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">RN</div>
+              <div><strong>Rohan Nair</strong><span>Backcountry group</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: CONCIERGE QUESTIONS -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Before you book the concierge service</h2>
+          <p>The details guests usually check first.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button">How far does the van travel?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Anywhere within 40 minutes of the valley base, which covers the whole resort and the two villages below it. Further out we can still come, with a travel fee agreed in advance.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Is there a minimum booking?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Three days for one or two riders, and a single day for groups of four or more. Fittings are scheduled in two-hour windows.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Can beginners use the concierge service?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Yes. The demo fleet gets the attention, but the same service runs with forgiving skis and soft boots, which is often the easiest way to start.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">What happens if you damage my floor?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">The team works on protective mats and carries full liability cover. Any damage is settled directly with you, not with your property manager.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SNOW REPORT SIGN-UP -->
+    <section class="section">
+      <div class="container">
+        <div class="newsletter-box">
+          <div class="newsletter-copy">
+            <h3>Get the 6am snow report</h3>
+            <p>One short email each morning of the season: overnight snowfall, groomed runs, lift status and which skis our techs are handing out that day.</p>
+          </div>
+          <div>
+            <form class="newsletter-form" id="newsletter-form" novalidate>
+              <input type="email" id="newsletter-email" placeholder="you@email.com" aria-label="Email address" required>
+              <button type="submit" class="btn btn-primary">Send it to me</button>
+            </form>
+            <p class="newsletter-msg" id="newsletter-msg">You are on the list. First report lands tomorrow at 6am.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ GEAR BAG DRAWER ============ -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Rental gear bag">
+    <div class="cart-header">
+      <h3 style="font-size:1.2rem; color:var(--secondary);">Your slopeside gear bag</h3>
+      <button id="close-cart-btn" class="drawer-close" aria-label="Close gear bag">&times;</button>
+    </div>
+    <div class="cart-items-container" id="cart-items-container"></div>
+    <div class="cart-footer-bar">
+      <div style="display:flex; justify-content:space-between; margin-bottom:14px;">
+        <span style="font-weight:600;">Total per day</span>
+        <strong id="cart-total-price" style="color:var(--primary); font-size:1.2rem;">$0.00</strong>
+      </div>
+      <a href="dashboard.html" class="btn btn-primary btn-block">Lock in sizing &amp; dates</a>
+      <button id="clear-cart-btn" class="btn btn-secondary btn-block btn-sm" style="margin-top:10px;">Empty the bag</button>
+    </div>
+  </aside>
+
+  <!-- ============ UNIVERSAL FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color:var(--footer-text);" aria-label="VERTEX ALPS home">
+            <div class="brand-badge">
+              <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
+            <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
+            <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+            </div>
+            <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+          </a>
+          <p>Slopeside ski and snowboard rental depots. Precision-tuned gear and custom-fitted boots for mountain riders since 2012.</p>
+          <div class="footer-social-cluster">
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg></a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+            <a href="#" class="social-icon-btn" aria-label="X"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="social-icon-btn" aria-label="Facebook"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="social-icon-btn" aria-label="TikTok"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home-2.html">Summit concierge</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="rentals.html">Equipment fleet</a></li>
+            <li><a href="lessons.html">Mountain academy</a></li>
+            <li><a href="pricing.html">Package rates</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="dashboard.html">Customer dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Depot hours</h4>
+          <ul class="footer-links">
+            <li>Monday to Friday: 07:30 &ndash; 20:00</li>
+            <li>Saturday &amp; Sunday: 07:00 &ndash; 21:00</li>
+            <li>Gondola lockers: open 24 hours</li>
+            <li>Mountain support line: 24 hours</li>
+            <li>Bootfitting lab: 08:00 &ndash; 19:00</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Base station &amp; depots</h4>
+          <div class="creative-address-list">
+            <div class="address-item">
+              <svg class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div class="address-item-content">
+                <strong>Base depot alpha</strong>
+                Gondola Plaza Level 1, Suite 104
+              </div>
+            </div>
+            <div class="address-item">
+              <svg class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11"/></svg>
+              <div class="address-item-content">
+                <strong>Mountain passway</strong>
+                Glacier Peak Way 402, Summit Gateway
+              </div>
+            </div>
+            <div class="address-item">
+              <svg class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <div class="address-item-content">
+                <strong>Coordinates &amp; altitude</strong>
+                39.5801&deg; N, 105.9438&deg; W &mdash; 3,450m
+              </div>
+            </div>
+            <div class="address-item">
+              <svg class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div class="address-item-content">
+                <strong>Slopeside dispatch line</strong>
+                <a href="tel:+18005552577">+1 (800) 555-ALPS</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 V&Eacute;RTEX ALPS Rentals. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Terms &amp; conditions</a>
+          <a href="#">Rental damage waiver</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">Safety disclosures</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <div class="toast-msg" id="toast" role="status" aria-live="polite">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+    <span id="toast-text">Added to your gear bag</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

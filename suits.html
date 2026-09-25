@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore signature bespoke commissions, floating canvas construction, and cloth options at SARTOR." />
+  <title>Bespoke Suits &bull; SARTOR Savile Row</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- UNIFIED SITE HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner container">
+      <a href="index.html" class="brand-logo" aria-label="SARTOR Home">
+        <svg class="logo-symbol" viewBox="0 0 44 44" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="40" height="40" rx="4" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M12 12L32 32M32 12L12 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="22" cy="22" r="5" fill="var(--bg-surface)" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="22" cy="22" r="2" fill="currentColor"/>
+        </svg>
+        <div class="brand-text-wrap">
+          <span class="brand-name">SARTOR</span>
+          <span class="brand-tagline">BESPOKE &bull; MAYFAIR</span>
+        </div>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="suits.html" class="nav-link active">Suits</a></li>
+          <li><a href="lookbook.html" class="nav-link">Lookbook</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="index.html#dashboard" class="nav-link nav-dash-link">Dashboard</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </button>
+        <button id="rtlToggle" class="icon-btn" aria-label="Toggle Direction" title="Toggle RTL/LTR"><span class="rtl-text">RTL</span></button>
+        <button class="btn btn-primary btn-header-login" id="openLoginBtn">Login</button>
+        <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-drawer" id="mobileDrawer">
+      <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="about.html" class="mobile-nav-link">About Us</a>
+        <a href="suits.html" class="mobile-nav-link active">Suits</a>
+        <a href="lookbook.html" class="mobile-nav-link">Lookbook</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="index.html#dashboard" class="mobile-nav-link mobile-dash-btn">Dashboard</a>
+        <button class="btn btn-primary w-full" id="mobileDrawerLogin">Login</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: HERO BANNER -->
+    <section class="page-banner text-center">
+      <div class="container">
+        <span class="section-tag">Commission Portfolio</span>
+        <h1 class="page-banner-title">Architectural Handcrafted Suits</h1>
+        <p class="section-lead">Every garment is conceived for posture correction, climate resilience, and formal distinction.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: 9 SIGNATURE COMMISSIONS -->
+    <section class="section section-suits">
+      <div class="container">
+        <div class="grid grid-3-col">
+          <!-- Suit Card 1 -->
+          <article class="suit-card">
+            <div class="suit-visual">
+              <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=900&auto=format&fit=crop" alt="Navy bespoke two-piece wool suit" loading="lazy">
+              <span class="suit-price-pill">From $1,450 &bull; Two-Piece</span>
+            </div>
+            <div class="suit-info-pane">
+              <span class="suit-serial">COMMISSION NO. 01</span>
+              <h3>The City Lounge Two-Piece</h3>
+              <p>Tailored from 290g Super 130s Yorkshire worsted wool. Engineered for demanding international travel, providing immediate wrinkle recovery.</p>
+              <ul class="suit-specs">
+                <li>Double side vents for seated movement</li>
+                <li>Side waist adjusters with solid brass sliders</li>
+                <li>Hand-worked Milanese lapel buttonhole</li>
+              </ul>
+              <button class="btn btn-secondary w-full select-suit-trigger" data-title="City Lounge Two-Piece">Select Commission</button>
+            </div>
+          </article>
+
+          <!-- Suit Card 2 -->
+          <article class="suit-card card-spotlight">
+            <div class="spotlight-flag">Ceremonial Standard</div>
+            <div class="suit-visual">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=900&auto=format&fit=crop" alt="Bespoke Midnight Navy Dinner Tuxedo" loading="lazy">
+              <span class="suit-price-pill">From $1,850 &bull; Black Tie</span>
+            </div>
+            <div class="suit-info-pane">
+              <span class="suit-serial">COMMISSION NO. 02</span>
+              <h3>The Grand Midnight Dinner Suit</h3>
+              <p>Constructed from 320g English barathea wool in true midnight navy. Under artificial chandeliers, midnight navy absorbs ambient yellow tones, appearing deeper and sharper than black.</p>
+              <ul class="suit-specs">
+                <li>Silk grosgrain-faced peak lapels and covered buttons</li>
+                <li>Single-button closure with deep evening vest drop</li>
+                <li>Military side-seam silk galloon trouser braid</li>
+              </ul>
+              <button class="btn btn-primary w-full select-suit-trigger" data-title="Grand Midnight Dinner Suit">Select Commission</button>
+            </div>
+          </article>
+
+          <!-- Suit Card 3 -->
+          <article class="suit-card">
+            <div class="suit-visual">
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=900&auto=format&fit=crop" alt="Double-breasted cashmere overcoat" loading="lazy">
+              <span class="suit-price-pill">From $2,200 &bull; Overcoat</span>
+            </div>
+            <div class="suit-info-pane">
+              <span class="suit-serial">COMMISSION NO. 03</span>
+              <h3>The Double-Breasted Ulster Coat</h3>
+              <p>Generously tailored from double-faced 520g Scottish cashmere. Features a convertible storm collar, deep envelope pockets, and an inverted back pleat that releases volume when walking.</p>
+              <ul class="suit-specs">
+                <li>Turn-back storm cuffs with working horn buttons</li>
+                <li>Inverted box-pleat back with buttoned half-belt</li>
+                <li>Carved Scottish stag horn buttons with raised rims</li>
+              </ul>
+              <button class="btn btn-secondary w-full select-suit-trigger" data-title="Double-Breasted Ulster Coat">Select Commission</button>
+            </div>
+          </article>
+
+          <!-- Suit Card 4 -->
+          <article class="suit-card">
+            <div class="suit-visual">
+              <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=900&auto=format&fit=crop" alt="Charcoal flannel three-piece suit" loading="lazy">
+              <span class="suit-price-pill">From $1,750 &bull; Three-Piece</span>
+            </div>
+            <div class="suit-info-pane">
+              <span class="suit-serial">COMMISSION NO. 04</span>
+              <h3>The Mayfair Flannel Three-Piece</h3>
+              <p>Constructed from 340g Scabal wool flannel with an athletic silhouette. Accompanied by a 6-button waistcoat with notched lapel and rear silk cinch.</p>
+              <ul class="suit-specs">
+                <li>Full floating horsehair interlining across chest</li>
+                <li>Matching vest with tailored watch chain loop</li>
+                <li>Inward double-pleated forward-drape trousers</li>
+              </ul>
+              <button class="btn btn-secondary w-full select-suit-trigger" data-title="Mayfair Flannel Three-Piece">Select Commission</button>
+            </div>
+          </article>
+
+          <!-- Suit Card 5 -->
+          <article class="suit-card">
+            <div class="suit-visual">
+              <img src="C:\F.E.D\Images and Links\images (1).jpg" alt="Summer Solaro and Irish Linen Bespoke Suit" loading="lazy">
+              <span class="suit-price-pill">From $1,550 &bull; Summer Drape</span>
+            </div>
+            <div class="suit-info-pane">
+              <span class="suit-serial">COMMISSION NO. 05</span>
+              <h3>The Mediterranean Summer Linen</h3>
+              <p>Woven from 300g heavyweight Irish linen. Unlined through the quarters for tropical breathability, with spalla camicia shirt-style pleated shoulders.</p>
+              <ul class="suit-specs">
+                <li>Quarter-lined Bemberg cupro back for cooling</li>
+                <li>Patch hip pockets with curved barqueta curves</li>
+                <li>Side-tab waist fastening with extended waistband</li>
+              </ul>
+              <button class="btn btn-secondary w-full select-suit-trigger" data-title="Mediterranean Summer Linen">Select Commission</button>
+            </div>
+          </article>
+
+          <!-- Suit Card 6 -->
+          <article class="suit-card">
+            <div class="suit-visual">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=900&auto=format&fit=crop" alt="Double-Breasted Chalkstripe 6x2 Stance Suit" loading="lazy">
+              <span class="suit-price-pill">From $1,650 &bull; Double-Breasted</span>
+            </div>
+            <div class="suit-info-pane">
+              <span class="suit-serial">COMMISSION NO. 06</span>
+              <h3>The 6x2 Double-Breasted Stance</h3>
+              <p>A classic Savile Row power silhouette cut with broad sweeping peak lapels, low buttoning stance, and generous chest fullness that commands respect.</p>
+              <ul class="suit-specs">
+                <li>10.5cm broad peak lapels rolling to lower button</li>
+                <li>Natural water-buffalo horn buttons cross-stitched</li>
+                <li>Side vents cut extra-deep for natural pocket access</li>
+              </ul>
+              <button class="btn btn-secondary w-full select-suit-trigger" data-title="6x2 Double-Breasted Stance">Select Commission</button>
+            </div>
+          </article>
+
+          <!-- Suit Card 7 -->
+          <article class="suit-card">
+            <div class="suit-visual">
+              <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=900&auto=format&fit=crop" alt="Field Tweed Sports Coat and Trousers" loading="lazy">
+              <span class="suit-price-pill">From $1,600 &bull; Sporting Tweed</span>
+            </div>
+            <div class="suit-info-pane">
+              <span class="suit-serial">COMMISSION NO. 07</span>
+              <h3>The Highland Estate Tweed</h3>
+              <p>Cut from 480g Cheviot thornproof tweed. Natural lanolin treatment repels mist and rainfall across shooting estates and rugged country travel.</p>
+              <ul class="suit-specs">
+                <li>Suede throat latch and reinforced horn closures</li>
+                <li>Expanding bellows patch pockets with drainage</li>
+                <li>Action bi-swing pleated back for unimpeded swing</li>
+              </ul>
+              <button class="btn btn-secondary w-full select-suit-trigger" data-title="Highland Estate Tweed">Select Commission</button>
+            </div>
+          </article>
+
+          <!-- Suit Card 8 -->
+          <article class="suit-card">
+            <div class="suit-visual">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=900&auto=format&fit=crop" alt="Velvet Smoking Jacket" loading="lazy">
+              <span class="suit-price-pill">From $1,500 &bull; Evening Velvet</span>
+            </div>
+            <div class="suit-info-pane">
+              <span class="suit-serial">COMMISSION NO. 08</span>
+              <h3>The Silk Velvet Smoking Jacket</h3>
+              <p>Rich, luminous Italian cotton velvet in deep burgundy. Cut with a sweeping shawl lapel faced with quilted duchess satin and toggle frogging.</p>
+              <ul class="suit-specs">
+                <li>Quilted silk satin shawl collar and matching cuffs</li>
+                <li>Braided frogging closure with cord toggle buttons</li>
+                <li>Lined in custom contrast jacquard Bemberg cupro</li>
+              </ul>
+              <button class="btn btn-secondary w-full select-suit-trigger" data-title="Silk Velvet Smoking Jacket">Select Commission</button>
+            </div>
+          </article>
+
+          <!-- Suit Card 9 -->
+          <article class="suit-card">
+            <div class="suit-visual">
+              <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=900&auto=format&fit=crop" alt="Formal Morning Coat and Striped Trousers" loading="lazy">
+              <span class="suit-price-pill">From $2,100 &bull; Ceremonial</span>
+            </div>
+            <div class="suit-info-pane">
+              <span class="suit-serial">COMMISSION NO. 09</span>
+              <h3>The Royal Ascot Morning Coat</h3>
+              <p>The apex of formal daywear. Crafted in heavy black wool herringbone with a sweeping curved cutaway skirt and traditional cashmere-stripe trousers.</p>
+              <ul class="suit-specs">
+                <li>Single link-button stance with peaked silk lapels</li>
+                <li>Deep interior tail pocket for gloves and service order</li>
+                <li>High-waisted pleated trousers in black and grey stripe</li>
+              </ul>
+              <button class="btn btn-secondary w-full select-suit-trigger" data-title="Royal Ascot Morning Coat">Select Commission</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CLOTH WEAVE SPECIFICATIONS -->
+    <section class="section section-fabrics-spec" style="background: var(--bg-surface-soft);">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="section-tag">Direct Mill Sourcing</span>
+          <h2 class="section-title">The Master Fabric Weights</h2>
+          <p class="section-lead">We partner exclusively with century-old family mills in Yorkshire, Scotland, and Biella.</p>
+        </div>
+        <div class="grid grid-3-col">
+          <div class="specimen-card">
+            <div class="specimen-header"><span class="specimen-serial">SPECIMEN #VBC-1663</span><span class="specimen-weight">240 GSM &bull; Tropical Fresco</span></div>
+            <div class="specimen-swatch-box swatch-fresco"></div>
+            <div class="specimen-body">
+              <h3>High-Twist 4-Ply Travel Wool</h3>
+              <p class="specimen-provenance">Vitale Barberis Canonico &bull; Italy</p>
+              <p class="specimen-detail">Porous weave designed for high humidity. Resists wrinkles through natural yarn springback tension.</p>
+            </div>
+          </div>
+          <div class="specimen-card specimen-spotlight">
+            <div class="specimen-header"><span class="specimen-serial">SPECIMEN #SCB-1899</span><span class="specimen-weight">340 GSM &bull; 4-Season Worsted</span></div>
+            <div class="specimen-swatch-box swatch-worsted"></div>
+            <div class="specimen-body">
+              <h3>Huddersfield Flannel 130s</h3>
+              <p class="specimen-provenance">Scabal &bull; Yorkshire, England</p>
+              <p class="specimen-detail">Milled with traditional English tension. Holds razor creases through long conference days.</p>
+            </div>
+          </div>
+          <div class="specimen-card">
+            <div class="specimen-header"><span class="specimen-serial">SPECIMEN #HNS-1783</span><span class="specimen-weight">480 GSM &bull; Heavy Scottish Tweed</span></div>
+            <div class="specimen-swatch-box swatch-tweed"></div>
+            <div class="specimen-body">
+              <h3>Cheviot Thornproof Tweed</h3>
+              <p class="specimen-provenance">Holland &amp; Sherry &bull; Scotland</p>
+              <p class="specimen-detail">Hard-twisted Scottish wool with natural lanolin water-resistance for outer winter coats.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ANATOMICAL POSTURE SOLUTIONS -->
+    <section class="section section-posture">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="section-tag">Anatomy Calibration</span>
+          <h2 class="section-title">Anatomy-Specific Engineering</h2>
+          <p class="section-lead">How our individual paper patterns neutralize posture challenges.</p>
+        </div>
+        <div class="grid grid-2-col">
+          <div class="dash-surface-card">
+            <h3>Dropped Shoulder Compensation</h3>
+            <p>Seventy-eight percent of clients exhibit a dominant right shoulder drop. Off-the-peg jackets break diagonally across the blade. SARTOR lowers the right armscye gorge by up to 8mm, creating perfect level symmetry at the hemline.</p>
+          </div>
+          <div class="dash-surface-card">
+            <h3>Forward Neck &amp; Head Pitch</h3>
+            <p>Prolonged digital desk posture draws the head forward, creating a hollow 2-inch gap behind the jacket collar. We re-hang the collar pitch with an advanced forward curve, locking the jacket flush against your neck band.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: COMMISSION LEAD TIMES & PROTOCOL -->
+    <section class="section section-timelines" style="background: var(--bg-surface-soft);">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="section-tag">Commission Timing</span>
+          <h2 class="section-title">Fitting Milestones &amp; Craft Schedules</h2>
+          <p class="section-lead">From raw measurements to your final daylight handover in Mayfair.</p>
+        </div>
+        <div class="grid grid-3-col">
+          <div class="service-feature-card">
+            <div class="service-icon-wrap">01</div>
+            <h3>Consultation &amp; Baste</h3>
+            <p><strong>Weeks 1 – 3:</strong> Paper pattern carving, initial cloth cutting, and basting together of the skeleton garment with white cotton thread.</p>
+          </div>
+          <div class="service-feature-card">
+            <div class="service-icon-wrap">02</div>
+            <h3>Forward Fitting</h3>
+            <p><strong>Weeks 4 – 6:</strong> Canvases pad-stitched into chest, shoulder slope set, buttonholes cut, and sleeve pitch confirmed.</p>
+          </div>
+          <div class="service-feature-card">
+            <div class="service-icon-wrap">03</div>
+            <h3>Handover &amp; Pressing</h3>
+            <p><strong>Weeks 7 – 9:</strong> Hand-pressing on vintage steam bucks, final daylight inspection, and handover in custom cedar garment case.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: INQUIRY CTA -->
+    <section class="section section-faq text-center">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Commission Guidance</span>
+          <h2 class="section-title">Ready for Your First Fitting?</h2>
+          <p class="section-lead">Appointments in our private Mayfair suites include complete personal anatomical profiling.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Book Consultation In Mayfair</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- UNIFIED FOOTER -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="brand-logo footer-logo">
+            <svg class="logo-symbol" viewBox="0 0 44 44" width="34" height="34" fill="none"><rect x="2" y="2" width="40" height="40" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 12L32 32M32 12L12 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="22" r="5" fill="var(--bg-surface)" stroke="currentColor" stroke-width="1.8"/><circle cx="22" cy="22" r="2" fill="currentColor"/></svg>
+            <div class="brand-text-wrap"><span class="brand-name">SARTOR</span><span class="brand-tagline">BESPOKE &bull; MAYFAIR</span></div>
+          </a>
+          <p class="footer-blurb">Traditional bespoke tailoring with pure floating horsehair canvas architecture. Hand-cut and basted on Savile Row, London.</p>
+          <div class="footer-social-row">
+            <a href="https://instagram.com" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+            <a href="https://linkedin.com" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://x.com" class="social-btn" aria-label="X" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16z"></path><path d="M4 20l6.768-6.768m2.46-2.46l6.772-6.772"></path></svg>
+            </a>
+            <a href="https://youtube.com" class="social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><polygon points="10 15 15 12 10 9 10 15" fill="currentColor"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">Bespoke Categories</h5>
+          <ul class="footer-menu">
+            <li><a href="suits.html">City Lounge Two-Piece</a></li>
+            <li><a href="suits.html">Grand Midnight Dinner Suit</a></li>
+            <li><a href="suits.html">Double-Breasted Ulster Coat</a></li>
+            <li><a href="lookbook.html">Visual Lookbook Archive</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">Atelier Navigation</h5>
+          <ul class="footer-menu">
+            <li><a href="about.html">About Us &amp; Standards</a></li>
+            <li><a href="lookbook.html">Sartorial Catalog</a></li>
+            <li><a href="contact.html">Private Appointments</a></li>
+            <li><a href="index.html#dashboard">Patron Client Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">Savile Row Atelier</h5>
+          <address class="footer-addr">14 Savile Row, Suite 3<br />Mayfair, London W1S 3JN<br />United Kingdom</address>
+          <div class="footer-contact-links">
+            <span class="footer-tel"><strong>Tel:</strong> +44 (0) 20 7946 0188</span>
+            <span class="footer-email"><strong>Inquiries:</strong> concierge@sartor.co.uk</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-sub-bar">
+        <p>&copy; 2026 SARTOR Bespoke Atelier. All handcraft patterns and designs reserved.</p>
+        <div class="sub-links"><a href="#">Privacy Policy</a><span>&bull;</span><a href="#">Terms of Commission</a><span>&bull;</span><a href="#">Cloth Traceability</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

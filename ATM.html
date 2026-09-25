@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head> ATM Withdrawal</head>
+    <body>
+        <script>
+            
+            function atmWithdrawal(balance, amount, pinEntered, pinActual, dailyLimit, fee, atmCash) {
+    
+            console.log("--- Initializing Transaction ---");
+
+            if (pinEntered !== pinActual) {
+                console.log("Error: Incorrect PIN. Access Denied.");
+                return; 
+            }
+
+            if (amount > dailyLimit) {
+                console.log("Error: Amount exceeds your Daily Limit of $" + dailyLimit);
+                return;
+            }
+
+            if (amount > atmCash) {
+                console.log("Error: ATM out of cash. Try a smaller amount.");
+                return;
+            }
+
+            var totalCost = amount + fee;
+            if (totalCost > balance) {
+                console.log("Error: Insufficient Balance. Required: $" + totalCost);
+                return;
+            }
+
+            var remainingBalance = balance - totalCost;
+    
+            console.log("Success! Please collect your cash: $" + amount);
+            console.log("Transaction Fee: $" + fee);
+            console.log("Updated Account Balance: $" + remainingBalance);
+            console.log("--------------------------------");
+            }
+
+
+            atmWithdrawal(5000, 200, 1234, 1234, 1000, 2, 10000);
+        </script>
+    </body>
+</html>

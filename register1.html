@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Registration | Apex Automotive</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <div class="auth-wrapper">
+    <div class="auth-card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="brand-logo">APEX</div>
+        <button class="icon-btn" title="Toggle Theme">🌙</button>
+      </div>
+      
+      <h2 style="margin-top: 25px;">Request Allocation Access</h2>
+      <p style="color: var(--text-muted); font-size: 0.85rem;">Register to track custom commissions and place pre-orders.</p>
+
+      <form class="auth-form">
+        <div class="form-group">
+          <label style="font-size: 0.85rem;">First Name</label>
+          <input type="text" class="form-input" required placeholder="John">
+        </div>
+
+        <div class="form-group">
+          <label style="font-size: 0.85rem;">Last Name</label>
+          <input type="text" class="form-input" required placeholder="Doe">
+        </div>
+
+        <div class="form-group">
+          <label style="font-size: 0.85rem;">Email Address</label>
+          <input type="email" class="form-input" required placeholder="john.doe@vip.com">
+        </div>
+
+        <div class="form-group">
+          <label style="font-size: 0.85rem;">Password</label>
+          <div style="position: relative;">
+            <input type="password" class="form-input" required placeholder="••••••••">
+            <span style="position: absolute; right: 15px; top: 14px; cursor: pointer; color: var(--text-muted);">👁️</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Complete Registration</button>
+      </form>
+
+      <div style="margin-top: 25px; text-align: center;">
+        <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 12px; letter-spacing: 1px;">AUTHENTICATE WITH</p>
+        <div style="display: flex; gap: 10px;">
+          <button class="btn btn-secondary" style="flex: 1; font-size: 0.75rem; height: 44px;">Google</button>
+          <button class="btn btn-secondary" style="flex: 1; font-size: 0.75rem; height: 44px;">Apple ID</button>
+        </div>
+      </div>
+
+      <div style="margin-top: 25px; text-align: center;">
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Already registered? <a href="login.html" style="color: var(--primary-color);">Sign In</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

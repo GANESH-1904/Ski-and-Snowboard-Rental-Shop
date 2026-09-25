@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Create an account | VÉRTEX ALPS</title>
+
+  <meta
+    name="description"
+    content="Create your VÉRTEX ALPS rider account and manage ski and snowboard rentals, lessons and reservations."
+  >
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Main website stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- =========================================================
+       SIGNUP PAGE OVERRIDE
+       This CSS intentionally uses !important on critical
+       properties so the existing style.css cannot hide
+       the signup page.
+       ========================================================= -->
+  <style>
+
+    /* =========================================================
+       RESET FOR SIGNUP PAGE
+       ========================================================= */
+
+    html.signup-page {
+      min-height: 100%;
+      background: #071923 !important;
+    }
+
+    html.signup-page,
+    html.signup-page body {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      min-height: 100% !important;
+    }
+
+    body.signup-page-body {
+      margin: 0 !important;
+      padding: 0 !important;
+
+      min-height: 100vh !important;
+      min-height: 100svh !important;
+
+      width: 100% !important;
+
+      overflow-x: hidden !important;
+
+      font-family: "Inter", Arial, sans-serif !important;
+
+      /*
+       * IMPORTANT:
+       * Hard-coded background instead of relying on
+       * --bg-main / --bg-surface from style.css.
+       */
+      background-color: #071923 !important;
+
+      background-image:
+        linear-gradient(
+          135deg,
+          rgba(3, 20, 30, 0.86),
+          rgba(4, 51, 72, 0.68)
+        ),
+        url("https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=2200&q=85") !important;
+
+      background-position: center center !important;
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+      background-attachment: fixed !important;
+
+      color: #0f172a !important;
+    }
+
+
+    /* =========================================================
+       PAGE WRAPPER
+       ========================================================= */
+
+    body.signup-page-body .signup-auth-wrapper {
+      position: relative !important;
+
+      width: 100% !important;
+      min-height: 100vh !important;
+      min-height: 100svh !important;
+
+      box-sizing: border-box !important;
+
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+
+      padding: 40px 20px !important;
+
+      background: transparent !important;
+
+      isolation: isolate !important;
+    }
+
+
+    /* =========================================================
+       BACKGROUND OVERLAY
+       ========================================================= */
+
+    body.signup-page-body .signup-auth-wrapper::before {
+      content: "" !important;
+
+      position: fixed !important;
+      inset: 0 !important;
+
+      z-index: -1 !important;
+
+      pointer-events: none !important;
+
+      background:
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(0, 164, 228, 0.20),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 85% 85%,
+          rgba(255, 255, 255, 0.10),
+          transparent 35%
+        ) !important;
+    }
+
+
+    /* =========================================================
+       SIGNUP CARD
+       ========================================================= */
+
+    body.signup-page-body .signup-auth-card {
+      position: relative !important;
+      z-index: 10 !important;
+
+      display: block !important;
+
+      width: 100% !important;
+      max-width: 500px !important;
+
+      box-sizing: border-box !important;
+
+      margin: 0 auto !important;
+      padding: 38px !important;
+
+      /*
+       * HARD-CODED WHITE CARD
+       */
+      background: #ffffff !important;
+
+      color: #0f172a !important;
+
+      border: 1px solid #e1e8ed !important;
+      border-radius: 20px !important;
+
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.42),
+        0 8px 30px rgba(0, 0, 0, 0.20) !important;
+    }
+
+
+    /* Blue top accent */
+
+    body.signup-page-body .signup-auth-card::before {
+      content: "" !important;
+
+      position: absolute !important;
+
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+
+      height: 5px !important;
+
+      background: linear-gradient(
+        90deg,
+        #00a4e4,
+        #5bd7ff,
+        #00a4e4
+      ) !important;
+
+      border-radius: 20px 20px 0 0 !important;
+    }
+
+
+    /* =========================================================
+       TOP CONTROLS
+       ========================================================= */
+
+    body.signup-page-body .signup-top-controls {
+      width: 100% !important;
+
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+
+      gap: 8px !important;
+
+      margin: 0 0 8px !important;
+
+      position: relative !important;
+      z-index: 20 !important;
+    }
+
+
+    body.signup-page-body .signup-top-controls .icon-toggle-btn {
+      width: 40px !important;
+      height: 40px !important;
+
+      min-width: 40px !important;
+
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+
+      padding: 0 !important;
+
+      border: 1px solid #d8e3ea !important;
+      border-radius: 50% !important;
+
+      background: #f5f9fc !important;
+
+      color: #0b1d28 !important;
+
+      cursor: pointer !important;
+
+      font-family: inherit !important;
+      font-weight: 700 !important;
+    }
+
+    body.signup-page-body
+    .signup-top-controls
+    .icon-toggle-btn:hover {
+      background: #e8f6fc !important;
+      border-color: #00a4e4 !important;
+      color: #0084b8 !important;
+    }
+
+
+    /* =========================================================
+       LOGO
+       ========================================================= */
+
+    body.signup-page-body .signup-logo {
+      width: 100% !important;
+
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+
+      margin: 4px 0 22px !important;
+
+      color: #0b1d28 !important;
+
+      text-align: center !important;
+    }
+
+    body.signup-page-body .signup-logo svg {
+      display: block !important;
+
+      width: 250px !important;
+      max-width: 100% !important;
+
+      height: auto !important;
+
+      overflow: visible !important;
+    }
+
+
+    /* =========================================================
+       HEADING
+       ========================================================= */
+
+    body.signup-page-body .signup-heading {
+      display: block !important;
+
+      width: 100% !important;
+
+      margin: 0 0 28px !important;
+
+      text-align: center !important;
+    }
+
+    body.signup-page-body .signup-heading h1 {
+      display: block !important;
+
+      margin: 0 0 10px !important;
+
+      color: #0b1d28 !important;
+
+      font-family: "Inter", Arial, sans-serif !important;
+
+      font-size: 2rem !important;
+      line-height: 1.2 !important;
+
+      font-weight: 900 !important;
+
+      letter-spacing: -0.035em !important;
+    }
+
+    body.signup-page-body .signup-heading p {
+      display: block !important;
+
+      max-width: 410px !important;
+
+      margin: 0 auto !important;
+
+      color: #4a5f70 !important;
+
+      font-size: 0.93rem !important;
+      line-height: 1.7 !important;
+
+      font-weight: 400 !important;
+    }
+
+
+    /* =========================================================
+       FORM
+       ========================================================= */
+
+    body.signup-page-body .signup-form {
+      display: block !important;
+
+      width: 100% !important;
+
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+
+    body.signup-page-body .signup-form .form-row {
+      display: grid !important;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+      gap: 14px !important;
+
+      width: 100% !important;
+
+      margin: 0 !important;
+    }
+
+
+    body.signup-page-body .signup-form .form-group {
+      display: block !important;
+
+      width: 100% !important;
+
+      margin: 0 0 16px !important;
+    }
+
+
+    body.signup-page-body
+    .signup-form
+    .form-group
+    .form-label {
+      display: block !important;
+
+      margin: 0 0 7px !important;
+
+      color: #0f172a !important;
+
+      font-size: 0.86rem !important;
+
+      font-weight: 700 !important;
+
+      line-height: 1.4 !important;
+    }
+
+
+    /* =========================================================
+       INPUTS
+       ========================================================= */
+
+    body.signup-page-body
+    .signup-form
+    .form-input {
+      display: block !important;
+
+      width: 100% !important;
+
+      min-height: 46px !important;
+
+      box-sizing: border-box !important;
+
+      margin: 0 !important;
+
+      padding: 12px 14px !important;
+
+      border: 1px solid #d5e0e7 !important;
+
+      border-radius: 8px !important;
+
+      background: #ffffff !important;
+
+      color: #0f172a !important;
+
+      font-family: "Inter", Arial, sans-serif !important;
+
+      font-size: 0.9rem !important;
+
+      outline: none !important;
+
+      -webkit-appearance: none !important;
+      appearance: none !important;
+    }
+
+
+    body.signup-page-body
+    .signup-form
+    .form-input::placeholder {
+      color: #8a9aa6 !important;
+
+      opacity: 1 !important;
+    }
+
+
+    body.signup-page-body
+    .signup-form
+    .form-input:focus {
+      border-color: #00a4e4 !important;
+
+      background: #ffffff !important;
+
+      color: #0f172a !important;
+
+      outline: none !important;
+
+      box-shadow:
+        0 0 0 3px rgba(0, 164, 228, 0.13) !important;
+    }
+
+
+    /* =========================================================
+       PASSWORD
+       ========================================================= */
+
+    body.signup-page-body .signup-password-wrapper {
+      position: relative !important;
+
+      display: block !important;
+
+      width: 100% !important;
+    }
+
+
+    body.signup-page-body
+    .signup-password-wrapper
+    .form-input {
+      padding-right: 48px !important;
+    }
+
+
+    body.signup-page-body
+    .signup-password-wrapper
+    .pwd-toggle-btn {
+      position: absolute !important;
+
+      top: 50% !important;
+      right: 7px !important;
+
+      transform: translateY(-50%) !important;
+
+      width: 36px !important;
+      height: 36px !important;
+
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+
+      padding: 0 !important;
+
+      border: 0 !important;
+
+      background: transparent !important;
+
+      color: #607482 !important;
+
+      cursor: pointer !important;
+
+      z-index: 5 !important;
+    }
+
+
+    body.signup-page-body
+    .signup-password-wrapper
+    .pwd-toggle-btn:hover {
+      color: #00a4e4 !important;
+    }
+
+
+    /* =========================================================
+       TERMS
+       ========================================================= */
+
+    body.signup-page-body .signup-terms {
+      display: flex !important;
+
+      align-items: flex-start !important;
+
+      gap: 10px !important;
+
+      width: 100% !important;
+
+      margin: 2px 0 20px !important;
+
+      color: #4a5f70 !important;
+
+      font-size: 0.82rem !important;
+
+      line-height: 1.6 !important;
+    }
+
+
+    body.signup-page-body .signup-terms input {
+      width: 17px !important;
+      height: 17px !important;
+
+      flex: 0 0 17px !important;
+
+      margin: 2px 0 0 !important;
+
+      accent-color: #00a4e4 !important;
+
+      cursor: pointer !important;
+    }
+
+
+    body.signup-page-body .signup-terms label {
+      display: block !important;
+
+      margin: 0 !important;
+
+      color: #4a5f70 !important;
+
+      cursor: pointer !important;
+    }
+
+
+    body.signup-page-body .signup-terms a {
+      color: #0084b8 !important;
+
+      font-weight: 700 !important;
+
+      text-decoration: underline !important;
+    }
+
+
+    /* =========================================================
+       CREATE ACCOUNT BUTTON
+       ========================================================= */
+
+    body.signup-page-body .signup-submit {
+      width: 100% !important;
+
+      min-height: 50px !important;
+
+      display: flex !important;
+
+      align-items: center !important;
+      justify-content: center !important;
+
+      box-sizing: border-box !important;
+
+      margin: 0 !important;
+      padding: 12px 18px !important;
+
+      border: 0 !important;
+
+      border-radius: 8px !important;
+
+      background: #00a4e4 !important;
+
+      color: #ffffff !important;
+
+      font-family: "Inter", Arial, sans-serif !important;
+
+      font-size: 0.95rem !important;
+
+      font-weight: 800 !important;
+
+      cursor: pointer !important;
+
+      transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease !important;
+    }
+
+
+    body.signup-page-body .signup-submit:hover {
+      background: #0084b8 !important;
+
+      transform: translateY(-2px) !important;
+
+      box-shadow:
+        0 10px 25px rgba(0, 164, 228, 0.32) !important;
+    }
+
+
+    body.signup-page-body .signup-submit:active {
+      transform: translateY(0) !important;
+    }
+
+
+    /* =========================================================
+       DIVIDER
+       ========================================================= */
+
+    body.signup-page-body .signup-divider {
+      display: flex !important;
+
+      align-items: center !important;
+
+      gap: 12px !important;
+
+      width: 100% !important;
+
+      margin: 22px 0 16px !important;
+
+      color: #82919c !important;
+
+      font-size: 0.75rem !important;
+
+      font-weight: 700 !important;
+
+      text-transform: uppercase !important;
+
+      letter-spacing: 0.08em !important;
+    }
+
+
+    body.signup-page-body
+    .signup-divider::before,
+    body.signup-page-body
+    .signup-divider::after {
+      content: "" !important;
+
+      flex: 1 !important;
+
+      height: 1px !important;
+
+      background: #dfe8ef !important;
+    }
+
+
+    /* =========================================================
+       SOCIAL BUTTONS
+       ========================================================= */
+
+    body.signup-page-body .signup-social-grid {
+      display: grid !important;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+      gap: 10px !important;
+
+      width: 100% !important;
+
+      margin: 0 !important;
+    }
+
+
+    body.signup-page-body .signup-social-btn {
+      width: 100% !important;
+
+      height: 46px !important;
+
+      display: flex !important;
+
+      align-items: center !important;
+      justify-content: center !important;
+
+      gap: 9px !important;
+
+      box-sizing: border-box !important;
+
+      padding: 0 12px !important;
+
+      border: 1px solid #d5e0e7 !important;
+
+      border-radius: 8px !important;
+
+      background: #ffffff !important;
+
+      color: #0f172a !important;
+
+      font-family: "Inter", Arial, sans-serif !important;
+
+      font-size: 0.88rem !important;
+
+      font-weight: 700 !important;
+
+      cursor: pointer !important;
+
+      transition: all 0.25s ease !important;
+    }
+
+
+    body.signup-page-body .signup-social-btn:hover {
+      border-color: #00a4e4 !important;
+
+      background: #f3fbfe !important;
+
+      transform: translateY(-2px) !important;
+    }
+
+
+    body.signup-page-body .signup-social-icon {
+      display: inline-flex !important;
+
+      align-items: center !important;
+      justify-content: center !important;
+
+      font-size: 1rem !important;
+
+      font-weight: 900 !important;
+
+      color: #0b1d28 !important;
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    body.signup-page-body .signup-footer {
+      display: block !important;
+
+      width: 100% !important;
+
+      margin: 22px 0 0 !important;
+
+      text-align: center !important;
+
+      color: #607482 !important;
+
+      font-size: 0.84rem !important;
+
+      line-height: 1.7 !important;
+    }
+
+
+    body.signup-page-body .signup-footer p {
+      margin: 0 0 8px !important;
+
+      color: #607482 !important;
+    }
+
+
+    body.signup-page-body .signup-footer a {
+      color: #0084b8 !important;
+
+      font-weight: 700 !important;
+
+      text-decoration: none !important;
+    }
+
+
+    body.signup-page-body .signup-footer a:hover {
+      text-decoration: underline !important;
+    }
+
+
+    body.signup-page-body .signup-home-link {
+      display: inline-block !important;
+
+      margin-top: 4px !important;
+
+      color: #0084b8 !important;
+
+      font-size: 0.78rem !important;
+    }
+
+
+    /* =========================================================
+       TOAST
+       ========================================================= */
+
+    body.signup-page-body .signup-toast {
+      position: fixed !important;
+
+      left: 50% !important;
+      bottom: 24px !important;
+
+      z-index: 99999 !important;
+
+      transform:
+        translateX(-50%)
+        translateY(20px) !important;
+
+      opacity: 0 !important;
+
+      visibility: hidden !important;
+
+      box-sizing: border-box !important;
+
+      max-width: calc(100vw - 30px) !important;
+
+      padding: 12px 18px !important;
+
+      border-radius: 8px !important;
+
+      background: #0b1d28 !important;
+
+      color: #ffffff !important;
+
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3) !important;
+
+      font-size: 0.84rem !important;
+
+      white-space: normal !important;
+
+      text-align: center !important;
+
+      transition: all 0.25s ease !important;
+
+      pointer-events: none !important;
+    }
+
+
+    body.signup-page-body .signup-toast.show {
+      opacity: 1 !important;
+
+      visibility: visible !important;
+
+      transform:
+        translateX(-50%)
+        translateY(0) !important;
+    }
+
+
+    /* =========================================================
+       DARK MODE
+       ========================================================= */
+
+    /*
+     * The signup page remains readable in dark mode.
+     * These rules activate if main.js adds .dark-mode
+     * to the body.
+     */
+
+    body.signup-page-body.dark-mode {
+      background-color: #030c12 !important;
+
+      background-image:
+        linear-gradient(
+          135deg,
+          rgba(3, 12, 18, 0.94),
+          rgba(7, 35, 49, 0.84)
+        ),
+        url("https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=2200&q=85") !important;
+
+      background-position: center center !important;
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+      background-attachment: fixed !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-auth-card {
+      background: #0f1f2c !important;
+
+      border-color: #1c3549 !important;
+
+      color: #f1f6fa !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-heading h1 {
+      color: #ffffff !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-heading p {
+      color: #b6c6d3 !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-logo {
+      color: #ffffff !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-logo svg text {
+      fill: #ffffff !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-logo svg path {
+      stroke: #ffffff !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-form
+    .form-group
+    .form-label {
+      color: #f1f6fa !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-form
+    .form-input {
+      background: #0a151e !important;
+
+      color: #f1f6fa !important;
+
+      border-color: #1c3549 !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-form
+    .form-input::placeholder {
+      color: #8194a2 !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-terms,
+    body.signup-page-body.dark-mode
+    .signup-terms label {
+      color: #b6c6d3 !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-divider {
+      color: #8ea2b0 !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-divider::before,
+    body.signup-page-body.dark-mode
+    .signup-divider::after {
+      background: #1c3549 !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-social-btn {
+      background: #0a151e !important;
+
+      border-color: #1c3549 !important;
+
+      color: #f1f6fa !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-social-btn:hover {
+      background: #112535 !important;
+
+      border-color: #00a4e4 !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-social-icon {
+      color: #ffffff !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-footer,
+    body.signup-page-body.dark-mode
+    .signup-footer p {
+      color: #9fb3c2 !important;
+    }
+
+
+    body.signup-page-body.dark-mode
+    .signup-top-controls
+    .icon-toggle-btn {
+      background: #0a151e !important;
+
+      border-color: #1c3549 !important;
+
+      color: #ffffff !important;
+    }
+
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 600px) {
+
+      body.signup-page-body .signup-auth-wrapper {
+        align-items: flex-start !important;
+
+        padding: 20px 12px 30px !important;
+      }
+
+
+      body.signup-page-body .signup-auth-card {
+        max-width: 500px !important;
+
+        padding: 30px 20px 25px !important;
+
+        border-radius: 16px !important;
+      }
+
+
+      body.signup-page-body
+      .signup-form
+      .form-row {
+        grid-template-columns: 1fr !important;
+
+        gap: 0 !important;
+      }
+
+
+      body.signup-page-body
+      .signup-social-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+
+      body.signup-page-body
+      .signup-heading h1 {
+        font-size: 1.65rem !important;
+      }
+
+
+      body.signup-page-body
+      .signup-logo svg {
+        width: 215px !important;
+      }
+    }
+
+
+    @media (max-width: 380px) {
+
+      body.signup-page-body .signup-auth-wrapper {
+        padding: 12px 8px 24px !important;
+      }
+
+
+      body.signup-page-body .signup-auth-card {
+        padding: 26px 16px 22px !important;
+      }
+
+
+      body.signup-page-body
+      .signup-heading h1 {
+        font-size: 1.45rem !important;
+      }
+    }
+
+  </style>
+
+
+  <!-- =========================================================
+       THEME / RTL INITIALIZATION
+       ========================================================= -->
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem("vertex_theme");
+        var savedRTL = localStorage.getItem("vertex_rtl");
+
+        if (savedTheme === "dark") {
+          document.documentElement.classList.add("pre-dark");
+        }
+
+        document.documentElement.setAttribute(
+          "dir",
+          savedRTL === "true" ? "rtl" : "ltr"
+        );
+
+      } catch (error) {
+        document.documentElement.setAttribute("dir", "ltr");
+      }
+    })();
+  </script>
+
+</head>
+
+
+<body class="signup-page-body">
+
+  <!-- =======================================================
+       SIGNUP PAGE
+       ======================================================= -->
+
+  <main class="signup-auth-wrapper">
+
+    <section class="signup-auth-card">
+
+      <!-- =================================================
+           TOP CONTROLS
+           ================================================= -->
+
+      <div class="signup-top-controls">
+
+        <button
+          type="button"
+          class="icon-toggle-btn"
+          id="theme-toggle"
+          aria-label="Toggle dark mode"
+          title="Toggle dark mode"
+        >
+          <span class="icon-sun">☀</span>
+          <span class="icon-moon">☾</span>
+        </button>
+
+
+        <button
+          type="button"
+          class="icon-toggle-btn"
+          id="rtl-toggle"
+          aria-label="Toggle right-to-left layout"
+          title="Toggle text direction"
+        >
+          RTL
+        </button>
+
+      </div>
+
+
+      <!-- =================================================
+           LOGO
+           ================================================= -->
+
+      <div class="signup-logo">
+
+        <svg
+          viewBox="0 0 360 90"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="VÉRTEX ALPS"
+        >
+
+          <g
+            fill="none"
+            stroke="#0b1d28"
+            stroke-width="5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M20 65 L55 15 L90 65"></path>
+            <path d="M38 65 L61 35 L82 65"></path>
+          </g>
+
+
+          <text
+            x="108"
+            y="51"
+            font-family="Inter, Arial, sans-serif"
+            font-size="31"
+            font-weight="900"
+            letter-spacing="3"
+            fill="#0b1d28"
+          >
+            VÉRTEX
+          </text>
+
+
+          <text
+            x="111"
+            y="74"
+            font-family="Inter, Arial, sans-serif"
+            font-size="13"
+            font-weight="700"
+            letter-spacing="6"
+            fill="#0b1d28"
+          >
+            ALPS
+          </text>
+
+        </svg>
+
+      </div>
+
+
+      <!-- =================================================
+           HEADING
+           ================================================= -->
+
+      <div class="signup-heading">
+
+        <h1>Create your rider account</h1>
+
+        <p>
+          Join VÉRTEX ALPS and manage your ski and snowboard
+          rentals, lessons, reservations and rider details
+          from one place.
+        </p>
+
+      </div>
+
+
+      <!-- =================================================
+           SIGNUP FORM
+           ================================================= -->
+
+      <form
+        class="signup-form"
+        id="signup-form"
+        action="dashboard.html"
+        method="get"
+      >
+
+        <!-- FIRST + LAST NAME -->
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label
+              class="form-label"
+              for="first-name"
+            >
+              First name
+            </label>
+
+            <input
+              class="form-input"
+              type="text"
+              id="first-name"
+              name="first_name"
+              placeholder="e.g. Alex"
+              autocomplete="given-name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label
+              class="form-label"
+              for="last-name"
+            >
+              Last name
+            </label>
+
+            <input
+              class="form-input"
+              type="text"
+              id="last-name"
+              name="last_name"
+              placeholder="e.g. Morgan"
+              autocomplete="family-name"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+          <label
+            class="form-label"
+            for="email"
+          >
+            Email address
+          </label>
+
+          <input
+            class="form-input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <div class="form-group">
+
+          <label
+            class="form-label"
+            for="password"
+          >
+            Password
+          </label>
+
+
+          <div class="signup-password-wrapper">
+
+            <input
+              class="form-input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a secure password"
+              autocomplete="new-password"
+              minlength="8"
+              required
+            >
+
+
+            <button
+              type="button"
+              class="pwd-toggle-btn"
+              aria-label="Show password"
+              title="Show password"
+            >
+              ◉
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- TERMS -->
+
+        <div class="signup-terms">
+
+          <input
+            type="checkbox"
+            id="rental-terms"
+            name="rental_terms"
+            required
+          >
+
+
+          <label for="rental-terms">
+            I agree to the VÉRTEX ALPS rental terms,
+            equipment policies and account conditions.
+          </label>
+
+        </div>
+
+
+        <!-- CREATE ACCOUNT -->
+
+        <button
+          type="submit"
+          class="signup-submit"
+        >
+          Create rider account
+        </button>
+
+      </form>
+
+
+      <!-- =================================================
+           SOCIAL SIGNUP
+           ================================================= -->
+
+      <div class="signup-divider">
+        <span>or continue with</span>
+      </div>
+
+
+      <div class="signup-social-grid">
+
+        <button
+          type="button"
+          class="signup-social-btn"
+          id="google-signup"
+        >
+
+          <span
+            class="signup-social-icon"
+            aria-hidden="true"
+          >
+            G
+          </span>
+
+          <span>Google</span>
+
+        </button>
+
+
+        <button
+          type="button"
+          class="signup-social-btn"
+          id="apple-signup"
+        >
+
+          <span
+            class="signup-social-icon"
+            aria-hidden="true"
+          >
+            ●
+          </span>
+
+          <span>Apple</span>
+
+        </button>
+
+      </div>
+
+
+      <!-- =================================================
+           FOOTER LINKS
+           ================================================= -->
+
+      <div class="signup-footer">
+
+        <p>
+          Already have an account?
+
+          <a href="login.html">
+            Sign in
+          </a>
+        </p>
+
+
+        <a
+          href="index.html"
+          class="signup-home-link"
+        >
+          ← Back to VÉRTEX ALPS
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       TOAST
+       main.js expects #toast and #toast-text
+       ======================================================= -->
+
+  <div
+    id="toast"
+    class="toast-msg signup-toast"
+    role="status"
+    aria-live="polite"
+  >
+    <span id="toast-text"></span>
+  </div>
+
+
+  <!-- =======================================================
+       SOCIAL BUTTONS
+       ======================================================= -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      var googleButton =
+        document.getElementById("google-signup");
+
+      var appleButton =
+        document.getElementById("apple-signup");
+
+
+      if (googleButton) {
+
+        googleButton.addEventListener("click", function () {
+
+          if (typeof window.vertexToast === "function") {
+
+            window.vertexToast(
+              "Google sign-up will be available when authentication is connected"
+            );
+
+          }
+
+        });
+
+      }
+
+
+      if (appleButton) {
+
+        appleButton.addEventListener("click", function () {
+
+          if (typeof window.vertexToast === "function") {
+
+            window.vertexToast(
+              "Apple sign-up will be available when authentication is connected"
+            );
+
+          }
+
+        });
+
+      }
+
+    });
+  </script>
+
+
+  <!-- Existing site engine -->
+  <script src="main.js"></script>
+
+</body>
+</html>

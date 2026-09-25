@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #333;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   
+  gap: 20px;
+}
+
+.Bike {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 180px auto 1fr auto;  /* image, title, text, price */
+  transition: transform 0.3s ease;
+}
+
+.Bike img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.Bike h3 {
+  margin: 15px 0 5px;
+  color: #222;
+}
+
+.Bike p {
+  padding: 0 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.price {
+  display: block;
+  background: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+}

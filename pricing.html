@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental rates, family discounts and packages | VÉRTEX ALPS</title>
+  <meta name="description" content="Transparent 2026 ski and snowboard rental rates, family and group discounts, multi-day savings, add-on prices and damage waiver cover.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('vertex_theme') === 'dark') {
+          document.documentElement.classList.add('pre-dark');
+        }
+        if (localStorage.getItem('vertex_rtl') === 'true') {
+          document.documentElement.setAttribute('dir', 'rtl');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+<style>
+img{display:block;max-width:100%;}
+.img-hover,.card-img-wrapper,.gallery-item,.hero-img-box{overflow:hidden;}
+.img-hover img,.card-img-wrapper img,.gallery-item img,.hero-img-box img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .55s ease;}
+.img-hover:hover img,.card:hover .card-img-wrapper img,.gallery-item:hover img,.hero-img-box:hover img{transform:scale(1.06);filter:saturate(1.12) contrast(1.04);}
+</style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ============ UNIVERSAL HEADER (identical on every public page) ============ -->
+  <header class="header">
+    <div class="container nav-bar">
+      <a href="index.html" class="brand-logo" aria-label="VERTEX ALPS home">
+        <div class="brand-badge">
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
+            <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
+            <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <div class="nav-dropdown-wrapper">
+          <a href="index.html" class="nav-link">
+            Home
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              Home 1 &mdash; Classic Depot
+              <span>Contactless locker pickup &amp; fleet</span>
+            </a>
+            <a href="home-2.html" class="dropdown-item">
+              Home 2 &mdash; Summit VIP Concierge
+              <span>Private chalet delivery &amp; heli-skiing</span>
+            </a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="rentals.html" class="nav-link">Rentals</a>
+        <a href="lessons.html" class="nav-link">Lessons</a>
+        <a href="pricing.html" class="nav-link active">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-toggle-btn" id="open-cart-btn" title="View gear bag" aria-label="Open rental gear bag">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-badge-count" id="cart-badge">0</span>
+        </button>
+        <button class="icon-toggle-btn" id="theme-toggle" title="Switch between light and dark" aria-label="Switch between light and dark">
+          <svg class="icon-sun" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="icon-toggle-btn" id="rtl-toggle" title="Switch text direction" aria-label="Switch text direction">RTL</button>
+        <a href="login.html" class="btn btn-secondary btn-sm">Sign in</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- SECTION 1: RATES INTRO -->
+    <section class="section page-head">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Season 2026 rates</span>
+          <h1 style="font-size:2.6rem; color:var(--secondary); margin-bottom:12px;">One price, everything included.</h1>
+          <p>Heated locker access, overnight drying, daily edge and wax, and unlimited gear swaps are part of every rate below. There are no resort surcharges added at the counter.</p>
+        </div>
+
+        <!-- NEW: LIVE RENTAL COST ESTIMATOR -->
+        <div class="split-panel" style="margin-bottom:44px;">
+          <h3 style="font-size:1.3rem; color:var(--secondary); margin-bottom:6px;">Estimate your trip cost</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:22px;">Pick a package and the number of riders and days. Multi-day and family/group discounts are applied automatically, the same way they are at checkout.</p>
+          <div class="estimator-box">
+            <div class="form-row" style="margin-bottom:0;">
+              <label class="form-label" for="est-package">Package</label>
+              <select class="form-input" id="est-package">
+                <option value="38">Recreation &mdash; $38/day</option>
+                <option value="58" selected>Mountain pro &mdash; $58/day</option>
+                <option value="75">Backcountry &mdash; $75/day</option>
+              </select>
+            </div>
+            <div class="form-row" style="margin-bottom:0;">
+              <label class="form-label" for="est-days">Number of days</label>
+              <input type="number" id="est-days" class="form-input" min="1" max="30" value="5">
+            </div>
+            <div class="form-row" style="margin-bottom:0;">
+              <label class="form-label" for="est-riders">Number of riders</label>
+              <input type="number" id="est-riders" class="form-input" min="1" max="30" value="2">
+            </div>
+          </div>
+          <div class="estimator-result">
+            <div>
+              <div class="estimator-label">Estimated total</div>
+              <div class="estimator-total" id="est-total">$0.00</div>
+              <div class="estimator-breakdown" id="est-breakdown"></div>
+            </div>
+            <button class="btn btn-primary add-to-cart-btn" id="est-add-btn" data-title="Custom estimate" data-price="0">Add this estimate to my gear bag</button>
+          </div>
+        </div>
+
+        <!-- SECTION 2: THREE PACKAGES -->
+        <div class="grid-3" style="align-items:center; margin-bottom:20px;">
+          <div class="pricing-card">
+            <h3 style="font-size:1.35rem; color:var(--secondary);">Recreation</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem;">Green and blue runs, comfort over performance</p>
+            <div class="pricing-cost">$38 <span>per day</span></div>
+            <ul class="pricing-features">
+              <li>All-mountain ski or snowboard</li>
+              <li>Comfort four-buckle boots</li>
+              <li>Composite poles</li>
+              <li>Heated overnight locker</li>
+              <li>Daily wax and edge check</li>
+            </ul>
+            <button class="btn btn-secondary btn-block add-to-cart-btn" data-title="Recreation package" data-price="38">Choose recreation</button>
+          </div>
+
+          <div class="pricing-card popular">
+            <span class="pricing-badge">Most booked</span>
+            <h3 style="font-size:1.35rem; color:var(--secondary);">Mountain pro</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem;">Current season demo gear for confident riders</p>
+            <div class="pricing-cost" style="color:var(--primary);">$58 <span>per day</span></div>
+            <ul class="pricing-features">
+              <li>2026 demo skis or snowboards</li>
+              <li>Heat-moulded BOA boots</li>
+              <li>Unlimited mid-trip swaps</li>
+              <li>Heated locker beside the gondola</li>
+              <li>Nightly stone grind and wax</li>
+              <li>Free boot adjustments all week</li>
+            </ul>
+            <button class="btn btn-primary btn-block add-to-cart-btn" data-title="Mountain pro package" data-price="58">Choose mountain pro</button>
+          </div>
+
+          <div class="pricing-card">
+            <h3 style="font-size:1.35rem; color:var(--secondary);">Backcountry</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem;">Touring, splitboards and long climbs</p>
+            <div class="pricing-cost">$75 <span>per day</span></div>
+            <ul class="pricing-features">
+              <li>Carbon touring skis or splitboard</li>
+              <li>Walk-mode pin-tech boots</li>
+              <li>Carbon poles and mohair skins</li>
+              <li>Transceiver, probe and shovel</li>
+              <li>Morning snow bulletin briefing</li>
+            </ul>
+            <button class="btn btn-secondary btn-block add-to-cart-btn" data-title="Backcountry package" data-price="75">Choose backcountry</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: FAMILY DISCOUNTS -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Family and group discounts</h2>
+          <p>Applied automatically when riders are on one booking. Discounts stack with the multi-day savings below.</p>
+        </div>
+        <div class="grid-3" style="margin-bottom:34px;">
+          <div class="card pad-card">
+            <span class="badge" style="margin-bottom:10px;">Family of three or more</span>
+            <h3 style="margin-bottom:8px;">15 percent off every rider</h3>
+            <p>Two adults and one child is enough to qualify. The discount applies to all riders on the booking, not only the children.</p>
+          </div>
+          <div class="card pad-card">
+            <span class="badge" style="margin-bottom:10px;">Children under six</span>
+            <h3 style="margin-bottom:8px;">Gear rides free</h3>
+            <p>Junior skis, boots and a helmet cost nothing for under-sixes when at least one paying adult is on the same booking.</p>
+          </div>
+          <div class="card pad-card">
+            <span class="badge" style="margin-bottom:10px;">Groups of eight or more</span>
+            <h3 style="margin-bottom:8px;">20 percent off, one invoice</h3>
+            <p>A named coordinator collects sizes ahead of arrival, lays out gear by name, and settles everything on a single invoice.</p>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Booking</th><th>Who it covers</th><th>Discount</th><th>Also included</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Family of 3 &ndash; 4</td><td>At least one child under 16</td><td>15 percent</td><td>Free helmets for the children</td></tr>
+              <tr><td>Family of 5 or more</td><td>At least one child under 16</td><td>20 percent</td><td>Free helmets and one free lesson place</td></tr>
+              <tr><td>Under-six riders</td><td>Any child under 6</td><td>Gear free</td><td>Helmet and carry bag included</td></tr>
+              <tr><td>Group of 8 &ndash; 15</td><td>Friends, clubs, corporate</td><td>20 percent</td><td>Private fitting window, one invoice</td></tr>
+              <tr><td>School trip, 16 or more</td><td>Organised school groups</td><td>25 percent</td><td>Technician on site the first morning</td></tr>
+              <tr><td>Returning family</td><td>Same household, second season</td><td>Extra 5 percent</td><td>Boot profiles kept on file</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="text-align:center; color:var(--text-muted); font-size:0.9rem; margin-top:18px;">Add every rider to one booking in the dashboard and the right discount is applied before you confirm.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 4: MULTI-DAY SAVINGS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>The longer you stay, the less you pay</h2>
+          <p>These unlock on their own as soon as the dates are in your booking.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card pad-card">
+            <span class="badge" style="margin-bottom:10px;">Three days or more</span>
+            <h4 style="margin-bottom:8px;">Free overnight storage</h4>
+            <p>Leave wet skis and boots in the pod each evening. Drying and cleaning are included rather than charged nightly.</p>
+          </div>
+          <div class="card pad-card">
+            <span class="badge" style="margin-bottom:10px;">Five days or more</span>
+            <h4 style="margin-bottom:8px;">Sixth day free, mid-week tune</h4>
+            <p>Book five consecutive days and the sixth costs nothing, with a full grind and fresh wax on day three.</p>
+          </div>
+          <div class="card pad-card">
+            <span class="badge" style="margin-bottom:10px;">Seven days or more</span>
+            <h4 style="margin-bottom:8px;">25 percent off and a travel kit</h4>
+            <p>A quarter comes off the whole booking, and you keep a portable boot dryer to take home with you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: ADD-ON PRICES -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Add-ons and extras</h2>
+          <p>Everything else on the price list, so nothing is a surprise at the counter.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Item</th><th>Day rate</th><th>Six day rate</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Helmet with MIPS liner</td><td>$9</td><td>$45</td><td>Free with every junior package</td></tr>
+              <tr><td>Goggles with spare lens</td><td>$7</td><td>$35</td><td>Low-light lens included</td></tr>
+              <tr><td>Poles</td><td>$5</td><td>$25</td><td>Included in ski packages</td></tr>
+              <tr><td>Avalanche safety set</td><td>$16</td><td>$80</td><td>Included in backcountry package</td></tr>
+              <tr><td>Damage waiver</td><td>$4</td><td>$20</td><td>No excess on rock damage</td></tr>
+              <tr><td>Hotel delivery</td><td>$15</td><td>$15</td><td>Per booking, inside the resort</td></tr>
+              <tr><td>Private ski servicing</td><td>$45</td><td>&mdash;</td><td>Your own skis, same-day before 15:00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: LESSON BUNDLES -->
+    <section class="section">
+      <div class="container grid-2" style="align-items:center;">
+        <div>
+          <span class="badge">Gear and teaching together</span>
+          <h2 style="font-size:2.1rem; color:var(--secondary); margin-bottom:16px;">Bundle a clinic with your rental</h2>
+          <p style="color:var(--text-muted); margin-bottom:18px;">Book a lesson on the same reservation as your gear and the clinic price drops. Your coach also sees what you are riding, which saves the first ten minutes of every session.</p>
+          <ul class="feature-list" style="margin-bottom:22px;">
+            <li>One clinic with any package: 10 percent off the clinic</li>
+            <li>Three clinics with the same coach: 15 percent off the block</li>
+            <li>Family private day plus family gear: 20 percent off both</li>
+            <li>Children's academy week plus junior gear: gear charged at half rate</li>
+          </ul>
+          <a href="lessons.html" class="btn btn-primary">See the clinics</a>
+        </div>
+        <div class="img-hover img-tall">
+          <img src="https://images.unsplash.com/photo-1642841220705-b03194dd9de7?auto=format&fit=crop&w=1400&q=85" alt="Group of skiers heading down a snowy slope together during a lesson" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: DEMO TO BUY -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="split-panel">
+          <div class="grid-2" style="align-items:center;">
+            <div>
+              <span class="badge">Try before you buy</span>
+              <h3 style="color:var(--secondary); font-size:1.7rem; margin-bottom:12px;">Rental days come off the purchase price</h3>
+              <p style="color:var(--text-muted); font-size:0.96rem; margin-bottom:16px;">If you fall for a pair of demo skis, up to two days of rental fees, to a maximum of $116, come straight off a new pair from the showroom.</p>
+              <p style="color:var(--text-muted); font-size:0.96rem; margin-bottom:20px;">Mounting and binding setup on the new pair are free, done before you pack for home.</p>
+              <a href="rentals.html" class="btn btn-secondary">Browse demo skis</a>
+            </div>
+            <div class="img-hover" style="border-radius:var(--radius-md);">
+              <img src="https://images.unsplash.com/photo-1596473537038-44039a055ded?auto=format&fit=crop&w=1200&q=85" alt="Skier trying a red demo ski on a sunny slope" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: DAMAGE WAIVER -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Should you take the damage waiver?</h2>
+          <p>Four dollars a day. Here is exactly what changes if you do.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card pad-card">
+            <strong style="color:var(--status-success); display:block; margin-bottom:12px; font-size:1.05rem;">With the waiver</strong>
+            <ul class="feature-list">
+              <li>Base gouges and core repairs covered in full</li>
+              <li>Edge damage from rocks covered in full</li>
+              <li>Bent or broken poles replaced at no charge</li>
+              <li>No excess and no assessment argument at return</li>
+            </ul>
+          </div>
+          <div class="card pad-card">
+            <strong style="color:var(--status-danger); display:block; margin-bottom:12px; font-size:1.05rem;">Without it, at workshop rates</strong>
+            <ul class="feature-list" style="--primary:var(--status-danger);">
+              <li>Base repair from $65</li>
+              <li>Edge section replacement $120</li>
+              <li>Pole replacement $45</li>
+              <li>A ski written off by a core shot, up to $750</li>
+            </ul>
+          </div>
+        </div>
+        <p style="text-align:center; color:var(--text-muted); font-size:0.9rem; margin-top:20px;">Normal wear, scratches and edge dulling are never charged, waiver or not.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 9: SEASON AND LOCAL RATES -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Season and local rates</h2>
+          <p>For riders who are here more than a week at a time.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card pad-card">
+            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+            <h4 style="margin-bottom:8px;">Season locker</h4>
+            <p style="margin-bottom:10px;">Your own heated pod from December to April, with drying every night.</p>
+            <strong style="color:var(--primary);">$690 for the season</strong>
+          </div>
+          <div class="card pad-card">
+            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <h4 style="margin-bottom:8px;">Season demo pass</h4>
+            <p style="margin-bottom:10px;">Any ski or board in the fleet, any day, swapped as often as you like.</p>
+            <strong style="color:var(--primary);">$1,480 for the season</strong>
+          </div>
+          <div class="card pad-card">
+            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <h4 style="margin-bottom:8px;">Valley resident rate</h4>
+            <p style="margin-bottom:10px;">Proof of a local address takes a third off every day rate, all season.</p>
+            <strong style="color:var(--primary);">33 percent off</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: WHAT EVERY RATE INCLUDES -->
+    <section class="section">
+      <div class="container grid-2" style="align-items:center;">
+        <div class="img-hover img-tall">
+          <img src="https://images.unsplash.com/photo-1616429553002-faf23468952d?auto=format&fit=crop&w=1400&q=85" alt="Rider in an orange jacket heading out on freshly tuned skis" loading="lazy">
+        </div>
+        <div>
+          <span class="badge">In every price on this page</span>
+          <h2 style="font-size:2.1rem; color:var(--secondary); margin-bottom:16px;">No extras bolted on at the counter</h2>
+          <ul class="feature-list" style="margin-bottom:22px;">
+            <li>Bootfitting session and unlimited adjustments during your rental</li>
+            <li>Bindings set and tested on the bench for your height, weight and style</li>
+            <li>Heated locker with overnight drying and cleaning</li>
+            <li>Nightly wax and an edge check before every morning</li>
+            <li>Gear swaps at any of the three depots, as often as you want</li>
+            <li>Deposit released within 30 minutes of drop-off</li>
+          </ul>
+          <a href="dashboard.html" class="btn btn-primary">Start a booking</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 11: PRICING FAQ -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>About payment and rates</h2>
+          <p>The questions the desk answers most often.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button">Do the family and multi-day discounts combine?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">They do. A family of four staying seven days gets 15 percent for the family booking and then 25 percent for the length of stay, both applied before you confirm.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">When am I charged?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Nothing is taken at booking. A deposit hold is placed when you collect the gear, and the rental is charged when you return it, minus any unused days.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">What if the lifts close for weather?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Days lost to a full mountain closure are credited automatically, and the credit is valid for two seasons.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Is there a cancellation fee?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Cancel up to 24 hours before pickup and there is no charge at all. Inside 24 hours we charge one day, because the gear has already been tuned for you.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Which payment methods do you take?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">All major cards, Apple Pay and Google Pay. Groups and schools can be invoiced with 30 day terms.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SNOW REPORT SIGN-UP -->
+    <section class="section">
+      <div class="container">
+        <div class="newsletter-box">
+          <div class="newsletter-copy">
+            <h3>Get the 6am snow report</h3>
+            <p>One short email each morning of the season: overnight snowfall, groomed runs, lift status and which skis our techs are handing out that day.</p>
+          </div>
+          <div>
+            <form class="newsletter-form" id="newsletter-form" novalidate>
+              <input type="email" id="newsletter-email" placeholder="you@email.com" aria-label="Email address" required>
+              <button type="submit" class="btn btn-primary">Send it to me</button>
+            </form>
+            <p class="newsletter-msg" id="newsletter-msg">You are on the list. First report lands tomorrow at 6am.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ GEAR BAG DRAWER ============ -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Rental gear bag">
+    <div class="cart-header">
+      <h3 style="font-size:1.2rem; color:var(--secondary);">Your slopeside gear bag</h3>
+      <button id="close-cart-btn" class="drawer-close" aria-label="Close gear bag">&times;</button>
+    </div>
+    <div class="cart-items-container" id="cart-items-container"></div>
+    <div class="cart-footer-bar">
+      <div style="display:flex; justify-content:space-between; margin-bottom:14px;">
+        <span style="font-weight:600;">Total per day</span>
+        <strong id="cart-total-price" style="color:var(--primary); font-size:1.2rem;">$0.00</strong>
+      </div>
+      <a href="dashboard.html" class="btn btn-primary btn-block">Lock in sizing &amp; dates</a>
+      <button id="clear-cart-btn" class="btn btn-secondary btn-block btn-sm" style="margin-top:10px;">Empty the bag</button>
+    </div>
+  </aside>
+
+  <!-- ============ UNIVERSAL FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color:var(--footer-text);" aria-label="VERTEX ALPS home">
+            <div class="brand-badge">
+              <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
+            <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
+            <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+            </div>
+            <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+          </a>
+          <p>Slopeside ski and snowboard rental depots. Precision-tuned gear and custom-fitted boots for mountain riders since 2012.</p>
+          <div class="footer-social-cluster">
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg></a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+            <a href="#" class="social-icon-btn" aria-label="X"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="social-icon-btn" aria-label="Facebook"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="social-icon-btn" aria-label="TikTok"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home-2.html">Summit concierge</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="rentals.html">Equipment fleet</a></li>
+            <li><a href="lessons.html">Mountain academy</a></li>
+            <li><a href="pricing.html">Package rates</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="dashboard.html">Customer dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Depot hours</h4>
+          <ul class="footer-links">
+            <li>Monday to Friday: 07:30 &ndash; 20:00</li>
+            <li>Saturday &amp; Sunday: 07:00 &ndash; 21:00</li>
+            <li>Gondola lockers: open 24 hours</li>
+            <li>Mountain support line: 24 hours</li>
+            <li>Bootfitting lab: 08:00 &ndash; 19:00</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Base station &amp; depots</h4>
+          <div class="creative-address-list">
+            <div class="address-item">
+              <svg class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div class="address-item-content">
+                <strong>Base depot alpha</strong>
+                Gondola Plaza Level 1, Suite 104
+              </div>
+            </div>
+            <div class="address-item">
+              <svg class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11"/></svg>
+              <div class="address-item-content">
+                <strong>Mountain passway</strong>
+                Glacier Peak Way 402, Summit Gateway
+              </div>
+            </div>
+            <div class="address-item">
+              <svg class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <div class="address-item-content">
+                <strong>Coordinates &amp; altitude</strong>
+                39.5801&deg; N, 105.9438&deg; W &mdash; 3,450m
+              </div>
+            </div>
+            <div class="address-item">
+              <svg class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div class="address-item-content">
+                <strong>Slopeside dispatch line</strong>
+                <a href="tel:+18005552577">+1 (800) 555-ALPS</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 V&Eacute;RTEX ALPS Rentals. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Terms &amp; conditions</a>
+          <a href="#">Rental damage waiver</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">Safety disclosures</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <div class="toast-msg" id="toast" role="status" aria-live="polite">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+    <span id="toast-text">Added to your gear bag</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

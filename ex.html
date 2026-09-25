@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Creative Image Gallery</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #1e293b;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+    }
+
+    .img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+
+    .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease, filter 0.35s ease;
+      filter: saturate(1.05) contrast(1.02);
+    }
+
+    .card:hover .img-wrap img {
+      transform: scale(1.06);
+      filter: saturate(1.15) contrast(1.06);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0));
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .card:hover .overlay {
+      opacity: 1;
+    }
+
+    .caption {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+
+    .meta {
+      padding: 0.9rem 1rem 1.1rem;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 0.6rem;
+      padding: 0.45rem 0.9rem;
+      background: #38bdf8;
+      color: #0b1220;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: filter 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <h1>Creative Image Cards</h1>
+
+  <div class="gallery">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="img-wrap">
+        <img src="https://picsum.photos/seed/tech/800/600" alt="Tech abstract">
+        <div class="overlay">
+          <div class="caption">Futuristic Tech</div>
+        </div>
+      </div>
+      <div class="meta">
+        Sleek, modern visuals with hover zoom and gradient overlay.
+        <a class="btn" href="#">View Details</a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="img-wrap">
+        <img src="https://picsum.photos/seed/nature/800/600" alt="Nature landscape">
+        <div class="overlay">
+          <div class="caption">Nature Escape</div>
+        </div>
+      </div>
+      <div class="meta">
+        Calm landscapes with subtle saturation boost on hover.
+        <a class="btn" href="#">View Details</a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="img-wrap">
+        <img src="https://picsum.photos/seed/city/800/600" alt="City lights">
+        <div class="overlay">
+          <div class="caption">Urban Nights</div>
+        </div>
+      </div>
+      <div class="meta">
+        Cityscapes with smooth scale animation and shadow lift.
+        <a class="btn" href="#">View Details</a>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <div class="img-wrap">
+        <img src="https://picsum.photos/seed/art/800/600" alt="Abstract art">
+        <div class="overlay">
+          <div class="caption">Abstract Art</div>
+        </div>
+      </div>
+      <div class="meta">
+        Bold colors and creative compositions for visual impact.
+        <a class="btn" href="#">View Details</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

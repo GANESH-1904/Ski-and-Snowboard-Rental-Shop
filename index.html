@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VÉRTEX ALPS | Ski &amp; snowboard rentals with heated slopeside lockers</title>
+<meta content="Book precision-tuned skis, snowboards and custom-fitted boots online and collect them from a heated locker beside the gondola." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<script>
+    (function () {
+      try {
+        if (localStorage.getItem('vertex_theme') === 'dark') {
+          document.documentElement.classList.add('pre-dark');
+        }
+        if (localStorage.getItem('vertex_rtl') === 'true') {
+          document.documentElement.setAttribute('dir', 'rtl');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<!-- ============ UNIVERSAL HEADER (identical on every public page) ============ -->
+<header class="header">
+<div class="container nav-bar">
+<a aria-label="VERTEX ALPS home" class="brand-logo" href="index.html">
+<div class="brand-badge">
+<svg aria-hidden="true" fill="none" viewbox="0 0 100 100">
+<polygon fill="#00a4e4" points="50,15 88,82 68,82 50,48 32,82 12,82"></polygon>
+<polygon fill="#ffffff" points="50,15 68,82 50,48"></polygon>
+<path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-linecap="round" stroke-width="7"></path>
+</svg>
+</div>
+<span class="brand-text">VÉRTEX<span style="color:var(--primary)">ALPS</span></span>
+</a>
+<nav aria-label="Main navigation" class="nav-menu" id="nav-menu">
+<div class="nav-dropdown-wrapper">
+<a class="nav-link active" href="index.html">
+            Home
+            <svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M6 9l6 6 6-6"></path></svg>
+</a>
+<div class="nav-dropdown-menu">
+<a class="dropdown-item active" href="index.html">
+              Home 1 — Classic Depot
+              <span>Contactless locker pickup &amp; fleet</span>
+</a>
+<a class="dropdown-item" href="home-2.html">
+              Home 2 — Summit VIP Concierge
+              <span>Private chalet delivery &amp; heli-skiing</span>
+</a>
+</div>
+</div>
+<a class="nav-link" href="about.html">About Us</a>
+<a class="nav-link" href="rentals.html">Rentals</a>
+<a class="nav-link" href="lessons.html">Lessons</a>
+<a class="nav-link" href="pricing.html">Pricing</a>
+<a class="nav-link" href="contact.html">Contact</a>
+<a class="nav-link" href="dashboard.html">Dashboard</a>
+</nav>
+<div class="header-actions">
+<button aria-label="Open rental gear bag" class="icon-toggle-btn" id="open-cart-btn" title="View gear bag">
+<svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" x2="21" y1="6" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+<span class="cart-badge-count" id="cart-badge">0</span>
+</button>
+<button aria-label="Switch between light and dark" class="icon-toggle-btn" id="theme-toggle" title="Switch between light and dark">
+<svg aria-hidden="true" class="icon-sun" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+<svg aria-hidden="true" class="icon-moon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<button aria-label="Switch text direction" class="icon-toggle-btn" id="rtl-toggle" title="Switch text direction">RTL</button>
+<a class="btn btn-secondary btn-sm" href="login.html">Sign in</a>
+<button aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation" class="mobile-toggle" id="mobile-toggle">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg>
+</button>
+</div>
+</div>
+</header>
+<main id="main-content">
+<!-- SECTION 1: HERO -->
+<section class="hero">
+<canvas aria-hidden="true" id="snow-canvas"></canvas>
+<div class="container hero-grid">
+<div>
+<span class="badge">2026 fleet ready • slopeside delivery</span>
+<h1 class="hero-title">Precision mountain gear, waiting at the lift.</h1>
+<p class="hero-desc">Skip the rental queue. Book your skis, board and boots online, and our technicians tune them overnight and load them into a heated locker 30 metres from the gondola gate.</p>
+<div class="hero-cta-group">
+<a class="btn btn-primary" href="rentals.html">Explore the 2026 fleet</a>
+<button class="btn btn-secondary" id="open-intel-btn" type="button">See the mountain report</button>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-img-box">
+<img alt="Alpine gondola station above a snow-covered ski resort" height="700" src="https://www.salzburgerhof.eu/bilder/region/skifahren/image-thumb__369__tabImageComplex2024/Gondel.jpg" width="1000"/>
+</div>
+<div class="hero-stat-card">
+<svg aria-hidden="true" fill="var(--primary)" height="34" viewbox="0 0 24 24" width="34"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+<div>
+<strong>Bindings set to your numbers</strong>
+<p style="font-size:0.85rem; color:var(--text-muted);">Release values checked on a test bench before every hand-off</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: TRUST STRIP -->
+<div class="container">
+<div class="trust-strip">
+<div class="trust-strip-item"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Free damage assessment on return</div>
+<div class="trust-strip-item"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg> Lockers open around the clock</div>
+<div class="trust-strip-item"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M20 6L9 17l-5-5"></path></svg> Swap your gear any day, no charge</div>
+<div class="trust-strip-item"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M3 12h18M12 3v18"></path></svg> Three depots across the mountain</div>
+</div>
+</div>
+<!-- SECTION 3: LOCKER NETWORK -->
+<section class="section">
+<div class="container">
+<div class="section-header">
+<h2>Heated lockers at the bottom of the lift</h2>
+<p>Tap your pass and walk straight to the gondola. Your boots are warm, your bases are fresh, and nothing rides home wet.</p>
+</div><div class="img-hover locker-feature-image" style="margin:0 auto 28px; max-width:1100px; border-radius:var(--radius-lg); height:320px;"><img alt="Heated ski depot lockers storing skis, boots and helmets beside a ski area" loading="lazy" src="https://www.intersport-arena.at/assets/images/skidepot/skidepot-direkt-an-der-piste-flachau-gross.jpg" style="width:100%;height:100%;object-fit:cover;"/></div>
+<div class="grid-3">
+<div class="card pad-card">
+<div class="icon-circle"><svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="22"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 1 1 4 0z"></path></svg></div>
+<h4 style="margin-bottom:8px;">Warm air drying at 38°C</h4>
+<p>Each pod pushes filtered warm air through boot liners, gloves and helmets overnight, so every morning starts dry.</p>
+</div>
+<div class="card pad-card">
+<div class="icon-circle"><svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="22"><rect height="11" rx="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
+<h4 style="margin-bottom:8px;">Open at any hour</h4>
+<p>Collect at 07:00 for first chair or drop off at midnight after a night session. There is no counter to queue at.</p>
+</div>
+<div class="card pad-card">
+<div class="icon-circle"><svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="22"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+<h4 style="margin-bottom:8px;">Thirty metres from the gate</h4>
+<p>The locker wall sits beside the Base Express gondola, so you clip in at the snowline instead of the car park.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: FEATURED PACKAGES -->
+<section class="section section-bg-alt">
+<div class="container">
+<div class="section-header">
+<h2>Three setups our technicians reach for first</h2>
+<p>Built for groomed corduroy, deep bowls and long climbs. Each package includes boots, poles and a daily tune.</p>
+</div>
+<div class="grid-3">
+<article class="card">
+<div class="card-img-wrapper">
+<span class="card-tag">Carving</span>
+<img alt="Skier carving a freshly groomed alpine piste" loading="lazy" src="https://cdn.bfldr.com/WIENNW6Q/as/cgcrnc6gch8c2tk7bkvhsss4/20250320_PhilippRuggli_007?auto=webp&amp;width=1024"/>
+</div>
+<div class="card-body">
+<h3 class="card-title">Apex all-mountain pro</h3>
+<p class="card-meta"><span>Intermediate to expert</span> <span>88mm waist</span></p>
+<p>Atomic Maverick skis on Salomon Warden bindings, matched with heated BOA boots fitted in our lab.</p>
+<div class="card-price">$48 <span>per day</span></div>
+<div class="card-footer">
+<button class="btn btn-primary btn-block add-to-cart-btn" data-price="48" data-title="Apex all-mountain pro">Add to gear bag</button>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-img-wrapper">
+<span class="card-tag">Rider favourite</span>
+<img alt="Snowboarder carving through deep powder on a mountain slope" loading="lazy" src="https://www.tetongravity.com/uploads/2025/10/Screenshot-2025-10-16-at-1.54.40%E2%80%AFPM.png?format=webp&amp;optimize=high&amp;precrop=1%3A1%2Csmart"/>
+</div>
+<div class="card-body">
+<h3 class="card-title">Glacier twin snowboard</h3>
+<p class="card-meta"><span>All levels</span> <span>Hybrid rocker</span></p>
+<p>Jones Mountain Twin with Step On bindings, so you click in at the top of the lift without sitting down.</p>
+<div class="card-price">$52 <span>per day</span></div>
+<div class="card-footer">
+<button class="btn btn-primary btn-block add-to-cart-btn" data-price="52" data-title="Glacier twin snowboard">Add to gear bag</button>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-img-wrapper">
+<span class="card-tag">Backcountry</span>
+<img alt="Ski tourer climbing a steep alpine slope with touring skis" loading="lazy" src="https://images.pexels.com/photos/6575864/pexels-photo-6575864.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
+</div>
+<div class="card-body">
+<h3 class="card-title">Summit ascent touring kit</h3>
+<p class="card-meta"><span>Expert</span> <span>Beacon and probe included</span></p>
+<p>Light carbon touring skis with pin bindings, mohair skins and a full Mammut safety set.</p>
+<div class="card-price">$68 <span>per day</span></div>
+<div class="card-footer">
+<button class="btn btn-primary btn-block add-to-cart-btn" data-price="68" data-title="Summit ascent touring kit">Add to gear bag</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- SECTION 5: HOW IT WORKS -->
+<section class="section">
+<div class="container">
+<div class="section-header">
+<h2>How a rental works here</h2>
+<p>Four steps from booking on the sofa to standing at the lift gate with your gear.</p>
+</div>
+<div class="grid-4">
+<div class="card pad-card">
+<div class="step-num">1</div>
+<h4 style="margin-bottom:8px;">Tell us your numbers</h4>
+<p>Height, weight, boot size and the terrain you like. It takes about a minute.</p>
+</div>
+<div class="card pad-card">
+<div class="step-num">2</div>
+<h4 style="margin-bottom:8px;">We tune overnight</h4>
+<p>Bases are ground and edges polished for the snow temperature forecast for your first morning.</p>
+</div>
+<div class="card pad-card">
+<div class="step-num">3</div>
+<h4 style="margin-bottom:8px;">Collect from your locker</h4>
+<p>A digital key lands in your inbox. Scan it at the pod beside the gondola and you are away.</p>
+</div>
+<div class="card pad-card">
+<div class="step-num">4</div>
+<h4 style="margin-bottom:8px;">Drop it and go</h4>
+<p>Leave everything in the same pod on your last day. Your deposit clears within half an hour.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: BOOTFITTING LAB -->
+<section class="section section-bg-alt">
+<div class="container grid-2" style="align-items:center;">
+<div>
+<span class="badge">Bootfitting lab</span>
+<h2 style="font-size:2.1rem; color:var(--secondary); margin-bottom:16px;">Sore feet end a ski day faster than bad snow</h2>
+<p style="color:var(--text-muted); margin-bottom:18px;">Most of the tiredness riders blame on fitness comes from a boot that does not match the shape of the foot. Every reservation includes a session on our pressure-scan bench, and adjustments are free for the length of your rental.</p>
+<ul class="feature-list" style="margin-bottom:24px;">
+<li>Infrared foot scan accurate to half a millimetre</li>
+<li>Heat-moulded liners and cork footbeds shaped to your arch</li>
+<li>Shell punching for wide forefeet and tender ankle bones</li>
+<li>Swap to another shell at any depot if something still rubs</li>
+</ul>
+<a class="btn btn-secondary" href="rentals.html">See boots and sizing</a>
+</div>
+<div class="img-hover img-tall">
+<img alt="Ski technician performing a custom boot pressure scan" loading="lazy" src="https://i.shgcdn.com/f2847bb8-95e8-4010-ab88-2536da174c6b/-/format/auto/-/quality/normal/"/>
+</div>
+</div>
+</section>
+<!-- SECTION 7: NUMBERS -->
+<section class="section">
+<div class="container">
+<div class="stats-strip">
+<div class="stat-item">
+<div class="stat-number">14<span class="stat-suffix">yrs</span></div>
+<div class="stat-label">On this mountain since 2012</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">450<span class="stat-suffix">+</span></div>
+<div class="stat-label">Heated locker pods</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">2.1<span class="stat-suffix">k</span></div>
+<div class="stat-label">Skis and boards in the fleet</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">4.9<span class="stat-suffix">/5</span></div>
+<div class="stat-label">Average rider rating</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 8: GALLERY -->
+<section class="section section-bg-alt">
+<div class="container">
+<div class="section-header">
+<h2>A season at the depot</h2>
+<p>Mornings in the tuning bay, afternoons on the ridge, and everything the mountain throws in between.</p>
+</div>
+<div class="gallery-grid">
+<figure class="gallery-item tall">
+<img alt="Skier laying out a precise carve on freshly groomed corduroy" loading="lazy" src="https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"/>
+<figcaption class="gallery-caption">First tracks on freshly groomed corduroy</figcaption>
+</figure>
+<figure class="gallery-item wide">
+<img alt="Skis and snowboards lined up beside a busy gondola station" loading="lazy" src="https://www.pelago.com/img/products/CA-Canada/whistler-lost-lake-snowshoeing-and-village-tour/529c6391-a525-4582-8478-3bece3b8b0dc_whistler-lost-lake-snowshoeing-and-village-tour.jpg"/>
+<figcaption class="gallery-caption">The fleet lined up before opening</figcaption>
+</figure>
+<figure class="gallery-item">
+<img alt="Ski boot technician fitting a customer in a professional workshop" loading="lazy" src="https://a.storyblok.com/f/274961/1500x1500/3edee88bdb/ski-boot-fitting-thumbnail.png"/>
+<figcaption class="gallery-caption">Liners moulded to order</figcaption>
+</figure>
+<figure class="gallery-item">
+<img alt="Snowboarder riding untouched powder on a steep alpine run" loading="lazy" src="https://www.bigwhite.com/sites/default/files/2024-10/Winter-Snowboarding-bright-jacket-600x400px.jpg"/>
+<figcaption class="gallery-caption">Powder day on the north side</figcaption>
+</figure>
+<figure class="gallery-item wide">
+<img alt="Ski tourer climbing toward a high alpine ridge" loading="lazy" src="https://dl.dropboxusercontent.com/s/vdnwscljabqlwst/DeepWild-Skitouring%20%281%29.jpg"/>
+<figcaption class="gallery-caption">Skinning up to the summit gate</figcaption>
+</figure>
+<figure class="gallery-item">
+<img alt="Snow-covered pine forest trail below a ski resort" loading="lazy" src="https://images.squarespace-cdn.com/content/v1/558d3d7de4b01d0572ff0342/1451969463707-WRXZP7DQTQSRMUXL3WGF/Grungy%2BSlopes%2C%2BBreckenridge%2BColorado%2C%2BThe%2BWedgewood%2BLodge%2B6.jpg?format=1000w"/>
+<figcaption class="gallery-caption">Tree runs below the mid station</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<!-- SECTION 9: SAFETY -->
+<section class="section">
+<div class="container">
+<div class="section-header">
+<h2>What we check before gear leaves the depot</h2>
+<p>Every ski, board and helmet passes the same checklist, whether it is going out for a day or a fortnight.</p>
+</div>
+<div class="grid-3">
+<div class="card pad-card"><div class="img-hover safety-card-image" style="height:180px;margin:-24px -24px 18px;border-radius:var(--radius-md) var(--radius-md) 0 0;"><img alt="Ski helmet with MIPS rotational protection" loading="lazy" src="https://contents.mediadecathlon.com/p2557889/k%24d600c881551242d5cf3b5125f5072cb7/1000x0/3480pt1999/4000xcr4000/default.jpg?format=auto" style="width:100%;height:100%;object-fit:cover;"/></div>
+<h4 style="margin-bottom:10px;">Helmets with rotational protection</h4>
+<p>The whole helmet fleet uses MIPS liners, and any helmet that takes a hard knock is retired the same day.</p>
+</div>
+<div class="card pad-card"><div class="img-hover safety-card-image" style="height:180px;margin:-24px -24px 18px;border-radius:var(--radius-md) var(--radius-md) 0 0;"><img alt="Ski technician calibrating a binding on a professional test machine" loading="lazy" src="https://images.squarespace-cdn.com/content/v1/5783c4cf2e69cfb0b30e8e33/1468945130213-FQYS424MJ8IXGZ8J2ZEK/image-asset.jpeg" style="width:100%;height:100%;object-fit:cover;"/></div>
+<h4 style="margin-bottom:10px;">Bindings on the test bench</h4>
+<p>Release values are measured on a calibrated Montana bench against the ISO standard, not set by eye.</p>
+</div>
+<div class="card pad-card"><div class="img-hover safety-card-image" style="height:180px;margin:-24px -24px 18px;border-radius:var(--radius-md) var(--radius-md) 0 0;"><img alt="Skier wearing a fitted MIPS helmet and goggles in alpine conditions" loading="lazy" src="https://contents.mediadecathlon.com/p2764782/k%248434a8d7743ddf69ea18429b96f36a1f/1800x0/3000pt1999/6000xcr3998/default.jpg?format=auto" style="width:100%;height:100%;object-fit:cover;"/></div>
+<h4 style="margin-bottom:10px;">Boots and helmets cleaned</h4>
+<p>Everything that touches skin runs through an ozone cabinet between riders, then dries in the pod overnight.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 10: RIDER FEEDBACK -->
+<section class="section section-bg-alt">
+<div class="container">
+<div class="section-header">
+<h2>What riders tell us</h2>
+<p>Collected from reservations closed in the last three months of the season.</p>
+</div>
+<div class="grid-3">
+<div class="testimonial-card">
+<div class="testimonial-stars">★★★★★</div>
+<p class="testimonial-quote">We landed late and still skied at nine the next morning. The locker key was on my phone before we reached the hotel, and the boots actually fitted.</p>
+<div class="testimonial-author">
+<div class="testimonial-avatar">MR</div>
+<div><strong>Marta Reyes</strong><span>Four day trip from Madrid</span></div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">★★★★★</div>
+<p class="testimonial-quote">Storm rolled in at lunch so I swapped my carvers for 106mm skis at the mid-mountain pod. Took four minutes and cost nothing.</p>
+<div class="testimonial-author">
+<div class="testimonial-avatar">TK</div>
+<div><strong>Tom Keller</strong><span>Season pass holder</span></div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">★★★★☆</div>
+<p class="testimonial-quote">Three kids, three sets of gear, one booking. The junior boots came with warm liners and nobody complained about their feet all week.</p>
+<div class="testimonial-author">
+<div class="testimonial-avatar">AL</div>
+<div><strong>Aisha Lund</strong><span>Family of five</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 11: FAQ -->
+<section class="section">
+<div class="container">
+<div class="section-header">
+<h2>Questions riders ask before booking</h2>
+<p>Anything else, the dispatch line answers within a couple of hours.</p>
+</div>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-question" type="button">How far ahead should I reserve?<span class="faq-icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Two or three days is enough outside holidays. Over Christmas, February half term and Easter, book two weeks ahead, because demo skis and wide powder boards go first.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" type="button">What if the boots hurt on the first morning?<span class="faq-icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Come to any depot and we will punch the shell, change the liner or move you into a different boot. There is no charge and no limit on how many times you come back.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" type="button">Can I change the dates after booking?<span class="faq-icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Yes, up to 24 hours before pickup, from the dashboard. If the mountain closes the lifts for weather, unused days are credited automatically.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" type="button">Do you rent to children?<span class="faq-icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">From age three upward. Junior packages include a helmet at no extra cost, and children under six ride free on a family booking.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" type="button">Is a helmet included?<span class="faq-icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Helmets are included with every junior package and cost $9 a day for adults. Goggles are $7 a day if you forget yours.</div></div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: SNOW REPORT SIGN-UP -->
+<section class="section">
+<div class="container">
+<div class="newsletter-box">
+<div class="newsletter-copy">
+<h3>Get the 6am snow report</h3>
+<p>One short email each morning of the season: overnight snowfall, groomed runs, lift status and which skis our techs are handing out that day.</p>
+</div>
+<div>
+<form class="newsletter-form" id="newsletter-form" novalidate="">
+<input aria-label="Email address" id="newsletter-email" placeholder="you@email.com" required="" type="email"/>
+<button class="btn btn-primary" type="submit">Send it to me</button>
+</form>
+<p class="newsletter-msg" id="newsletter-msg">You are on the list. First report lands tomorrow at 6am.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- MOUNTAIN REPORT MODAL -->
+<div aria-label="Mountain report" aria-modal="true" class="modal-overlay" id="intel-modal" role="dialog">
+<div class="modal-window">
+<button aria-label="Close" class="modal-close-btn" id="close-intel-btn" type="button">×</button>
+<h3 style="color:var(--secondary); margin-bottom:8px;">This morning on the mountain</h3>
+<p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:20px;">Summit elevation 3,450m. Report written by the patrol team at 06:15.</p>
+<div class="img-hover" style="margin-bottom:18px; border-radius:var(--radius-md);">
+<img alt="Snowy alpine resort panorama viewed from high elevation" loading="lazy" src="https://peakvisor.com/photo/SD/La-Rosiere-France-Bourg-Saint-Maurice.jpg"/>
+</div>
+<div class="grid-2" style="gap:14px;">
+<div style="background:var(--bg-surface); padding:14px; border-radius:var(--radius-sm);">
+<strong style="display:block; font-size:0.85rem; color:var(--text-muted);">Grooming</strong>
+<span style="color:var(--status-success); font-weight:700;">All main runs packed overnight</span>
+</div>
+<div style="background:var(--bg-surface); padding:14px; border-radius:var(--radius-sm);">
+<strong style="display:block; font-size:0.85rem; color:var(--text-muted);">Summit wind and temperature</strong>
+<span style="font-weight:700;">−11°C, northwest 24 km/h</span>
+</div>
+<div style="background:var(--bg-surface); padding:14px; border-radius:var(--radius-sm);">
+<strong style="display:block; font-size:0.85rem; color:var(--text-muted);">New snow</strong>
+<span style="font-weight:700;">18cm above 2,600m</span>
+</div>
+<div style="background:var(--bg-surface); padding:14px; border-radius:var(--radius-sm);">
+<strong style="display:block; font-size:0.85rem; color:var(--text-muted);">Lifts running</strong>
+<span style="font-weight:700;">11 of 12, north chair on wind hold</span>
+</div>
+</div>
+<p style="margin-top:16px; font-size:0.9rem; color:var(--text-muted);">Our technicians are handing out 100mm skis today. Ask at the counter if you booked something narrower.</p>
+</div>
+</div>
+</main>
+<!-- ============ GEAR BAG DRAWER ============ -->
+<div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+<aside aria-label="Rental gear bag" class="cart-drawer" id="cart-drawer">
+<div class="cart-header">
+<h3 style="font-size:1.2rem; color:var(--secondary);">Your slopeside gear bag</h3>
+<button aria-label="Close gear bag" class="drawer-close" id="close-cart-btn">×</button>
+</div>
+<div class="cart-items-container" id="cart-items-container"></div>
+<div class="cart-footer-bar">
+<div style="display:flex; justify-content:space-between; margin-bottom:14px;">
+<span style="font-weight:600;">Total per day</span>
+<strong id="cart-total-price" style="color:var(--primary); font-size:1.2rem;">$0.00</strong>
+</div>
+<a class="btn btn-primary btn-block" href="dashboard.html">Lock in sizing &amp; dates</a>
+<button class="btn btn-secondary btn-block btn-sm" id="clear-cart-btn" style="margin-top:10px;">Empty the bag</button>
+</div>
+</aside>
+<!-- ============ UNIVERSAL FOOTER ============ -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a aria-label="VERTEX ALPS home" class="brand-logo" href="index.html" style="color:var(--footer-text);">
+<div class="brand-badge">
+<svg aria-hidden="true" fill="none" viewbox="0 0 100 100">
+<polygon fill="#00a4e4" points="50,15 88,82 68,82 50,48 32,82 12,82"></polygon>
+<polygon fill="#ffffff" points="50,15 68,82 50,48"></polygon>
+<path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-linecap="round" stroke-width="7"></path>
+</svg>
+</div>
+<span style="color:#ffffff;">VÉRTEX<span style="color:var(--primary)">ALPS</span></span>
+</a>
+<p>Slopeside ski and snowboard rental depots. Precision-tuned gear and custom-fitted boots for mountain riders since 2012.</p>
+<div class="footer-social-cluster">
+<a aria-label="Instagram" class="social-icon-btn" href="#"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><rect height="20" rx="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path></svg></a>
+<a aria-label="YouTube" class="social-icon-btn" href="#"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+<a aria-label="X" class="social-icon-btn" href="#"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+<a aria-label="Facebook" class="social-icon-btn" href="#"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+<a aria-label="TikTok" class="social-icon-btn" href="#"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Navigation</h4>
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="home-2.html">Summit concierge</a></li>
+<li><a href="about.html">About us</a></li>
+<li><a href="rentals.html">Equipment fleet</a></li>
+<li><a href="lessons.html">Mountain academy</a></li>
+<li><a href="pricing.html">Package rates</a></li>
+<li><a href="contact.html">Contact us</a></li>
+<li><a href="dashboard.html">Customer dashboard</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Depot hours</h4>
+<ul class="footer-links">
+<li>Monday to Friday: 07:30 – 20:00</li>
+<li>Saturday &amp; Sunday: 07:00 – 21:00</li>
+<li>Gondola lockers: open 24 hours</li>
+<li>Mountain support line: 24 hours</li>
+<li>Bootfitting lab: 08:00 – 19:00</li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Base station &amp; depots</h4>
+<div class="creative-address-list">
+<div class="address-item">
+<svg aria-hidden="true" class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+<div class="address-item-content">
+<strong>Base depot alpha</strong>
+                Gondola Plaza Level 1, Suite 104
+              </div>
+</div>
+<div class="address-item">
+<svg aria-hidden="true" class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11"></path></svg>
+<div class="address-item-content">
+<strong>Mountain passway</strong>
+                Glacier Peak Way 402, Summit Gateway
+              </div>
+</div>
+<div class="address-item">
+<svg aria-hidden="true" class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+<div class="address-item-content">
+<strong>Coordinates &amp; altitude</strong>
+                39.5801° N, 105.9438° W — 3,450m
+              </div>
+</div>
+<div class="address-item">
+<svg aria-hidden="true" class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+<div class="address-item-content">
+<strong>Slopeside dispatch line</strong>
+<a href="tel:+18005552577">+1 (800) 555-ALPS</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 VÉRTEX ALPS Rentals. All rights reserved.</p>
+<div class="footer-legal-links">
+<a href="#">Terms &amp; conditions</a>
+<a href="#">Rental damage waiver</a>
+<a href="#">Privacy policy</a>
+<a href="#">Safety disclosures</a>
+</div>
+</div>
+</div>
+</footer>
+<button aria-label="Back to top" class="back-to-top" id="back-to-top">
+<svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+</button>
+<div aria-live="polite" class="toast-msg" id="toast" role="status">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M20 6L9 17l-5-5"></path></svg>
+<span id="toast-text">Added to your gear bag</span>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

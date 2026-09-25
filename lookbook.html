@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Visual lookbook of bespoke suits, trousers, pleated pants, silk ties, and accoutrements at SARTOR." />
+  <title>Sartorial Lookbook &bull; SARTOR Savile Row</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- UNIFIED SITE HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner container">
+      <a href="index.html" class="brand-logo">
+        <svg class="logo-symbol" viewBox="0 0 44 44" width="34" height="34" fill="none">
+          <rect x="2" y="2" width="40" height="40" rx="4" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M12 12L32 32M32 12L12 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="22" cy="22" r="5" fill="var(--bg-surface)" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="22" cy="22" r="2" fill="currentColor"/>
+        </svg>
+        <div class="brand-text-wrap"><span class="brand-name">SARTOR</span><span class="brand-tagline">BESPOKE &bull; MAYFAIR</span></div>
+      </a>
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="suits.html" class="nav-link">Suits</a></li>
+          <li><a href="lookbook.html" class="nav-link active">Lookbook</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="index.html#dashboard" class="nav-link nav-dash-link">Dashboard</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle Theme"><svg class="sun-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg><svg class="moon-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+        <button id="rtlToggle" class="icon-btn"><span class="rtl-text">RTL</span></button>
+        <button class="btn btn-primary btn-header-login" id="openLoginBtn">Login</button>
+        <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+      </div>
+    </div>
+    <div class="mobile-drawer" id="mobileDrawer">
+      <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="about.html" class="mobile-nav-link">About Us</a>
+        <a href="suits.html" class="mobile-nav-link">Suits</a>
+        <a href="lookbook.html" class="mobile-nav-link active">Lookbook</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="index.html#dashboard" class="mobile-nav-link mobile-dash-btn">Dashboard</a>
+        <button class="btn btn-primary w-full" id="mobileDrawerLogin">Login</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: BANNER -->
+    <section class="page-banner text-center">
+      <div class="container">
+        <span class="section-tag">Visual Lookbook</span>
+        <h1 class="page-banner-title">The Sartorial Archive</h1>
+        <p class="section-lead">A visual catalog spanning complete bespoke silhouettes, tailored trousers, pleated pants, and accoutrements.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: 16-IMAGE FILTERABLE GRID -->
+    <section class="section section-lookbook">
+      <div class="container">
+        <div class="lookbook-filter-bar">
+          <button class="lookbook-filter-btn active" data-filter="all">All Ensembles</button>
+          <button class="lookbook-filter-btn" data-filter="suits">Suits &amp; Coats</button>
+          <button class="lookbook-filter-btn" data-filter="pants">Trousers &amp; Pants</button>
+          <button class="lookbook-filter-btn" data-filter="accessories">Accoutrements &amp; Footwear</button>
+        </div>
+
+        <div class="lookbook-grid">
+          <!-- 1. Suit: Navy Chalkstripe -->
+          <div class="lookbook-card" data-category="suits">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=900&auto=format&fit=crop" alt="Navy chalk stripe" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Suits &amp; Coats</span><h4>Navy Chalk Stripe Two-Piece</h4><p>Super 140s Yorkshire Wool</p></div>
+            </div>
+          </div>
+
+          <!-- 2. Pants: Forward Pleated Flannel -->
+          <div class="lookbook-card" data-category="pants">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=900&auto=format&fit=crop" alt="Pleated trousers" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Trousers &amp; Pants</span><h4>High-Waisted Forward-Pleat Trousers</h4><p>320g Flannel &bull; 4cm Cuffs</p></div>
+            </div>
+          </div>
+
+          <!-- 3. Acc: Ancient Madder Silk Ties -->
+          <div class="lookbook-card" data-category="accessories">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=900&auto=format&fit=crop" alt="Silk ties" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Accoutrements</span><h4>7-Fold Ancient Madder Silk Ties</h4><p>Hand-Printed in Macclesfield</p></div>
+            </div>
+          </div>
+
+          <!-- 4. Suit: Midnight Tuxedo -->
+          <div class="lookbook-card" data-category="suits">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=900&auto=format&fit=crop" alt="Midnight dinner jacket" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Suits &amp; Coats</span><h4>Grand Midnight Dinner Jacket</h4><p>320g Barathea Wool</p></div>
+            </div>
+          </div>
+
+          <!-- 5. Pants: Cavalry Twill Chinos -->
+          <div class="lookbook-card" data-category="pants">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=900&auto=format&fit=crop" alt="Cotton chinos" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Trousers &amp; Pants</span><h4>Cavalry Twill Tailored Chinos</h4><p>Heavy English Cotton Twill</p></div>
+            </div>
+          </div>
+
+          <!-- 6. Acc: Forged Silver Cufflinks -->
+          <div class="lookbook-card" data-category="accessories">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=900&auto=format&fit=crop" alt="Sterling cufflinks" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Accoutrements</span><h4>Forged Sterling &amp; Onyx Cufflinks</h4><p>Engine-Turned Hallmarked Silver</p></div>
+            </div>
+          </div>
+
+          <!-- 7. Suit: Ulster Overcoat -->
+          <div class="lookbook-card" data-category="suits">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=900&auto=format&fit=crop" alt="Ulster coat" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Suits &amp; Coats</span><h4>Double-Breasted Ulster Coat</h4><p>520g Scottish Cashmere</p></div>
+            </div>
+          </div>
+
+          <!-- 8. Pants: Barathea Evening Trousers -->
+          <div class="lookbook-card" data-category="pants">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?q=80&w=900&auto=format&fit=crop" alt="Evening trousers" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Trousers &amp; Pants</span><h4>Formal Evening Barathea Trousers</h4><p>Silk Grosgrain Side Stripe</p></div>
+            </div>
+          </div>
+
+          <!-- 9. Acc: Goodyear Oxford Shoes -->
+          <div class="lookbook-card" data-category="accessories">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?q=80&w=900&auto=format&fit=crop" alt="Burnished oxfords" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Accoutrements</span><h4>Hand-Burnished Oxford Footwear</h4><p>Goodyear Welted Calfskin</p></div>
+            </div>
+          </div>
+
+          <!-- 10. Suit: Velvet Smoking Jacket -->
+          <div class="lookbook-card" data-category="suits">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=900&auto=format&fit=crop" alt="Velvet smoking jacket" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Suits &amp; Coats</span><h4>Silk Velvet Smoking Jacket</h4><p>Italian Cotton Velvet</p></div>
+            </div>
+          </div>
+
+          <!-- 11. Pants: Gurkha Linen Trousers -->
+          <div class="lookbook-card" data-category="pants">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=900&auto=format&fit=crop" alt="Gurkha trousers" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Trousers &amp; Pants</span><h4>Gurkha Fastening Linen Trousers</h4><p>Pure Irish Linen</p></div>
+            </div>
+          </div>
+
+          <!-- 12. Acc: Irish Linen Pocket Squares -->
+          <div class="lookbook-card" data-category="accessories">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=900&auto=format&fit=crop" alt="Pocket squares" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Accoutrements</span><h4>Hand-Rolled Irish Linen Squares</h4><p>Shoestring Edging &bull; Silk Twill</p></div>
+            </div>
+          </div>
+
+          <!-- 13. Suit: Glen Check 3-Piece -->
+          <div class="lookbook-card" data-category="suits">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=900&auto=format&fit=crop" alt="Prince of Wales Suit" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Suits &amp; Coats</span><h4>Prince of Wales Three-Piece</h4><p>Super 130s Yorkshire Glen Plaid</p></div>
+            </div>
+          </div>
+
+          <!-- 14. Pants: Dark Navy Flannel Trouser -->
+          <div class="lookbook-card" data-category="pants">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=900&auto=format&fit=crop" alt="Dark Navy Flannel Trouser" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Trousers &amp; Pants</span><h4>Classic Navy Flannel Slacks</h4><p>340g English Wool &bull; Extended Tab</p></div>
+            </div>
+          </div>
+
+          <!-- 15. Acc: Leather Briefcase & Bridle Belt -->
+          <div class="lookbook-card" data-category="accessories">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=900&auto=format&fit=crop" alt="English Bridle Leather Document Case" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Accoutrements</span><h4>English Bridle Document Case</h4><p>Hand-Waxed Sedgwick Leather</p></div>
+            </div>
+          </div>
+
+          <!-- 16. Suit: Camel Hair Polo Coat -->
+          <div class="lookbook-card" data-category="suits">
+            <div class="lookbook-media">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=900&auto=format&fit=crop" alt="Double-Faced Camel Coat" />
+              <div class="lookbook-meta-overlay"><span class="lookbook-category">Suits &amp; Coats</span><h4>Mongolian Camel Polo Coat</h4><p>540g Baby Camel &bull; Patch Pockets</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: HARMONIZED ENSEMBLE SPECIFICATION -->
+    <section class="section section-ensemble-spec" style="background: var(--bg-surface-soft);">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="section-tag">Styling Philosophy</span>
+          <h2 class="section-title">The Three Ensembles Protocol</h2>
+          <p class="section-lead">True sartorial distinction lies in pairing the correct weight of worsted with matching neckwear and hallmarked jewelry.</p>
+        </div>
+        <div class="grid grid-3-col">
+          <div class="service-feature-card">
+            <h3>1. The Boardroom Command</h3>
+            <p>Navy worsted two-piece matched with 7-fold ancient madder silk neckties, white poplin shirt, and dark cognac English bridle leather.</p>
+          </div>
+          <div class="service-feature-card">
+            <h3>2. The Ceremonial Protocol</h3>
+            <p>Midnight barathea dinner suit paired with a 7cm grosgrain self-tie butterfly bow tie, forged onyx cufflinks, and patent calf oxfords.</p>
+          </div>
+          <div class="service-feature-card">
+            <h3>3. The Country Sporting</h3>
+            <p>Heavyweight Cheviot tweed coat paired with high-twist cavalry twill trousers, knitted silk-cashmere neckwear, and Goodyear-welted brogues.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: BESPOKE DETAILS & EMBELLISHMENTS -->
+    <section class="section section-details">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="section-tag">Micro-Craftsmanship</span>
+          <h2 class="section-title">The Finishes That Define SARTOR</h2>
+          <p class="section-lead">The details invisible to the casual eye that separate authentic bespoke from commercial production.</p>
+        </div>
+        <div class="grid grid-3-col">
+          <div class="service-feature-card">
+            <h3>Barchetta Breast Pocket</h3>
+            <p>A hand-cut, gently boat-shaped pocket curve following the natural swell of the chest blade, cut cleanly across the chest canvas.</p>
+          </div>
+          <div class="service-feature-card">
+            <h3>Cross-Stitched Horn Shanks</h3>
+            <p>Buttons carved from Scottish stag and natural water buffalo horn, secured with thick waxed thread cross-stitches that resist tearing.</p>
+          </div>
+          <div class="service-feature-card">
+            <h3>Fish-Eye Trousers Darts</h3>
+            <p>Concave double darts tailored along the lower back waistband that sculpt the fabric into the hollow of the spine without gathering.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PATRON TESTIMONIALS -->
+    <section class="section section-testimonials" style="background: var(--bg-surface-soft);">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="section-tag">Client Acclaim</span>
+          <h2 class="section-title">Endorsements from the Bespoke Guild</h2>
+        </div>
+        <div class="grid grid-3-col">
+          <div class="testimonial-card">
+            <div class="quote-mark">&ldquo;</div>
+            <p>The high armhole geometry changes everyday movement completely. I can reach across a boardroom table without the jacket lifting away from my collar.</p>
+            <div class="patron-profile"><strong>Lord Julian Sterling</strong><small>Patron &bull; 6 Commissions</small></div>
+          </div>
+          <div class="testimonial-card">
+            <div class="quote-mark">&ldquo;</div>
+            <p>Marcus Vance identified a 9mm shoulder drop during my first consultation that previous tailors had ignored. My dinner suit hangs with perfect balance.</p>
+            <div class="patron-profile"><strong>Marcus Thorne, KC</strong><small>Patron &bull; Black Tie</small></div>
+          </div>
+          <div class="testimonial-card">
+            <div class="quote-mark">&ldquo;</div>
+            <p>The forward-pleated flannel trousers drape effortlessly over the shoe with zero break distortion. True Savile Row mastery.</p>
+            <div class="patron-profile"><strong>David H. Vance</strong><small>Patron &bull; Ulster Commission</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT CONCIERGE -->
+    <section class="section section-contact text-center">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Commission An Ensemble</span>
+          <h2 class="section-title">Experience True Savile Row Tailoring</h2>
+          <p class="section-lead">Reserve your private fitting suite in Mayfair with our master cutters.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Book Private Consultation</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- UNIFIED FOOTER -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="brand-logo footer-logo">
+            <svg class="logo-symbol" viewBox="0 0 44 44" width="34" height="34" fill="none"><rect x="2" y="2" width="40" height="40" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 12L32 32M32 12L12 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="22" r="5" fill="var(--bg-surface)" stroke="currentColor" stroke-width="1.8"/><circle cx="22" cy="22" r="2" fill="currentColor"/></svg>
+            <div class="brand-text-wrap"><span class="brand-name">SARTOR</span><span class="brand-tagline">BESPOKE &bull; MAYFAIR</span></div>
+          </a>
+          <p class="footer-blurb">Traditional bespoke tailoring with pure floating horsehair canvas architecture. Hand-cut and basted on Savile Row, London.</p>
+          <div class="footer-social-row">
+            <a href="https://instagram.com" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+            <a href="https://linkedin.com" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://x.com" class="social-btn" aria-label="X" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16z"></path><path d="M4 20l6.768-6.768m2.46-2.46l6.772-6.772"></path></svg>
+            </a>
+            <a href="https://youtube.com" class="social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><polygon points="10 15 15 12 10 9 10 15" fill="currentColor"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">Bespoke Categories</h5>
+          <ul class="footer-menu">
+            <li><a href="suits.html">City Lounge Two-Piece</a></li>
+            <li><a href="suits.html">Grand Midnight Dinner Suit</a></li>
+            <li><a href="suits.html">Double-Breasted Ulster Coat</a></li>
+            <li><a href="lookbook.html">Visual Lookbook Archive</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">Atelier Navigation</h5>
+          <ul class="footer-menu">
+            <li><a href="about.html">About Us &amp; Standards</a></li>
+            <li><a href="lookbook.html">Sartorial Catalog</a></li>
+            <li><a href="contact.html">Private Appointments</a></li>
+            <li><a href="index.html#dashboard">Patron Client Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">Savile Row Atelier</h5>
+          <address class="footer-addr">14 Savile Row, Suite 3<br />Mayfair, London W1S 3JN<br />United Kingdom</address>
+          <div class="footer-contact-links">
+            <span class="footer-tel"><strong>Tel:</strong> +44 (0) 20 7946 0188</span>
+            <span class="footer-email"><strong>Inquiries:</strong> concierge@sartor.co.uk</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-sub-bar">
+        <p>&copy; 2026 SARTOR Bespoke Atelier. All handcraft patterns and designs reserved.</p>
+        <div class="sub-links"><a href="#">Privacy Policy</a><span>&bull;</span><a href="#">Terms of Commission</a><span>&bull;</span><a href="#">Cloth Traceability</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

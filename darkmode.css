@@ -1,0 +1,124 @@
+/* ==========================================================================
+   VÉRTEX ALPS - DARK MODE HIGH CONTRAST PALETTE
+   ========================================================================== */
+
+body.dark-mode {
+  --bg-main: #060e14;
+  --bg-surface: #0a151e;
+  --bg-card: #0f1f2c;
+  
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --border-color: #1a3245;
+
+  --secondary: #ffffff;
+  --secondary-hover: #e2e8f0;
+
+  --footer-bg: #03080c;
+  --footer-text: #ffffff;
+  --footer-muted: #cbd5e1;
+  --footer-border: rgba(255, 255, 255, 0.16);
+}
+
+body.dark-mode .header {
+  background-color: rgba(6, 14, 20, 0.94);
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .nav-link {
+  color: #e2e8f0;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: var(--primary);
+}
+
+body.dark-mode .hero {
+  background: linear-gradient(180deg, #0a151e 0%, #060e14 100%);
+}
+
+body.dark-mode .hero-stat-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .btn-secondary {
+  color: #ffffff;
+  border-color: #64748b;
+}
+
+body.dark-mode .btn-secondary:hover {
+  background-color: #ffffff;
+  color: #060e14 !important;
+  border-color: #ffffff;
+}
+
+body.dark-mode .card,
+body.dark-mode .pricing-card,
+body.dark-mode .dash-panel,
+body.dark-mode .metric-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .card-img-wrapper {
+  background-color: #1a2c3a;
+  border-bottom: 1px solid var(--border-color);
+}
+
+body.dark-mode .card-img-wrapper img {
+  filter: brightness(0.92) contrast(1.05);
+}
+
+body.dark-mode .card-tag {
+  background-color: #00a4e4;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .card-title,
+body.dark-mode .pricing-cost,
+body.dark-mode .hero-title,
+body.dark-mode .section-header h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .card-price {
+  color: #38bdf8;
+}
+
+body.dark-mode .pricing-card.popular {
+  border-color: var(--primary);
+  background: #112535;
+}
+
+body.dark-mode .form-input,
+body.dark-mode .form-textarea {
+  background-color: #0a151e;
+  border-color: var(--border-color);
+  color: #f8fafc;
+}
+
+body.dark-mode .form-input:focus,
+body.dark-mode .form-textarea:focus {
+  border-color: var(--primary);
+}
+
+body.dark-mode .sidebar,
+body.dark-mode .dash-topbar {
+  background-color: #081219;
+  border-color: var(--border-color);
+}
+
+body.dark-mode .icon-toggle-btn {
+  background-color: #0a151e;
+  border-color: var(--border-color);
+  color: #f8fafc;
+}
+
+body.dark-mode .footer-links a,
+body.dark-mode .footer-brand p,
+body.dark-mode .address-item {
+  color: #cbd5e1;
+}

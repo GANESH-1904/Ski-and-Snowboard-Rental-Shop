@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+}
+
+.fixed-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 1000; 
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.image-container {
+    position: relative; 
+    display: inline-block;
+}
+
+.absolute {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: orange;
+    color: black;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.absolute-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: black;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.static-text {
+    position: static;
+    margin: 10px 0;
+}
+
+.relative-price {
+    position: relative;
+    top: 10px;   
+    left: 10px;  
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.bike-card {
+    background-color: white;
+    width: 320px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.bike-card img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.spacer {
+    margin-top: 50px;
+}
+
+.spacer img {
+    display: block;
+    margin: 40px auto;
+    width: 400px;
+    border-radius: 10px;
+}

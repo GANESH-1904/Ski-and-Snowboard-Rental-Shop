@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Consultation | Apex Automotive</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <style>
+    /* Interactivity & Logo Styling Enhancements */
+    .brand-logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    
+    .brand-logo-container:hover {
+      transform: scale(1.03);
+    }
+
+    .brand-logo-svg {
+      height: 40px;
+      width: auto;
+      display: block;
+      filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+    }
+
+    .brand-logo-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: #ffffff;
+      font-family: var(--font-heading, sans-serif);
+      background: linear-gradient(135deg, #ffffff 0%, #a1a1a1 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Sticky Navbar Scroll Effect */
+    .navbar.scrolled {
+      background-color: rgba(13, 15, 20, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Mobile Hamburger Menu */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 992px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(13, 15, 20, 0.98);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar" id="navbar">
+    <!-- BRAND LOGO -->
+    <a href="index.html" class="brand-logo-container" aria-label="Apex Home">
+      <svg class="brand-logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="apexGold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F3E5AB" />
+            <stop offset="50%" stop-color="#D4AF37" />
+            <stop offset="100%" stop-color="#996515" />
+          </linearGradient>
+          <linearGradient id="apexSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF" />
+            <stop offset="50%" stop-color="#8E9EAB" />
+            <stop offset="100%" stop-color="#475569" />
+          </linearGradient>
+        </defs>
+        <!-- Outer Shield Crest -->
+        <path d="M60 5 L105 25 L95 80 L60 115 L25 80 L15 25 Z" fill="none" stroke="url(#apexGold)" stroke-width="4" stroke-linejoin="round"/>
+        <!-- Dynamic Apex 'A' Wings -->
+        <path d="M60 20 L85 75 L70 75 L60 50 L50 75 L35 75 Z" fill="url(#apexSilver)"/>
+        <!-- Inner Sharp Accent Chevron -->
+        <path d="M60 38 L78 85 L60 72 L42 85 Z" fill="url(#apexGold)"/>
+      </svg>
+      <span class="brand-logo-text">APEX</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+
+    <nav>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+        <li><a href="about1.html" class="nav-link">Heritage</a></li>
+        <li><a href="contact1.html" class="nav-link active">Contact</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+      </ul>
+    </nav>
+    <div class="nav-controls">
+      <a href="login1.html" class="btn btn-secondary">Client Sign In</a>
+      <a href="register1.html" class="btn btn-primary">Pre-Order</a>
+    </div>
+  </header>
+
+  <!-- Section 1: Consultation Header -->
+  <section class="section-padding text-center" style="background: var(--surface-color); border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <span class="section-subtitle">Private Concierge</span>
+      <h1>Client Consultations</h1>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 10px auto 0;">Reserve a private view in Geneva, London, or Dubai.</p>
+    </div>
+  </section>
+
+  <!-- Section 2 & 3: Inquiry Form & Global Showrooms Grid -->
+  <section class="section-padding container grid-2">
+    <!-- Section 2: Inquiry Form -->
+    <div>
+      <span class="section-subtitle">Commission Inquiry</span>
+      <h2 style="margin-bottom: 25px;">Private Consultation Request</h2>
+      
+      <form class="auth-form" style="margin-top: 0;">
+        <div class="form-group">
+          <label style="font-size: 0.85rem;">Full Name</label>
+          <input type="text" class="form-input" required placeholder="Lord / Lady / Name">
+        </div>
+        <div class="form-group">
+          <label style="font-size: 0.85rem;">Email Address</label>
+          <input type="email" class="form-input" required placeholder="client@domain.com">
+        </div>
+        <div class="form-group">
+          <label style="font-size: 0.85rem;">Vehicle Allocation Interest</label>
+          <select class="form-input">
+            <option>Apex Sovereign V12 Hypercar</option>
+            <option>Phantom RR Titanium Superbike</option>
+            <option>Stratos EV Roadster</option>
+            <option>One-Off Atelier Commission</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label style="font-size: 0.85rem;">Consultation Details / Message</label>
+          <textarea class="form-input" style="height: 120px; padding: 15px;" placeholder="Specify your desired viewing location or custom specifications..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+      </form>
+    </div>
+
+    <!-- Section 3: Global Showroom Directory -->
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <span class="section-subtitle">Global Presence</span>
+      <h2>Atelier Locations</h2>
+      
+      <div class="card" style="padding: 24px;">
+        <h3>Geneva Atelier</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Rue du Rhône 42, 1204 Genève, Switzerland</p>
+        <p style="color: var(--primary-color); margin-top: 10px; font-weight: 600;">+41 22 555 0199</p>
+      </div>
+
+      <div class="card" style="padding: 24px;">
+        <h3>Dubai Flagship</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">DIFC Gate Precinct 4, Dubai, UAE</p>
+        <p style="color: var(--primary-color); margin-top: 10px; font-weight: 600;">+971 4 312 0000</p>
+      </div>
+
+      <div class="card" style="padding: 24px;">
+        <h3>London Mayfair Studio</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Berkeley Square, Mayfair, London W1J 6BR</p>
+        <p style="color: var(--primary-color); margin-top: 10px; font-weight: 600;">+44 20 7946 0912</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Concierge VIP Services -->
+  <section class="section-padding" style="background: var(--surface-color);">
+    <div class="container text-center">
+      <div class="section-header">
+        <span class="section-subtitle">VIP Support</span>
+        <h2>Concierge Services</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card" style="padding: 30px;">
+          <h3>Private Air Transfer</h3>
+          <p style="color: var(--text-muted); margin-top: 10px;">Direct helicopter and jet arrangements to our testing track.</p>
+        </div>
+        <div class="card" style="padding: 30px;">
+          <h3>Circuit Access</h3>
+          <p style="color: var(--text-muted); margin-top: 10px;">Exclusive private track days with dedicated performance engineers.</p>
+        </div>
+        <div class="card" style="padding: 30px;">
+          <h3>Global Maintenance</h3>
+          <p style="color: var(--text-muted); margin-top: 10px;">24/7 technician dispatch to service vehicles anywhere in the world.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Procurement FAQ -->
+  <section class="section-padding container">
+    <div class="section-header text-center">
+      <span class="section-subtitle">Clarifications</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card" style="padding: 30px;">
+        <h3>What is the average build time?</h3>
+        <p style="color: var(--text-muted); margin-top: 10px;">Each machine requires between 6 and 14 months depending on custom upholstery and exposed carbon requests.</p>
+      </div>
+      <div class="card" style="padding: 30px;">
+        <h3>How are allocations granted?</h3>
+        <p style="color: var(--text-muted); margin-top: 10px;">Allocations are approved individually through our Geneva liaison office based on build availability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <!-- FOOTER LOGO -->
+        <a href="index.html" class="brand-logo-container" style="margin-bottom: 15px;">
+          <svg class="brand-logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 5 L105 25 L95 80 L60 115 L25 80 L15 25 Z" fill="none" stroke="#D4AF37" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M60 20 L85 75 L70 75 L60 50 L50 75 L35 75 Z" fill="#8E9EAB"/>
+            <path d="M60 38 L78 85 L60 72 L42 85 Z" fill="#D4AF37"/>
+          </svg>
+          <span class="brand-logo-text">APEX</span>
+        </a>
+        <p style="color: var(--text-muted); font-size: 0.85rem; max-width: 300px;">Bespoke hypercars and high-performance motorrad built for collectors worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="inventory.html">Inventory</a></li>
+          <li><a href="about1.html">Heritage</a></li>
+          <li><a href="contact1.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Client Services</h4>
+        <ul class="footer-links">
+          <li><a href="dashboard.html">Client Portal</a></li>
+          <li><a href="login1.html">Sign In</a></li>
+          <li><a href="register1.html">Pre-Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Global Ateliers</h4>
+        <ul class="footer-links">
+          <li><a href="#">Geneva Atelier</a></li>
+          <li><a href="#">Dubai Showroom</a></li>
+          <li><a href="#">London Studio</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container text-center" style="border-top: 1px solid var(--border-light); padding-top: 30px; color: var(--text-muted); font-size: 0.8rem;">
+      <p>&copy; 2026 Apex Automotive Group SA. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Interactivity Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Navbar Scroll Effect
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // 2. Responsive Mobile Menu Toggle
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

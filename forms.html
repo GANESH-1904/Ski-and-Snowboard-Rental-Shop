@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form Validation</title>
+</head>
+<body>
+
+    <h2>Register Here</h2>
+    <form id="myform">
+        <input type="text" placeholder="Enter Name" id="name">
+        <p id="name-error"></p>
+
+        <input type="text" placeholder="Enter Email" id="email">
+        <p id="email-error"></p>
+
+        <input type="password" placeholder="Enter Password" id="password">
+        <p id="pass-error"></p>
+
+        <input type="password" placeholder="Confirm Password" id="confirm_password">
+        <p id="confirm-error"></p>
+
+        <input type="text" placeholder="Phone Number" id="phone">
+        <p id="phone-error"></p>
+
+        <input type="number" placeholder="Age" id="age">
+        <p id="age-error"></p>
+
+        <input type="text" placeholder="City" id="city">
+        <p id="city-error"></p>
+
+        <input type="text" placeholder="Zip Code" id="zip">
+        <p id="zip-error"></p>
+
+        <select id="gender">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <p id="gender-error"></p>
+
+        <input type="checkbox" id="terms"> I agree to terms
+        <p id="terms-error"></p>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="msg"></p>
+
+    <script>
+        let form = document.getElementById("myform");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let errors = document.getElementsByTagName("p");
+            for(let i=0; i<errors.length; i++) {
+                errors[i].innerHTML = "";
+            }
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("password").value;
+            let confirm = document.getElementById("confirm_password").value;
+            let phone = document.getElementById("phone").value;
+            let age = document.getElementById("age").value;
+            let city = document.getElementById("city").value;
+            let zip = document.getElementById("zip").value;
+            let gender = document.getElementById("gender").value;
+            let terms = document.getElementById("terms").checked;
+
+            let isValid = true;
+
+            if (name == "") {
+                document.getElementById("name-error").innerHTML = "Name is required";
+                document.getElementById("name-error").style.color = "red";
+                isValid = false;
+            }
+
+            if (email == "" || !email.includes("@")) {
+                document.getElementById("email-error").innerHTML = "Valid email is required";
+                document.getElementById("email-error").style.color = "red";
+                isValid = false;
+            }
+            if (pass.length < 6) {
+                document.getElementById("pass-error").innerHTML = "Password must be 6+ chars";
+                document.getElementById("pass-error").style.color = "red";
+                isValid = false;
+            }
+
+            if (pass !== confirm || confirm == "") {
+                document.getElementById("confirm-error").innerHTML = "Passwords do not match";
+                document.getElementById("confirm-error").style.color = "red";
+                isValid = false;
+            }
+
+            if (phone.length !== 10) {
+                document.getElementById("phone-error").innerHTML = "Enter a 10-digit phone number";
+                document.getElementById("phone-error").style.color = "red";
+                isValid = false;
+            }
+
+            if (age < 18) {
+                document.getElementById("age-error").innerHTML = "Must be at least 18";
+                document.getElementById("age-error").style.color = "red";
+                isValid = false;
+            }
+
+            if (city == "") {
+                document.getElementById("city-error").innerHTML = "City is required";
+                document.getElementById("city-error").style.color = "red";
+                isValid = false;
+            }
+
+            if (zip == "") {
+                document.getElementById("zip-error").innerHTML = "Zip code is required";
+                document.getElementById("zip-error").style.color = "red";
+                isValid = false;
+            }
+
+            if (gender == "") {
+                document.getElementById("gender-error").innerHTML = "Please select gender";
+                document.getElementById("gender-error").style.color = "red";
+                isValid = false;
+            }
+
+            if (!terms) {
+                document.getElementById("terms-error").innerHTML = "Accept terms to continue";
+                document.getElementById("terms-error").style.color = "red";
+                isValid = false;
+            }
+
+            if (isValid) {
+                document.getElementById("msg").innerHTML = "Form submitted successfully!";
+                document.getElementById("msg").style.color = "green";
+                form.reset();
+            } else {
+                document.getElementById("msg").innerHTML = "";
+            }
+        });
+    </script>
+</body>
+</html>

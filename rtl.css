@@ -1,0 +1,35 @@
+/* ==========================================================================
+   VÉRTEX ALPS - RTL STYLES
+   ========================================================================== */
+
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .card-tag {
+  right: auto;
+  left: 14px;
+}
+
+[dir="rtl"] .hero-stat-card {
+  left: auto;
+  right: -24px;
+}
+
+[dir="rtl"] .header-actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .sidebar {
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .footer-links a:hover {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .address-item {
+  flex-direction: row;
+}
