@@ -27,21 +27,40 @@
   <!-- Dashboard carries no public navigation bar or footer -->
   <div class="dashboard-layout">
     <aside class="sidebar">
-      <a href="index.html" class="sidebar-brand">
-        <div class="brand-badge" style="width:32px; height:32px;">
+      <a href="index.html" class="sidebar-brand" style="display:flex; align-items:center; gap:12px;">
+        <div class="brand-badge" style="width:36px; height:36px; flex-shrink:0;">
           <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
             <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
             <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
             <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
           </svg>
         </div>
-        <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <span class="brand-text" style="font-size:1.1rem; letter-spacing:-0.01em;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+          <span style="font-size:0.58rem; color:var(--text-muted); letter-spacing:0.12em; text-transform:uppercase; font-weight:700;">SKI & SNOWBOARD CO.</span>
+        </div>
       </a>
 
       <nav class="sidebar-menu" aria-label="Dashboard sections">
         <button class="side-nav-item active" data-tab="tab-overview" type="button">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
           <span class="side-label">Overview</span>
+        </button>
+        <button class="side-nav-item" data-tab="tab-analytics" type="button">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          <span class="side-label">Analytics</span>
+        </button>
+        <button class="side-nav-item" data-tab="tab-users" type="button">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span class="side-label">Users</span>
+        </button>
+        <button class="side-nav-item" data-tab="tab-orders" type="button">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="side-label">Orders</span>
+        </button>
+        <button class="side-nav-item" data-tab="tab-messages" type="button">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span class="side-label">Messages</span>
         </button>
         <button class="side-nav-item" data-tab="tab-reserve" type="button">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
@@ -148,18 +167,132 @@
               <table class="data-table">
                 <thead><tr><th>Date</th><th>Activity</th><th>Depot</th><th>Status</th></tr></thead>
                 <tbody>
-                  <tr><td>19 Sep</td><td>Skis collected, pod 42-B</td><td>Base gondola</td><td><span class="status-pill ok">Complete</span></td></tr>
-                  <tr><td>19 Sep</td><td>Boot shell punched, left ankle</td><td>Fitting lab</td><td><span class="status-pill ok">Complete</span></td></tr>
-                  <tr><td>20 Sep</td><td>Overnight wax for cold snow</td><td>Tuning bay</td><td><span class="status-pill ok">Complete</span></td></tr>
-                  <tr><td>21 Sep</td><td>Carving clinic, 09:30</td><td>Run 3 meeting point</td><td><span class="status-pill info">Booked</span></td></tr>
-                  <tr><td>22 Sep</td><td>Return due by 17:00</td><td>Pod 42-B</td><td><span class="status-pill warn">Upcoming</span></td></tr>
+                  <tr><td>19 Sep</td><td>Skis collected, pod 42-B</td><td>Base gondola</td><td><span class="status-pill ok">Complete</span>[cite: 2]</td></tr>
+                  <tr><td>19 Sep</td><td>Boot shell punched, left ankle</td><td>Fitting lab</td><td><span class="status-pill ok">Complete</span>[cite: 2]</td></tr>
+                  <tr><td>20 Sep</td><td>Overnight wax for cold snow</td><td>Tuning bay</td><td><span class="status-pill ok">Complete</span>[cite: 2]</td></tr>
+                  <tr><td>21 Sep</td><td>Carving clinic, 09:30</td><td>Run 3 meeting point</td><td><span class="status-pill info">Booked</span>[cite: 2]</td></tr>
+                  <tr><td>22 Sep</td><td>Return due by 17:00</td><td>Pod 42-B</td><td><span class="status-pill warn">Upcoming</span>[cite: 2]</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
         </section>
 
-        <!-- TAB 2: RESERVE GEAR -->
+        <!-- TAB: ANALYTICS -->
+        <section class="dash-tab-section" id="tab-analytics">
+          <div class="metric-grid">
+            <div class="metric-card">
+              <span style="font-size:0.84rem; color:var(--text-muted);">Total Vertical (m)</span>
+              <div class="metric-val">14,850m</div>
+            </div>
+            <div class="metric-card">
+              <span style="font-size:0.84rem; color:var(--text-muted);">Days on Snow</span>
+              <div class="metric-val">12 Days</div>
+            </div>
+            <div class="metric-card">
+              <span style="font-size:0.84rem; color:var(--text-muted);">Top Speed</span>
+              <div class="metric-val">74.2 km/h</div>
+            </div>
+            <div class="metric-card">
+              <span style="font-size:0.84rem; color:var(--text-muted);">Rental Savings</span>
+              <div class="metric-val" style="color:var(--status-success);">$145.00</div>
+            </div>
+          </div>
+
+          <div class="dash-panel">
+            <h3>Season Performance Metrics</h3>
+            <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:18px;">Track your slope statistics, equipment utilization efficiency, and historical resort activity.</p>
+            <div class="grid-2" style="gap:20px;">
+              <div class="card pad-card">
+                <h4 style="margin-bottom:8px;">Terrain Breakdown</h4>
+                <ul style="list-style:none; padding:0; margin:0; font-size:0.9rem; color:var(--text-muted);">
+                  <li style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--border-color);"><span>Groomers (Piste)</span> <strong style="color:var(--secondary);">55%</strong></li>
+                  <li style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--border-color);"><span>Powder & Bowls</span> <strong style="color:var(--secondary);">30%</strong></li>
+                  <li style="display:flex; justify-content:space-between; padding:6px 0;"><span>Park & Trees</span> <strong style="color:var(--secondary);">15%</strong></li>
+                </ul>
+              </div>
+              <div class="card pad-card">
+                <h4 style="margin-bottom:8px;">Equipment Wear Analysis</h4>
+                <ul style="list-style:none; padding:0; margin:0; font-size:0.9rem; color:var(--text-muted);">
+                  <li style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--border-color);"><span>Edge Sharpness</span> <strong style="color:var(--status-success);">Good (88%)</strong></li>
+                  <li style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--border-color);"><span>Base Wax Status</span> <strong style="color:var(--status-warning);">Needs Refresh</strong></li>
+                  <li style="display:flex; justify-content:space-between; padding:6px 0;"><span>Binding DIN Check</span> <strong style="color:var(--status-success);">Passed (6.5)</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: USERS -->
+        <section class="dash-tab-section" id="tab-users">
+          <div class="dash-panel">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:18px;">
+              <div>
+                <h3>Crew Members & Linked Riders</h3>
+                <p style="color:var(--text-muted); font-size:0.92rem; margin:4px 0 0;">Manage group bookings, family passes, and secondary rider profiles.</p>
+              </div>
+              <button class="btn btn-primary btn-sm" type="button" onclick="document.querySelector('[data-tab=\'tab-reserve\']').click();">Add Rider to Crew</button>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Rider Name</th><th>Package</th><th>Boot Size</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Erik Lindgren</strong> (Primary)</td><td>Apex all-mountain pro</td><td>27.5 Mondo</td><td><span class="status-pill ok">Active</span></td></tr>
+                  <tr><td>Sarah Lindgren</td><td>Glacier twin snowboard</td><td>24.5 Mondo</td><td><span class="status-pill ok">Active</span></td></tr>
+                  <tr><td>Lucas Lindgren</td><td>Junior grom performance ski</td><td>21.0 Mondo</td><td><span class="status-pill info">Reserved</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: ORDERS -->
+        <section class="dash-tab-section" id="tab-orders">
+          <div class="dash-panel">
+            <h3>Rental Orders & History</h3>
+            <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:18px;">Review active and past equipment orders, receipts, and fulfillment status.</p>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Order ID</th><th>Equipment / Items</th><th>Dates</th><th>Total</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>VX-889104</strong></td><td>Apex skis & Salomon BOA boots</td><td>18 Dec &ndash; 24 Dec 2026</td><td>$468.00</td><td><span class="status-pill ok">Active</span>[cite: 2]</td></tr>
+                  <tr><td><strong>VX-871620</strong>[cite: 2]</td><td>Mountain pro, 2 riders[cite: 2]</td><td>12 &ndash; 18 Feb 2026[cite: 2]</td><td>$522.00[cite: 2]</td><td><span class="status-pill ok">Completed</span></td></tr>
+                  <tr><td><strong>VX-844907</strong>[cite: 2]</td><td>Family of four[cite: 2]</td><td>27 &ndash; 30 Dec 2025[cite: 2]</td><td>$418.20[cite: 2]</td><td><span class="status-pill ok">Completed</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: MESSAGES -->
+        <section class="dash-tab-section" id="tab-messages">
+          <div class="dash-panel">
+            <h3>Support & Technician Messages</h3>
+            <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:18px;">Direct communication channel with your boot fitter, ski tuner, and resort concierge.</p>
+            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;">
+              <div style="padding:14px; background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md);">
+                <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                  <strong>Master Boot Fitter (Hans)</strong>
+                  <span style="font-size:0.78rem; color:var(--text-muted);">Yesterday, 16:40</span>
+                </div>
+                <p style="margin:0; font-size:0.9rem; color:var(--text-muted);">Hey Erik, we finished punching the left ankle shell on your boots. It should feel much better on your morning run.</p>
+              </div>
+              <div style="padding:14px; background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md);">
+                <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                  <strong>Vértex Concierge</strong>
+                  <span style="font-size:0.78rem; color:var(--text-muted);">22 Sep, 09:15</span>
+                </div>
+                <p style="margin:0; font-size:0.9rem; color:var(--text-muted);">Your locker key (Pod 42-B) has been successfully activated. Enjoy the fresh powder!</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <input type="text" id="user-message-input" class="form-input" placeholder="Type a message to your technician or concierge..." style="flex:1;">
+              <button class="btn btn-primary btn-sm" id="send-message-btn" type="button">Send</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 2 (ORIGINAL): RESERVE GEAR -->
         <section class="dash-tab-section" id="tab-reserve">
           <div class="dash-panel">
             <h3>Reserve gear for you and your crew</h3>
@@ -223,7 +356,7 @@
           </div>
         </section>
 
-        <!-- TAB 3: RETURNS -->
+        <!-- TAB 3 (ORIGINAL): RETURNS -->
         <section class="dash-tab-section" id="tab-returns">
           <div class="dash-panel">
             <h3>Current rental and drop-off</h3>
@@ -261,7 +394,7 @@
           </div>
         </section>
 
-        <!-- TAB 4: LESSONS -->
+        <!-- TAB 4 (ORIGINAL): LESSONS -->
         <section class="dash-tab-section" id="tab-lessons">
           <div class="dash-panel">
             <h3>Add a clinic to this trip</h3>
@@ -316,7 +449,7 @@
           </div>
         </section>
 
-        <!-- TAB 5: RIDER PROFILE -->
+        <!-- TAB 5 (ORIGINAL): RIDER PROFILE -->
         <section class="dash-tab-section" id="tab-profile">
           <div class="dash-panel">
             <h3>Rider profile</h3>
@@ -364,7 +497,7 @@
           </div>
         </section>
 
-        <!-- TAB 6: PAYMENTS -->
+        <!-- TAB 6 (ORIGINAL): PAYMENTS -->
         <section class="dash-tab-section" id="tab-payments">
           <div class="dash-panel">
             <h3>Payment methods</h3>

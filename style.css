@@ -24,6 +24,9 @@
   --text-muted: #4a5f70;
   --border-color: #dfe8ef;
 
+  --header-bg: rgba(255, 255, 255, 0.94);
+  --header-border: var(--border-color);
+
   --footer-bg: #0b1d28;
   --footer-text: #f8fafc;
   --footer-muted: #9fb3c2;
@@ -58,6 +61,9 @@ body.dark-mode {
   --secondary-hover: #e2e8f0;
   --primary-soft: rgba(0, 164, 228, 0.16);
 
+  --header-bg: rgba(6, 14, 20, 0.92);
+  --header-border: #1c3549;
+
   --footer-bg: #03080c;
   --footer-text: #ffffff;
   --footer-muted: #b9c8d4;
@@ -76,6 +82,7 @@ body.dark-mode {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
+  background-color: var(--bg-main);
 }
 
 body {
@@ -300,22 +307,39 @@ body.dark-mode .brand-logo span.brand-text { color: #ffffff; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.94);
+  background-color: var(--header-bg);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border-color);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--header-border);
   transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .header.scrolled { box-shadow: var(--shadow-md); }
 
-body.dark-mode .header { background-color: rgba(6, 14, 20, 0.92); }
-
 .nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 78px;
+  min-height: 78px;
+  padding: 10px 0;
 }
+
+.brand-text-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-tagline {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.footer-brand .brand-tagline { color: var(--footer-muted); }
 
 .nav-menu {
   display: flex;
@@ -455,6 +479,18 @@ body.dark-mode .hero-concierge {
   grid-template-columns: 1.15fr 0.85fr;
   gap: 54px;
   align-items: center;
+}
+
+.hero-grid.reverse {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.hero-grid.reverse .hero-visual {
+  order: -1;
+}
+
+@media (max-width: 1024px) {
+  .hero-grid.reverse .hero-visual { order: 0; }
 }
 
 .badge {

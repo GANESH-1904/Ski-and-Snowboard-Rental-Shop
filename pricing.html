@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b1d28'/%3E%3Cpolygon points='50,18 84,80 66,80 50,50 34,80 16,80' fill='%2300a4e4'/%3E%3Cpolygon points='50,18 66,80 50,50' fill='%23ffffff'/%3E%3Cpath d='M20,72 Q50,92 80,72' stroke='%2300a4e4' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml">
   <script>
     (function () {
       try {
@@ -27,6 +28,7 @@ img{display:block;max-width:100%;}
 .img-hover,.card-img-wrapper,.gallery-item,.hero-img-box{overflow:hidden;}
 .img-hover img,.card-img-wrapper img,.gallery-item img,.hero-img-box img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .55s ease;}
 .img-hover:hover img,.card:hover .card-img-wrapper img,.gallery-item:hover img,.hero-img-box:hover img{transform:scale(1.06);filter:saturate(1.12) contrast(1.04);}
+.hero-img-box img, .img-hover img { background: linear-gradient(135deg, #dcecf6 0%, #7aa6bd 100%); }
 </style>
 </head>
 <body>
@@ -44,7 +46,10 @@ img{display:block;max-width:100%;}
             <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
           </svg>
         </div>
-        <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+        <div class="brand-text-group">
+          <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+          <span class="brand-tagline">Ski &amp; Snowboard Co.</span>
+        </div>
       </a>
 
       <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
@@ -82,7 +87,7 @@ img{display:block;max-width:100%;}
           <svg class="icon-moon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
         <button class="icon-toggle-btn" id="rtl-toggle" title="Switch text direction" aria-label="Switch text direction">RTL</button>
-        <a href="login.html" class="btn btn-secondary btn-sm">Sign in</a>
+        <a href="login.html" class="btn btn-primary btn-sm">Sign in</a>
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -92,19 +97,44 @@ img{display:block;max-width:100%;}
 
   <main id="main-content">
 
+    <!-- SECTION 0: PRICING HERO BANNER -->
+    <section class="hero">
+      <canvas id="snow-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-grid reverse">
+        <div class="hero-visual">
+          <div class="hero-img-box">
+            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80" alt="Technician fitting and adjusting ski equipment at a professional workshop bench" width="1000" height="700" loading="lazy">
+          </div>
+          <div class="hero-stat-card">
+            <svg width="34" height="34" fill="var(--primary)" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 2H3a1 1 0 0 0-1 1v10.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l9-9a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 17 2zM7 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
+            <div>
+              <strong>No hidden surcharges</strong>
+              <p style="font-size:0.85rem; color:var(--text-muted);">Every rate on this page is exactly what you pay at the counter</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <span class="badge">Season 2026 rates</span>
+          <h1 class="hero-title">One price, everything included.</h1>
+          <p class="hero-desc">Heated locker access, overnight drying, daily edge and wax, and unlimited gear swaps are part of every rate on this page.</p>
+          <div class="hero-cta-group">
+            <a href="#fleet-rates" class="btn btn-primary">See package rates</a>
+            <a href="#main-content" class="btn btn-secondary">Estimate my trip</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION 1: RATES INTRO -->
-    <section class="section page-head">
+    <section class="section page-head" id="fleet-rates">
       <div class="container">
         <div class="section-header">
-          <span class="badge">Season 2026 rates</span>
-          <h1 style="font-size:2.6rem; color:var(--secondary); margin-bottom:12px;">One price, everything included.</h1>
-          <p>Heated locker access, overnight drying, daily edge and wax, and unlimited gear swaps are part of every rate below. There are no resort surcharges added at the counter.</p>
+          <span class="badge">Trip Estimator</span>
+          <h2 style="font-size:2.1rem;">Estimate your trip cost</h2>
+          <p>Pick a package and the number of riders and days. Multi-day and family/group discounts are applied automatically, the same way they are at checkout.</p>
         </div>
 
-        <!-- NEW: LIVE RENTAL COST ESTIMATOR -->
         <div class="split-panel" style="margin-bottom:44px;">
-          <h3 style="font-size:1.3rem; color:var(--secondary); margin-bottom:6px;">Estimate your trip cost</h3>
-          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:22px;">Pick a package and the number of riders and days. Multi-day and family/group discounts are applied automatically, the same way they are at checkout.</p>
           <div class="estimator-box">
             <div class="form-row" style="margin-bottom:0;">
               <label class="form-label" for="est-package">Package</label>
@@ -133,7 +163,10 @@ img{display:block;max-width:100%;}
           </div>
         </div>
 
-        <!-- SECTION 2: THREE PACKAGES -->
+        <div class="section-header">
+          <span class="badge">Packages</span>
+          <h2 style="font-size:2.1rem;">Three simple packages</h2>
+        </div>
         <div class="grid-3" style="align-items:center; margin-bottom:20px;">
           <div class="pricing-card">
             <h3 style="font-size:1.35rem; color:var(--secondary);">Recreation</h3>
@@ -186,6 +219,7 @@ img{display:block;max-width:100%;}
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Discounts</span>
           <h2>Family and group discounts</h2>
           <p>Applied automatically when riders are on one booking. Discounts stack with the multi-day savings below.</p>
         </div>
@@ -230,6 +264,7 @@ img{display:block;max-width:100%;}
     <section class="section">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Multi-Day Savings</span>
           <h2>The longer you stay, the less you pay</h2>
           <p>These unlock on their own as soon as the dates are in your booking.</p>
         </div>
@@ -257,6 +292,7 @@ img{display:block;max-width:100%;}
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Add-Ons</span>
           <h2>Add-ons and extras</h2>
           <p>Everything else on the price list, so nothing is a surprise at the counter.</p>
         </div>
@@ -279,23 +315,23 @@ img{display:block;max-width:100%;}
       </div>
     </section>
 
-    <!-- SECTION 6: LESSON BUNDLES -->
+    <!-- SECTION 6: GUIDED MOUNTAIN DAYS -->
     <section class="section">
       <div class="container grid-2" style="align-items:center;">
         <div>
-          <span class="badge">Gear and teaching together</span>
-          <h2 style="font-size:2.1rem; color:var(--secondary); margin-bottom:16px;">Bundle a clinic with your rental</h2>
-          <p style="color:var(--text-muted); margin-bottom:18px;">Book a lesson on the same reservation as your gear and the clinic price drops. Your coach also sees what you are riding, which saves the first ten minutes of every session.</p>
+          <span class="badge">Gear and guiding together</span>
+          <h2 style="font-size:2.1rem; color:var(--secondary); margin-bottom:16px;">Add a guided mountain day to your rental</h2>
+          <p style="color:var(--text-muted); margin-bottom:18px;">Heading above the lifts? Book a guide on the same reservation as your gear and the guiding price drops. Your guide sees exactly what you are riding, so the setup is checked before you leave the trailhead.</p>
           <ul class="feature-list" style="margin-bottom:22px;">
-            <li>One clinic with any package: 10 percent off the clinic</li>
-            <li>Three clinics with the same coach: 15 percent off the block</li>
-            <li>Family private day plus family gear: 20 percent off both</li>
-            <li>Children's academy week plus junior gear: gear charged at half rate</li>
+            <li>One guided day with any package: 10 percent off the guiding fee</li>
+            <li>Three guided days with the same guide: 15 percent off the block</li>
+            <li>Backcountry package plus a guided day: safety set and skins already included</li>
+            <li>Morning snow bulletin and route briefing before every departure</li>
           </ul>
-          <a href="lessons.html" class="btn btn-primary">See the clinics</a>
+          <a href="lessons.html" class="btn btn-primary">See guided days and clinics</a>
         </div>
         <div class="img-hover img-tall">
-          <img src="https://images.unsplash.com/photo-1642841220705-b03194dd9de7?auto=format&fit=crop&w=1400&q=85" alt="Group of skiers heading down a snowy slope together during a lesson" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80" alt="Glaciated alpine peaks above the treeline, the terrain reached on a guided backcountry day" loading="lazy">
         </div>
       </div>
     </section>
@@ -313,7 +349,7 @@ img{display:block;max-width:100%;}
               <a href="rentals.html" class="btn btn-secondary">Browse demo skis</a>
             </div>
             <div class="img-hover" style="border-radius:var(--radius-md);">
-              <img src="https://images.unsplash.com/photo-1596473537038-44039a055ded?auto=format&fit=crop&w=1200&q=85" alt="Skier trying a red demo ski on a sunny slope" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1596473535762-ce7f43470748?auto=format&fit=crop&w=1200&q=85" alt="Skier trying a red demo ski on a sunny slope" loading="lazy">
             </div>
           </div>
         </div>
@@ -324,6 +360,7 @@ img{display:block;max-width:100%;}
     <section class="section">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Damage Waiver</span>
           <h2>Should you take the damage waiver?</h2>
           <p>Four dollars a day. Here is exactly what changes if you do.</p>
         </div>
@@ -355,6 +392,7 @@ img{display:block;max-width:100%;}
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Season Rates</span>
           <h2>Season and local rates</h2>
           <p>For riders who are here more than a week at a time.</p>
         </div>
@@ -385,16 +423,17 @@ img{display:block;max-width:100%;}
     <section class="section">
       <div class="container grid-2" style="align-items:center;">
         <div class="img-hover img-tall">
-          <img src="https://images.unsplash.com/photo-1616429553002-faf23468952d?auto=format&fit=crop&w=1400&q=85" alt="Rider in an orange jacket heading out on freshly tuned skis" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" alt="Workshop technician inspecting the bases and edges of skis at a service bench" loading="lazy">
         </div>
         <div>
           <span class="badge">In every price on this page</span>
-          <h2 style="font-size:2.1rem; color:var(--secondary); margin-bottom:16px;">No extras bolted on at the counter</h2>
+          <h2 style="font-size:2.1rem; color:var(--secondary); margin-bottom:16px;">A technician has been over your gear before you</h2>
+          <p style="color:var(--text-muted); margin-bottom:16px;">Every ski and board is checked by hand at the workshop bench each night. That work is part of the day rate, not a line added at the counter.</p>
           <ul class="feature-list" style="margin-bottom:22px;">
-            <li>Bootfitting session and unlimited adjustments during your rental</li>
-            <li>Bindings set and tested on the bench for your height, weight and style</li>
+            <li>Base and edge inspection before every morning</li>
+            <li>Nightly wax, with a stone grind on multi-day rentals</li>
+            <li>Bindings set and tested for your height, weight and style</li>
             <li>Heated locker with overnight drying and cleaning</li>
-            <li>Nightly wax and an edge check before every morning</li>
             <li>Gear swaps at any of the three depots, as often as you want</li>
             <li>Deposit released within 30 minutes of drop-off</li>
           </ul>
@@ -407,6 +446,7 @@ img{display:block;max-width:100%;}
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">FAQ</span>
           <h2>About payment and rates</h2>
           <p>The questions the desk answers most often.</p>
         </div>
@@ -440,6 +480,7 @@ img{display:block;max-width:100%;}
       <div class="container">
         <div class="newsletter-box">
           <div class="newsletter-copy">
+            <span class="badge" style="margin-bottom:10px;">Snow Report</span>
             <h3>Get the 6am snow report</h3>
             <p>One short email each morning of the season: overnight snowfall, groomed runs, lift status and which skis our techs are handing out that day.</p>
           </div>
@@ -482,12 +523,15 @@ img{display:block;max-width:100%;}
           <a href="index.html" class="brand-logo" style="color:var(--footer-text);" aria-label="VERTEX ALPS home">
             <div class="brand-badge">
               <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-            <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
-            <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
-            <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
-          </svg>
+                <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
+                <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
+                <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
+              </svg>
             </div>
-            <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+            <div class="brand-text-group">
+              <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+              <span class="brand-tagline" style="display:block; font-size:0.75rem; color:var(--footer-text-muted, #94a3b8); margin-top:2px;">Ski &amp; Snowboard Co.</span>
+            </div>
           </a>
           <p>Slopeside ski and snowboard rental depots. Precision-tuned gear and custom-fitted boots for mountain riders since 2012.</p>
           <div class="footer-social-cluster">
@@ -581,5 +625,37 @@ img{display:block;max-width:100%;}
   </div>
 
   <script src="main.js"></script>
+
+  <!-- Image safety net: 1) try the backup photo in data-alt, 2) then a built-in mountain illustration, so no broken-image icon ever shows -->
+  <script>
+    (function () {
+      var svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' preserveAspectRatio='xMidYMid slice'>" +
+        "<defs><linearGradient id='g' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0b1d28'/><stop offset='1' stop-color='#2a5d7a'/></linearGradient></defs>" +
+        "<rect width='1200' height='800' fill='url(#g)'/>" +
+        "<polygon points='0,800 260,340 460,620 640,240 900,600 1050,420 1200,640 1200,800' fill='#e8f3f9'/>" +
+        "<polygon points='640,240 720,380 640,330 580,400' fill='#00a4e4' opacity='.6'/></svg>";
+      var fallback = "data:image/svg+xml," + encodeURIComponent(svg);
+      function fix(img) {
+        var alt = img.getAttribute('data-alt');
+        if (alt && !img.getAttribute('data-tried')) {
+          img.setAttribute('data-tried', '1');
+          img.src = alt;
+          return;
+        }
+        if (img.getAttribute('data-fallback')) return;
+        img.setAttribute('data-fallback', '1');
+        img.removeAttribute('srcset');
+        img.src = fallback;
+      }
+      document.addEventListener('error', function (e) {
+        if (e.target && e.target.tagName === 'IMG') fix(e.target);
+      }, true);
+      window.addEventListener('load', function () {
+        document.querySelectorAll('img').forEach(function (img) {
+          if (img.complete && img.naturalWidth === 0 && img.src) fix(img);
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

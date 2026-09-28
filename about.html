@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b1d28'/%3E%3Cpolygon points='50,18 84,80 66,80 50,50 34,80 16,80' fill='%2300a4e4'/%3E%3Cpolygon points='50,18 66,80 50,50' fill='%23ffffff'/%3E%3Cpath d='M20,72 Q50,92 80,72' stroke='%2300a4e4' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml">
   <script>
     (function () {
       try {
@@ -21,6 +22,46 @@
       } catch (e) {}
     })();
   </script>
+
+<style>
+/* Team: compact circular portraits (same look as the coaches on the lessons page) */
+.team-photo{
+  width:190px;
+  height:190px;
+  margin:26px auto 0;
+  border-radius:50%;
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(135deg,#dcecf6 0%,#7aa6bd 100%);
+}
+.team-photo img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 20%;
+  display:block;
+  transition:transform .55s ease;
+}
+.card:hover .team-photo img{transform:scale(1.04);}
+.team-role-tag{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:10px;
+  z-index:2;
+  padding:4px 10px;
+  border-radius:999px;
+  background:rgba(11,29,40,.82);
+  color:#fff;
+  font-size:.66rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+</style>
 </head>
 <body>
 
@@ -37,7 +78,10 @@
             <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
           </svg>
         </div>
-        <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+        <div class="brand-text-group">
+          <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+          <span class="brand-tagline">Ski &amp; Snowboard Co.</span>
+        </div>
       </a>
 
       <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
@@ -75,7 +119,7 @@
           <svg class="icon-moon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
         <button class="icon-toggle-btn" id="rtl-toggle" title="Switch text direction" aria-label="Switch text direction">RTL</button>
-        <a href="login.html" class="btn btn-secondary btn-sm">Sign in</a>
+        <a href="login.html" class="btn btn-primary btn-sm">Sign in</a>
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -98,7 +142,8 @@
           </div>
         </div>
         <div class="img-hover img-tall">
-          <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=900&q=80" alt="Panoramic view across glaciated alpine peaks" loading="lazy">
+          <!-- Hero: ski technician tuning skis in a workshop -->
+          <img src="https://images.unsplash.com/photo-1565992441121-4367c2967103?auto=format&fit=crop&w=1200&q=80" alt="Ski technician tuning a pair of skis in a workshop" loading="lazy">
         </div>
       </div>
     </section>
@@ -107,6 +152,7 @@
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Our Timeline</span>
           <h2>How the depot grew</h2>
           <p>Fourteen seasons, one mountain, and a workshop that kept outgrowing its room.</p>
         </div>
@@ -145,40 +191,51 @@
       </div>
     </section>
 
-    <!-- SECTION 3: BOOT ANATOMY -->
+    <!-- SECTION 3 (NEW): OUR DEPOTS - replaces the boot anatomy section -->
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <h2>Where ski boots hurt, and what we do about it</h2>
-          <p>Choose a pressure point to see how the lab treats it. These four account for almost every boot complaint we hear.</p>
+          <span class="badge">Our Depots</span>
+          <h2>Three depots, one mountain</h2>
+          <p>Pick up, swap or drop off wherever you happen to be on the hill. Your booking works at all three.</p>
         </div>
-        <div class="grid-2" style="align-items:center;">
-          <div>
-            <div class="boot-anatomy-diagram">
-              <button type="button" class="hotspot-pill active" data-name="Inner ankle bone" data-info="A heated shell press pushes the plastic out by three to five millimetres exactly over the bone, which removes the sharp rubbing that shows up an hour into the first morning.">
-                <strong>Inner ankle bone</strong>
-                <span>The most common pressure point of all</span>
-              </button>
-              <button type="button" class="hotspot-pill" data-name="Outer forefoot" data-info="We widen the toe box with a localised heat stretch so the little toe joint stops going numb on long traverses, without making the whole boot sloppy.">
-                <strong>Outer forefoot</strong>
-                <span>Numb toes and bunion rub</span>
-              </button>
-              <button type="button" class="hotspot-pill" data-name="Top of the foot" data-info="A cork footbed moulded to your arch spreads the load away from the blood vessels over the instep, which is usually why feet go cold before they go sore.">
-                <strong>Top of the foot</strong>
-                <span>Buckle pressure and cold feet</span>
-              </button>
-              <button type="button" class="hotspot-pill" data-name="Heel pocket" data-info="Moulded foam packs out the space behind the heel so it stops lifting. Heel lift is the main cause of blisters and of skis that feel slow to respond.">
-                <strong>Heel pocket</strong>
-                <span>Heel lift and blisters</span>
-              </button>
-            </div>
-            <div id="hotspot-desc">
-              <strong>Inner ankle bone:</strong> A heated shell press pushes the plastic out by three to five millimetres exactly over the bone, which removes the sharp rubbing that shows up an hour into the first morning.
-            </div>
+        <div class="grid-3">
+          <div class="card pad-card">
+            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <span class="badge" style="margin-bottom:10px;">Valley floor</span>
+            <h3 style="margin-bottom:8px;">Base depot alpha</h3>
+            <p style="margin-bottom:14px;">The original workshop, now at the foot of the gondola. This is where the heavy work happens.</p>
+            <ul class="feature-list">
+              <li>Bootfitting lab and tuning bay</li>
+              <li>Main heated locker wall</li>
+              <li>Full fleet, sized and prepared each night</li>
+            </ul>
           </div>
-          <div class="img-hover img-tall">
-            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" alt="Bootfitter checking foot alignment inside a ski boot shell" loading="lazy">
+          <div class="card pad-card">
+            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <span class="badge" style="margin-bottom:10px;">Mid-mountain</span>
+            <h3 style="margin-bottom:8px;">Mid-station depot</h3>
+            <p style="margin-bottom:14px;">Halfway up, for the moment a boot pinches or the snow turns and you want different skis.</p>
+            <ul class="feature-list">
+              <li>Gear swaps without riding down</li>
+              <li>Quick binding and boot adjustments</li>
+              <li>Lockers for a lunch-break drop-off</li>
+            </ul>
           </div>
+          <div class="card pad-card">
+            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <span class="badge" style="margin-bottom:10px;">Summit side</span>
+            <h3 style="margin-bottom:8px;">North peak depot</h3>
+            <p style="margin-bottom:14px;">The quiet one by the summit gate, used by guided groups and riders heading for the high terrain.</p>
+            <ul class="feature-list">
+              <li>Backcountry kit checks before the gate</li>
+              <li>Safety equipment issued for guided days</li>
+              <li>Lockers for skins, packs and spare layers</li>
+            </ul>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:30px;">
+          <a href="contact.html" class="btn btn-primary">Find your depot</a>
         </div>
       </div>
     </section>
@@ -187,6 +244,7 @@
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Our Standards</span>
           <h2>Four things we refuse to compromise on</h2>
           <p>The standard applied to every ski tune, every board edge and every locker pod before it goes out.</p>
         </div>
@@ -219,7 +277,8 @@
     <section class="section">
       <div class="container grid-2" style="align-items:center;">
         <div class="img-hover img-tall">
-          <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=800&q=80" alt="Stone grinding machine finishing the base of a ski" loading="lazy">
+          <!-- CHANGED: no longer the hero image; a skier carving on a freshly tuned edge -->
+          <img src="https://images.unsplash.com/photo-1596473535762-ce7f43470748?auto=format&fit=crop&w=1200&q=80" alt="Skier carving a clean turn on a groomed run with freshly tuned edges" loading="lazy">
         </div>
         <div>
           <span class="badge">The tuning bay</span>
@@ -252,7 +311,8 @@
           <a href="pricing.html" class="btn btn-secondary">See our rates</a>
         </div>
         <div class="img-hover img-tall">
-          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Mountain stream running through snow-covered pines" loading="lazy">
+          <!-- CHANGED: snow-covered alpine summit, on theme with the ski business -->
+          <img src="https://images.unsplash.com/photo-1498576260462-eefc9d0ce9f7?auto=format&fit=crop&w=1200&q=80" alt="Snow-covered alpine summit above the ski area" loading="lazy">
         </div>
       </div>
     </section>
@@ -281,40 +341,44 @@
       </div>
     </section>
 
-    <!-- SECTION 8: THE TEAM -->
+    <!-- SECTION 8: THE TEAM (CHANGED: compact circular portraits, like the coaches on the lessons page) -->
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Meet The Team</span>
           <h2>The people behind the counter</h2>
           <p>Between them they have serviced World Cup starts, guided expeditions and fitted a great many sore feet.</p>
         </div>
         <div class="grid-3" style="align-items:stretch;">
-          <article class="card" style="overflow:hidden;">
-            <div class="card-img-wrapper" style="height:320px; overflow:hidden;">
-              <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Professional male ski workshop team member portrait" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+          <article class="card" style="overflow:hidden; text-align:center;">
+            <div class="team-photo">
+              <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Portrait of Marco Bellini, workshop director" loading="lazy">
+              <span class="team-role-tag">Workshop</span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">Lukas Meier</h3>
+              <h3 class="card-title">Marco Bellini</h3>
               <p class="card-meta"><span>Workshop director</span> <span>Co-founder</span></p>
               <p>Former Europa Cup service technician. Sets the grind and bevel standards the whole fleet is tuned to.</p>
             </div>
           </article>
-          <article class="card" style="overflow:hidden;">
-            <div class="card-img-wrapper" style="height:320px; overflow:hidden;">
-              <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Professional female ski fitting team member portrait" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+          <article class="card" style="overflow:hidden; text-align:center;">
+            <div class="team-photo">
+              <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Portrait of Elena Voss, head of bootfitting" loading="lazy">
+              <span class="team-role-tag">Bootfitting</span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">Anja Lindqvist</h3>
+              <h3 class="card-title">Elena Voss</h3>
               <p class="card-meta"><span>Head of bootfitting</span> <span>IFMGA guide</span></p>
               <p>Twenty years of expedition work. Runs the fitting lab and trains every new fitter on the bench.</p>
             </div>
           </article>
-          <article class="card" style="overflow:hidden;">
-            <div class="card-img-wrapper" style="height:320px; overflow:hidden;">
-              <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Professional male outdoor operations team member portrait" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+          <article class="card" style="overflow:hidden; text-align:center;">
+            <div class="team-photo">
+              <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Portrait of Daniel Fischer, depot operations" loading="lazy">
+              <span class="team-role-tag">Operations</span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">Camille Dufour</h3>
+              <h3 class="card-title">Daniel Fischer</h3>
               <p class="card-meta"><span>Depot operations</span> <span>Co-founder</span></p>
               <p>Designed the locker network and the swap system that lets riders change gear mid-mountain.</p>
             </div>
@@ -323,7 +387,7 @@
       </div>
     </section>
 
-    <!-- SECTION 9: INSIDE THE DEPOT -->
+    <!-- SECTION 9: INSIDE THE DEPOT (four real ski-shop photos matched to each caption) -->
     <section class="section depot-section">
       <div class="container">
         <div class="section-header">
@@ -335,7 +399,7 @@
         <div class="depot-showcase">
           <article class="depot-feature">
             <div class="depot-image">
-              <img src="https://images.pexels.com/photos/34771214/pexels-photo-34771214.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Modern ski and snowboard rental shop with equipment on display" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1636886577599-278aed686b20?auto=format&fit=crop&w=1200&q=80" alt="Pairs of skis stored on a rack, ready for the rental floor" loading="lazy">
             </div>
             <div class="depot-copy">
               <span class="depot-kicker">01 · Rental floor</span>
@@ -346,7 +410,7 @@
 
           <article class="depot-feature reverse">
             <div class="depot-image">
-              <img src="https://images.pexels.com/photos/29920625/pexels-photo-29920625.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Busy ski service station with equipment and skiers in an alpine resort" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1486684338211-1a7ced564b0d?auto=format&fit=crop&w=1200&q=80" alt="Skis riding on the outside of a gondola cabin up the mountain" loading="lazy">
             </div>
             <div class="depot-copy">
               <span class="depot-kicker">02 · Mountain service</span>
@@ -357,18 +421,18 @@
 
           <article class="depot-feature">
             <div class="depot-image">
-              <img src="https://images.pexels.com/photos/35072802/pexels-photo-35072802.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Technician working carefully on equipment at a workshop bench" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1552853662-8f707e1cb336?auto=format&fit=crop&w=1200&q=80" alt="Rows of colourful skis lined up after service, ready for the fleet" loading="lazy">
             </div>
             <div class="depot-copy">
               <span class="depot-kicker">03 · Workshop</span>
               <h3>Tuned before it leaves</h3>
-              <p>Every service pass is handled at the bench before equipment returns to the fleet, keeping the workshop focused on consistency and precision.</p>
+              <p>Every pair is serviced at the bench, then lined up by size before it returns to the fleet, so what leaves the workshop is consistent and ready to ride.</p>
             </div>
           </article>
 
           <article class="depot-feature reverse">
             <div class="depot-image">
-              <img src="https://images.pexels.com/photos/3913010/pexels-photo-3913010.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Technician working with tools at a professional fitting and workshop bench" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1638914784346-881bcdd56aa7?auto=format&fit=crop&w=1200&q=80" alt="Skier seated with skis on while boots and bindings are checked" loading="lazy">
             </div>
             <div class="depot-copy">
               <span class="depot-kicker">04 · Precision fitting</span>
@@ -389,8 +453,10 @@
       .depot-feature.reverse .depot-image,
       .depot-feature.reverse .depot-copy { order:initial; }
       .depot-image { height:235px; min-height:235px; overflow:hidden; background:#dfe5ea; }
-      .depot-image img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .5s ease; }
-      .depot-feature:hover .depot-image img { transform:scale(1.035); }
+      .depot-image img,
+      .depot-image svg { width:100%; height:100%; display:block; object-fit:cover; transition:transform .5s ease; }
+      .depot-feature:hover .depot-image img,
+      .depot-feature:hover .depot-image svg { transform:scale(1.035); }
       .depot-copy { display:flex; flex-direction:column; justify-content:center; padding:22px 24px 24px; background:linear-gradient(180deg,rgba(23,32,42,.98),rgba(27,38,49,.98)); }
       .depot-kicker { display:inline-block; margin-bottom:7px; font-size:.72rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; color:var(--primary,#b87333); }
       .depot-copy h3 { margin:0 0 8px; color:#fff; font-size:clamp(1.25rem,1.8vw,1.65rem); line-height:1.2; }
@@ -407,6 +473,7 @@
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">FAQ</span>
           <h2>About the depot</h2>
           <p>Questions we get from riders, schools and journalists.</p>
         </div>
@@ -436,6 +503,7 @@
       <div class="container">
         <div class="newsletter-box">
           <div class="newsletter-copy">
+            <span class="badge" style="margin-bottom:10px;">Snow Report</span>
             <h3>Get the 6am snow report</h3>
             <p>One short email each morning of the season: overnight snowfall, groomed runs, lift status and which skis our techs are handing out that day.</p>
           </div>
@@ -478,12 +546,15 @@
           <a href="index.html" class="brand-logo" style="color:var(--footer-text);" aria-label="VERTEX ALPS home">
             <div class="brand-badge">
               <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-            <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
-            <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
-            <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
-          </svg>
+                <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
+                <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
+                <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
+              </svg>
             </div>
-            <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+            <div class="brand-text-group">
+              <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+              <span class="brand-tagline" style="display:block; font-size:0.75rem; color:var(--footer-text-muted, #94a3b8); margin-top:2px;">Ski &amp; Snowboard Co.</span>
+            </div>
           </a>
           <p>Slopeside ski and snowboard rental depots. Precision-tuned gear and custom-fitted boots for mountain riders since 2012.</p>
           <div class="footer-social-cluster">
@@ -512,11 +583,11 @@
         <div class="footer-col">
           <h4>Depot hours</h4>
           <ul class="footer-links">
-            <li>Monday to Friday: 07:30 &ndash; 20:00</li>
-            <li>Saturday &amp; Sunday: 07:00 &ndash; 21:00</li>
+            <li>Monday to Friday: 07:30 – 20:00</li>
+            <li>Saturday &amp; Sunday: 07:00 – 21:00</li>
             <li>Gondola lockers: open 24 hours</li>
             <li>Mountain support line: 24 hours</li>
-            <li>Bootfitting lab: 08:00 &ndash; 19:00</li>
+            <li>Bootfitting lab: 08:00 – 19:00</li>
           </ul>
         </div>
 
@@ -541,7 +612,7 @@
               <svg class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               <div class="address-item-content">
                 <strong>Coordinates &amp; altitude</strong>
-                39.5801&deg; N, 105.9438&deg; W &mdash; 3,450m
+                39.5801° N, 105.9438° W — 3,450m
               </div>
             </div>
             <div class="address-item">
@@ -556,7 +627,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 V&Eacute;RTEX ALPS Rentals. All rights reserved.</p>
+        <p>&copy; 2026 VÉRTEX ALPS Rentals. All rights reserved.</p>
         <div class="footer-legal-links">
           <a href="#">Terms &amp; conditions</a>
           <a href="#">Rental damage waiver</a>
@@ -577,5 +648,31 @@
   </div>
 
   <script src="main.js"></script>
+
+  <!-- Image safety net: if any photo fails to load, swap in a built-in mountain illustration so no broken-image icon ever shows -->
+  <script>
+    (function () {
+      var svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' preserveAspectRatio='xMidYMid slice'>" +
+        "<defs><linearGradient id='g' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0b1d28'/><stop offset='1' stop-color='#2a5d7a'/></linearGradient></defs>" +
+        "<rect width='1200' height='800' fill='url(#g)'/>" +
+        "<polygon points='0,800 260,340 460,620 640,240 900,600 1050,420 1200,640 1200,800' fill='#e8f3f9'/>" +
+        "<polygon points='640,240 720,380 640,330 580,400' fill='#00a4e4' opacity='.6'/></svg>";
+      var fallback = "data:image/svg+xml," + encodeURIComponent(svg);
+      function fix(img) {
+        if (img.getAttribute('data-fallback')) return;
+        img.setAttribute('data-fallback', '1');
+        img.removeAttribute('srcset');
+        img.src = fallback;
+      }
+      document.addEventListener('error', function (e) {
+        if (e.target && e.target.tagName === 'IMG') fix(e.target);
+      }, true);
+      window.addEventListener('load', function () {
+        document.querySelectorAll('img').forEach(function (img) {
+          if (img.complete && img.naturalWidth === 0 && img.src) fix(img);
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

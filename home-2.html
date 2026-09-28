@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b1d28'/%3E%3Cpolygon points='50,18 84,80 66,80 50,50 34,80 16,80' fill='%2300a4e4'/%3E%3Cpolygon points='50,18 66,80 50,50' fill='%23ffffff'/%3E%3Cpath d='M20,72 Q50,92 80,72' stroke='%2300a4e4' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml">
   <script>
     (function () {
       try {
@@ -37,7 +38,10 @@
             <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
           </svg>
         </div>
-        <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+        <div class="brand-text-group">
+          <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+          <span class="brand-tagline">Ski &amp; Snowboard Co.</span>
+        </div>
       </a>
 
       <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
@@ -75,7 +79,7 @@
           <svg class="icon-moon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
         <button class="icon-toggle-btn" id="rtl-toggle" title="Switch text direction" aria-label="Switch text direction">RTL</button>
-        <a href="login.html" class="btn btn-secondary btn-sm">Sign in</a>
+        <a href="login.html" class="btn btn-primary btn-sm">Sign in</a>
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -117,6 +121,7 @@
     <section class="section">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Included</span>
           <h2>What the concierge week includes</h2>
           <p>Everything below is part of the service. Nothing is charged by the hour.</p>
         </div>
@@ -149,6 +154,7 @@
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Demo Fleet</span>
           <h2>The private demo fleet</h2>
           <p>Swiss and Austrian race stock kept aside for concierge guests, hand-waxed for the day you ride it.</p>
         </div>
@@ -229,6 +235,7 @@
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Valet Service</span>
           <h2>Heated cabanas and valet depots</h2>
           <p>Finish the day without walking through the village in ski boots.</p>
         </div>
@@ -274,6 +281,7 @@
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">A Day With Us</span>
           <h2>How a concierge day runs</h2>
           <p>A typical Tuesday in February, from the first message to the last pair of skis collected.</p>
         </div>
@@ -306,6 +314,7 @@
     <section class="section">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Testimonials</span>
           <h2>Notes from concierge guests</h2>
           <p>Shared with permission at the end of the last two seasons.</p>
         </div>
@@ -342,6 +351,7 @@
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">FAQ</span>
           <h2>Before you book the concierge service</h2>
           <p>The details guests usually check first.</p>
         </div>
@@ -371,6 +381,7 @@
       <div class="container">
         <div class="newsletter-box">
           <div class="newsletter-copy">
+            <span class="badge" style="margin-bottom:10px;">Snow Report</span>
             <h3>Get the 6am snow report</h3>
             <p>One short email each morning of the season: overnight snowfall, groomed runs, lift status and which skis our techs are handing out that day.</p>
           </div>
@@ -413,12 +424,15 @@
           <a href="index.html" class="brand-logo" style="color:var(--footer-text);" aria-label="VERTEX ALPS home">
             <div class="brand-badge">
               <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-            <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
-            <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
-            <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
-          </svg>
+                <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
+                <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
+                <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
+              </svg>
             </div>
-            <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+            <div class="brand-text-group">
+              <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+              <span class="brand-tagline" style="display:block; font-size:0.75rem; color:var(--footer-text-muted, #94a3b8); margin-top:2px;">Ski &amp; Snowboard Co.</span>
+            </div>
           </a>
           <p>Slopeside ski and snowboard rental depots. Precision-tuned gear and custom-fitted boots for mountain riders since 2012.</p>
           <div class="footer-social-cluster">

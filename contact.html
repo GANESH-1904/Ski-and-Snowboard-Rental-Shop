@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b1d28'/%3E%3Cpolygon points='50,18 84,80 66,80 50,50 34,80 16,80' fill='%2300a4e4'/%3E%3Cpolygon points='50,18 66,80 50,50' fill='%23ffffff'/%3E%3Cpath d='M20,72 Q50,92 80,72' stroke='%2300a4e4' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml">
   <script>
     (function () {
       try {
@@ -27,6 +28,7 @@ img{display:block;max-width:100%;}
 .img-hover,.card-img-wrapper,.gallery-item,.hero-img-box{overflow:hidden;}
 .img-hover img,.card-img-wrapper img,.gallery-item img,.hero-img-box img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .55s ease;}
 .img-hover:hover img,.card:hover .card-img-wrapper img,.gallery-item:hover img,.hero-img-box:hover img{transform:scale(1.06);filter:saturate(1.12) contrast(1.04);}
+.hero-img-box img { background: linear-gradient(135deg, #dcecf6 0%, #7aa6bd 100%); }
 </style>
 </head>
 <body>
@@ -44,7 +46,10 @@ img{display:block;max-width:100%;}
             <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
           </svg>
         </div>
-        <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+        <div class="brand-text-group">
+          <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+          <span class="brand-tagline">Ski &amp; Snowboard Co.</span>
+        </div>
       </a>
 
       <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
@@ -82,7 +87,7 @@ img{display:block;max-width:100%;}
           <svg class="icon-moon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
         <button class="icon-toggle-btn" id="rtl-toggle" title="Switch text direction" aria-label="Switch text direction">RTL</button>
-        <a href="login.html" class="btn btn-secondary btn-sm">Sign in</a>
+        <a href="login.html" class="btn btn-primary btn-sm">Sign in</a>
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -92,13 +97,41 @@ img{display:block;max-width:100%;}
 
   <main id="main-content">
 
+    <!-- SECTION 0: CONTACT HERO BANNER -->
+    <section class="hero">
+      <canvas id="snow-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">We're here to help</span>
+          <h1 class="hero-title">Real people, real fast replies.</h1>
+          <p class="hero-desc">Whatever you need on the mountain, a message here reaches an actual technician within about two hours, not a call centre.</p>
+          <div class="hero-cta-group">
+            <a href="tel:+18005552577" class="btn btn-primary">Call the dispatch line</a>
+            <a href="#c-name" class="btn btn-secondary">Send a message</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-img-box">
+            <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=1200&q=80" alt="Skiers and equipment at a busy mountain ski service station in an alpine resort" width="1000" height="700" loading="eager" fetchpriority="high">
+          </div>
+          <div class="hero-stat-card">
+            <svg width="34" height="34" fill="var(--primary)" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
+            <div>
+              <strong>Replies within 2 hours</strong>
+              <p style="font-size:0.85rem; color:var(--text-muted);">07:00 to 21:00, every day of the season</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION 1: CONTACT & FORM -->
     <section class="section page-head">
       <div class="container grid-2" style="align-items:start;">
         <div>
-          <span class="badge">Slopeside support</span>
-          <h1 style="font-size:2.7rem; color:var(--secondary); margin-bottom:16px;">Talk to the mountain team.</h1>
-          <p style="color:var(--text-muted); font-size:1.05rem; margin-bottom:28px;">Boot adjustments, chalet delivery, group bookings, lost gloves. The Gondola Plaza desk is staffed seven days a week and answers messages within about two hours.</p>
+          <span class="badge">Other ways to reach us</span>
+          <h2 style="font-size:2rem; color:var(--secondary); margin-bottom:16px;">Boots, bookings and lost gloves</h2>
+          <p style="color:var(--text-muted); font-size:1.05rem; margin-bottom:28px;">The Gondola Plaza desk is staffed seven days a week and answers messages within about two hours.</p>
 
           <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:28px;">
             <div class="checklist-item">
@@ -165,6 +198,7 @@ img{display:block;max-width:100%;}
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Our Depots</span>
           <h2>Three depots on the mountain</h2>
           <p>Collect, swap and return at whichever one you happen to be standing next to.</p>
         </div>
@@ -231,6 +265,7 @@ img{display:block;max-width:100%;}
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Groups &amp; Schools</span>
           <h2>Groups, schools and events</h2>
           <p>Bookings over eight riders are handled by a named coordinator rather than the general desk.</p>
         </div>
@@ -258,6 +293,7 @@ img{display:block;max-width:100%;}
     <section class="section">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Hours</span>
           <h2>When each service is open</h2>
           <p>Winter season hours. Summer opening runs Thursday to Sunday only.</p>
         </div>
@@ -303,6 +339,7 @@ img{display:block;max-width:100%;}
     <section class="section">
       <div class="container">
         <div class="section-header">
+          <span class="badge">FAQ</span>
           <h2>Before you get in touch</h2>
           <p>A few answers that save a phone call.</p>
         </div>
@@ -332,6 +369,7 @@ img{display:block;max-width:100%;}
       <div class="container">
         <div class="newsletter-box">
           <div class="newsletter-copy">
+            <span class="badge" style="margin-bottom:10px;">Snow Report</span>
             <h3>Get the 6am snow report</h3>
             <p>One short email each morning of the season: overnight snowfall, groomed runs, lift status and which skis our techs are handing out that day.</p>
           </div>
@@ -374,12 +412,15 @@ img{display:block;max-width:100%;}
           <a href="index.html" class="brand-logo" style="color:var(--footer-text);" aria-label="VERTEX ALPS home">
             <div class="brand-badge">
               <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-            <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
-            <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
-            <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
-          </svg>
+                <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
+                <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
+                <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
+              </svg>
             </div>
-            <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+            <div class="brand-text-group">
+              <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+              <span class="brand-tagline" style="display:block; font-size:0.75rem; color:var(--footer-text-muted, #94a3b8); margin-top:2px;">Ski &amp; Snowboard Co.</span>
+            </div>
           </a>
           <p>Slopeside ski and snowboard rental depots. Precision-tuned gear and custom-fitted boots for mountain riders since 2012.</p>
           <div class="footer-social-cluster">
@@ -473,5 +514,37 @@ img{display:block;max-width:100%;}
   </div>
 
   <script src="main.js"></script>
+
+  <!-- Image safety net: 1) try the backup photo in data-alt, 2) then a built-in mountain illustration, so no broken-image icon ever shows -->
+  <script>
+    (function () {
+      var svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' preserveAspectRatio='xMidYMid slice'>" +
+        "<defs><linearGradient id='g' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0b1d28'/><stop offset='1' stop-color='#2a5d7a'/></linearGradient></defs>" +
+        "<rect width='1200' height='800' fill='url(#g)'/>" +
+        "<polygon points='0,800 260,340 460,620 640,240 900,600 1050,420 1200,640 1200,800' fill='#e8f3f9'/>" +
+        "<polygon points='640,240 720,380 640,330 580,400' fill='#00a4e4' opacity='.6'/></svg>";
+      var fallback = "data:image/svg+xml," + encodeURIComponent(svg);
+      function fix(img) {
+        var alt = img.getAttribute('data-alt');
+        if (alt && !img.getAttribute('data-tried')) {
+          img.setAttribute('data-tried', '1');
+          img.src = alt;
+          return;
+        }
+        if (img.getAttribute('data-fallback')) return;
+        img.setAttribute('data-fallback', '1');
+        img.removeAttribute('srcset');
+        img.src = fallback;
+      }
+      document.addEventListener('error', function (e) {
+        if (e.target && e.target.tagName === 'IMG') fix(e.target);
+      }, true);
+      window.addEventListener('load', function () {
+        document.querySelectorAll('img').forEach(function (img) {
+          if (img.complete && img.naturalWidth === 0 && img.src) fix(img);
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

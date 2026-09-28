@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b1d28'/%3E%3Cpolygon points='50,18 84,80 66,80 50,50 34,80 16,80' fill='%2300a4e4'/%3E%3Cpolygon points='50,18 66,80 50,50' fill='%23ffffff'/%3E%3Cpath d='M20,72 Q50,92 80,72' stroke='%2300a4e4' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml">
   <script>
     (function () {
       try {
@@ -54,8 +55,17 @@ img{display:block;max-width:100%;}
   font-size:.82rem;
 }
 
-/* Coaching team: photo fills the tile, initials chip shows only if a photo fails to load */
-.team-avatar-wrap{height:280px;overflow:hidden;position:relative;}
+/* Coaching team: compact circular portraits, initials chip shows only if a photo fails to load */
+.team-avatar-wrap{
+  width:190px;
+  height:190px;
+  aspect-ratio:1/1;
+  margin:26px auto 0;
+  border-radius:50%;
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(135deg,#dcecf6 0%,#7aa6bd 100%);
+}
 .team-avatar-wrap img{
   position:absolute;
   inset:0;
@@ -68,6 +78,21 @@ img{display:block;max-width:100%;}
   transition:transform .55s ease;
 }
 .card:hover .team-avatar-wrap img{transform:scale(1.04);}
+.team-role-tag{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:10px;
+  z-index:2;
+  padding:4px 10px;
+  border-radius:999px;
+  background:rgba(11,29,40,.82);
+  color:#fff;
+  font-size:.66rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
 
 @media (max-width:1024px){
   .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
@@ -93,7 +118,10 @@ img{display:block;max-width:100%;}
             <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
           </svg>
         </div>
-        <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+        <div class="brand-text-group">
+          <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+          <span class="brand-tagline">Ski &amp; Snowboard Co.</span>
+        </div>
       </a>
 
       <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
@@ -131,7 +159,7 @@ img{display:block;max-width:100%;}
           <svg class="icon-moon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
         <button class="icon-toggle-btn" id="rtl-toggle" title="Switch text direction" aria-label="Switch text direction">RTL</button>
-        <a href="login.html" class="btn btn-secondary btn-sm">Sign in</a>
+        <a href="login.html" class="btn btn-primary btn-sm">Sign in</a>
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -153,8 +181,9 @@ img{display:block;max-width:100%;}
             <a href="#safety" class="btn btn-secondary">Backcountry safety</a>
           </div>
         </div>
-        <div class="img-hover img-tall">
-          <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=1400&q=85" alt="Ski coach demonstrating a turn to a small group" loading="lazy">
+        <div class="img-hover img-tall hero-img-box">
+          <!-- CHANGED: a ski coach in a yellow jacket demonstrating on the slope (matches "certified coach" description) -->
+          <img src="https://images.unsplash.com/photo-1596473536124-397c469c8506?auto=format&fit=crop&w=1200&q=80" alt="Ski coach in a yellow jacket demonstrating technique on a snowy slope" loading="lazy">
         </div>
       </div>
     </section>
@@ -163,6 +192,7 @@ img{display:block;max-width:100%;}
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Our Method</span>
           <h2>How teaching works here</h2>
           <p>Small groups, honest feedback and a clear idea of what you are working on by the end of the session.</p>
         </div>
@@ -195,6 +225,7 @@ img{display:block;max-width:100%;}
     <section class="section" id="clinics">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Clinics</span>
           <h2>Clinics running this season</h2>
           <p>Book a single session or a block of three. Blocks with the same coach cost ten percent less.</p>
         </div>
@@ -302,7 +333,7 @@ img{display:block;max-width:100%;}
     <section class="section section-bg-alt">
       <div class="container grid-2" style="align-items:center;">
         <div class="img-hover img-tall">
-          <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=1400&q=85" alt="Children learning to ski with an instructor" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1611270629569-8b357cb88da9?auto=format&fit=crop&w=1400&q=85" alt="Children learning to ski with an instructor" loading="lazy">
         </div>
         <div>
           <span class="badge">Children's academy</span>
@@ -323,6 +354,7 @@ img{display:block;max-width:100%;}
     <section class="section">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Progression</span>
           <h2>What comes next for you</h2>
           <p>A rough map of the skills that unlock each part of the mountain.</p>
         </div>
@@ -350,6 +382,7 @@ img{display:block;max-width:100%;}
     <section class="section section-bg-alt" id="safety">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Safety Check</span>
           <h2>The kit check before every backcountry day</h2>
           <p>Your guide runs through this list at the summit gate with each rider individually. No exceptions, including for guides.</p>
         </div>
@@ -381,41 +414,45 @@ img{display:block;max-width:100%;}
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <h2>The coaching team</h2>
+          <span class="badge">Our Coaches</span>
+          <h2>Meet your coaches</h2>
           <p>Every coach holds a top-tier national qualification and current wilderness first aid.</p>
         </div>
         <div class="grid-3">
           <article class="card">
             <div class="card-img-wrapper team-avatar-wrap">
               <div class="avatar-chip">LM</div>
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&crop=faces&w=800&h=800&q=85" alt="Portrait of Lukas Meier, head alpine coach" loading="lazy" onerror="this.remove()">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=80" alt="Luca Moretti, head alpine coach" loading="lazy" onerror="this.remove()">
+              <span class="team-role-tag">Alpine</span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">Lukas Meier</h3>
+              <h3 class="card-title">Luca Moretti</h3>
               <p class="card-meta"><span>Head alpine coach</span> <span>Level III</span></p>
-              <p>Former Europa Cup racer. Teaches angulation and edge timing, and is unreasonably good at spotting a lazy inside leg.</p>
+              <p>Former national-squad racer. Teaches carving, edge timing and speed control with a calm, patient style.</p>
             </div>
           </article>
           <article class="card">
             <div class="card-img-wrapper team-avatar-wrap">
-              <div class="avatar-chip">CD</div>
-              <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&crop=faces&w=800&h=800&q=85" alt="Portrait of Camille Dufour, lead snowboard coach, smiling in the snow" loading="lazy" onerror="this.remove()">
+              <div class="avatar-chip">DK</div>
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=400&q=80" alt="Daniel Keller, freeride coach" loading="lazy" onerror="this.remove()">
+              <span class="team-role-tag">Freeride</span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">Camille Dufour</h3>
-              <p class="card-meta"><span>Lead snowboard coach</span> <span>Level III</span></p>
-              <p>Freeride World Qualifier competitor. Works on rotation, park transitions and picking a line down a steep face.</p>
+              <h3 class="card-title">Daniel Keller</h3>
+              <p class="card-meta"><span>Freeride and all-mountain coach</span> <span>Level III</span></p>
+              <p>Freeride competitor turned coach. Works on line choice, bumps, tree runs and staying loose on steep terrain.</p>
             </div>
           </article>
           <article class="card">
             <div class="card-img-wrapper team-avatar-wrap">
-              <div class="avatar-chip">AL</div>
-              <img src="https://images.unsplash.com/photo-1611367540722-9825e219be45?auto=format&fit=crop&crop=faces&w=800&h=800&q=85" alt="Portrait of Anja Lindqvist, backcountry director, in a blue jacket and knit cap on the snow" loading="lazy" onerror="this.remove()">
+              <div class="avatar-chip">AV</div>
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&h=400&q=80" alt="Adrian Vogel, backcountry director" loading="lazy" onerror="this.remove()">
+              <span class="team-role-tag">Backcountry</span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">Anja Lindqvist</h3>
+              <h3 class="card-title">Adrian Vogel</h3>
               <p class="card-meta"><span>Backcountry director</span> <span>IFMGA guide</span></p>
-              <p>Twenty years of expeditions. Runs snow stability teaching, crevasse rescue practice and the guided heli days.</p>
+              <p>Twenty years of guiding. Leads snow stability teaching, rescue practice and the guided backcountry days.</p>
             </div>
           </article>
         </div>
@@ -426,6 +463,7 @@ img{display:block;max-width:100%;}
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Rates</span>
           <h2>Private and group rates</h2>
           <p>Prices per group, not per person. Gear rental is separate and can be added to the same booking.</p>
         </div>
@@ -451,6 +489,7 @@ img{display:block;max-width:100%;}
     <section class="section">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Gallery</span>
           <h2>Sessions in progress</h2>
           <p>From the boot check to the summit gate.</p>
         </div>
@@ -487,6 +526,7 @@ img{display:block;max-width:100%;}
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Testimonials</span>
           <h2>What students say</h2>
           <p>Feedback left after clinics in the last two seasons.</p>
         </div>
@@ -523,6 +563,7 @@ img{display:block;max-width:100%;}
     <section class="section">
       <div class="container">
         <div class="section-header">
+          <span class="badge">FAQ</span>
           <h2>About the clinics</h2>
           <p>Practical answers before you book a session.</p>
         </div>
@@ -556,6 +597,7 @@ img{display:block;max-width:100%;}
       <div class="container">
         <div class="newsletter-box">
           <div class="newsletter-copy">
+            <span class="badge" style="margin-bottom:10px;">Snow Report</span>
             <h3>Get the 6am snow report</h3>
             <p>One short email each morning of the season: overnight snowfall, groomed runs, lift status and which skis our techs are handing out that day.</p>
           </div>
@@ -598,12 +640,15 @@ img{display:block;max-width:100%;}
           <a href="index.html" class="brand-logo" style="color:var(--footer-text);" aria-label="VERTEX ALPS home">
             <div class="brand-badge">
               <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-            <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
-            <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
-            <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
-          </svg>
+                <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
+                <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
+                <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
+              </svg>
             </div>
-            <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+            <div class="brand-text-group">
+              <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+              <span class="brand-tagline" style="display:block; font-size:0.75rem; color:var(--footer-text-muted, #94a3b8); margin-top:2px;">Ski &amp; Snowboard Co.</span>
+            </div>
           </a>
           <p>Slopeside ski and snowboard rental depots. Precision-tuned gear and custom-fitted boots for mountain riders since 2012.</p>
           <div class="footer-social-cluster">

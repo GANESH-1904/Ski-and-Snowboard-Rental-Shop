@@ -3,7 +3,7 @@
    Premium ski + snowboard rental dashboard
 
    Features:
-   1 Sidebar tabs
+   1 Sidebar tabs (including Analytics, Users, Orders, Messages)
    2 Crew riders
    3 Smart equipment recommendations
    4 Reservation form + live booking summary
@@ -14,7 +14,7 @@
    9 Booking persistence
    10 Image fallback protection
    11 Dashboard quick actions
-   12 Demo account state
+   12 Interactive messaging handler
    ========================================================================== */
 
 (function () {
@@ -878,7 +878,27 @@
     }
 
     /* ======================================================================
-       10. QUICK ACTION BUTTONS
+       10. MESSAGING ACTIONS
+       ====================================================================== */
+
+    var sendMessageBtn = $('#send-message-btn');
+    var messageInput = $('#user-message-input');
+
+    if (sendMessageBtn && messageInput) {
+      sendMessageBtn.addEventListener('click', function () {
+        var text = messageInput.value.trim();
+        if (!text) {
+          notify('Please write a message first');
+          return;
+        }
+
+        notify('Message sent to resort concierge');
+        messageInput.value = '';
+      });
+    }
+
+    /* ======================================================================
+       11. QUICK ACTION BUTTONS
        ====================================================================== */
 
     $$('.dash-quick-action')
@@ -917,13 +937,13 @@
       });
 
     /* ======================================================================
-       11. IMAGE FALLBACKS
+       12. IMAGE FALLBACKS
        ====================================================================== */
 
     repairImages();
 
     /* ======================================================================
-       12. KEYBOARD FRIENDLY DASHBOARD
+       13. KEYBOARD FRIENDLY DASHBOARD
        ====================================================================== */
 
     document.addEventListener(

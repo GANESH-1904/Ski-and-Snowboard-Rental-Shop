@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b1d28'/%3E%3Cpolygon points='50,18 84,80 66,80 50,50 34,80 16,80' fill='%2300a4e4'/%3E%3Cpolygon points='50,18 66,80 50,50' fill='%23ffffff'/%3E%3Cpath d='M20,72 Q50,92 80,72' stroke='%2300a4e4' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml">
   <script>
     (function () {
       try {
@@ -23,13 +24,13 @@
   </script>
 
     <style>
-      /* Rental profile/fleet image fixes */
-      #profiles .card-img-wrapper, #fleet .card-img-wrapper {
+      /* Rental profile / fleet / gallery image sizing (all cards share the same 16:10 frame) */
+      #profiles .card-img-wrapper, #fleet .card-img-wrapper, #gallery .card-img-wrapper {
         aspect-ratio: 16 / 10;
         overflow: hidden;
         background: #0b1118;
       }
-      #profiles .card-img-wrapper img, #fleet .card-img-wrapper img {
+      #profiles .card-img-wrapper img, #fleet .card-img-wrapper img, #gallery .card-img-wrapper img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -38,39 +39,130 @@
       #profiles .card:first-child .card-img-wrapper img { object-position: center; }
       #profiles .card:nth-child(2) .card-img-wrapper img { object-position: center 55%; }
       #profiles .card:nth-child(3) .card-img-wrapper img { object-position: center 45%; }
-      .fleet-use-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
-        align-items: stretch;
+
+      /* ===== Brand tagline + precision alignment refinements ===== */
+      .brand-logo { 
+        display:flex; 
+        align-items:center; 
+        gap:12px; 
+        text-decoration:none;
       }
-      .fleet-use-grid .gallery-item {
-        min-width: 0;
-        margin: 0;
-        overflow: hidden;
-        border-radius: 18px;
-        background: #0b1118;
+      .brand-badge { flex:0 0 auto; }
+      .brand-text-group {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        line-height:1.05;
+        min-width:0;
       }
-      .fleet-use-grid .gallery-item:last-child {
-        grid-column: 1 / -1;
+      .brand-tagline {
+        display:block;
+        margin-top:5px;
+        font-size:.68rem;
+        font-weight:600;
+        letter-spacing:.12em;
+        text-transform:uppercase;
+        color:var(--text-muted);
+        white-space:nowrap;
       }
-      .fleet-use-grid .gallery-item img {
-        width: 100%;
-        height: 360px;
-        display: block;
-        object-fit: cover;
-        object-position: center;
+      .footer .brand-logo {
+        align-items:flex-start;
+        gap:12px;
       }
-      .fleet-use-grid .gallery-caption {
-        min-height: 54px;
-        display: flex;
-        align-items: center;
-        padding: 14px 18px;
+      .footer .brand-logo .footer-brand-text {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        line-height:1.05;
       }
-      @media (max-width: 760px) {
-        .fleet-use-grid { grid-template-columns: 1fr; gap: 18px; }
-        .fleet-use-grid .gallery-item:last-child { grid-column: auto; }
-        .fleet-use-grid .gallery-item img { height: 260px; }
+      .footer .brand-logo .brand-tagline {
+        margin-top:6px;
+        color:rgba(255,255,255,.68);
+      }
+
+      /* Consistent section geometry */
+      main > .section > .container { width:100%; }
+      .section-header {
+        max-width:820px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+      .section-header h2 { margin-bottom:12px; }
+      .section-header p { margin-left:auto; margin-right:auto; }
+
+      .grid-2, .grid-3, .grid-4 {
+        align-items:stretch;
+      }
+      .grid-2 > *, .grid-3 > *, .grid-4 > * { min-width:0; }
+
+      .card {
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        overflow:hidden;
+      }
+      .card .card-body {
+        flex:1;
+        display:flex;
+        flex-direction:column;
+      }
+      .card .card-body > .card-footer { margin-top:auto; }
+      .card .card-img-wrapper {
+        flex:0 0 auto;
+      }
+
+      .img-hover {
+        width:100%;
+        overflow:hidden;
+        border-radius:18px;
+      }
+      .img-hover img {
+        width:100%;
+        height:100%;
+        display:block;
+        object-fit:cover;
+      }
+      .page-head .grid-2,
+      .section > .container.grid-2 {
+        column-gap:clamp(28px,4vw,64px);
+        row-gap:36px;
+      }
+      .page-head .img-hover,
+      .section > .container.grid-2 .img-hover {
+        height:100%;
+        min-height:360px;
+      }
+      .page-head .grid-2 > div:first-child,
+      .section > .container.grid-2 > div {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+      }
+
+      .pad-card {
+        height:100%;
+        box-sizing:border-box;
+      }
+
+      .table-wrap { width:100%; overflow-x:auto; }
+      .data-table { width:100%; border-collapse:collapse; }
+
+      .newsletter-box {
+        display:grid;
+        grid-template-columns:minmax(0,1fr) minmax(320px,1fr);
+        align-items:center;
+        gap:32px;
+      }
+      .newsletter-form {
+        display:flex;
+        align-items:stretch;
+        gap:10px;
+      }
+      .newsletter-form input { min-width:0; flex:1; }
+
+      @media (max-width: 900px) {
+        .newsletter-box { grid-template-columns:1fr; }
+        .newsletter-form { width:100%; }
       }
     </style>
 </head>
@@ -89,7 +181,10 @@
             <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
           </svg>
         </div>
-        <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+        <div class="brand-text-group">
+          <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+          <span class="brand-tagline">Ski &amp; Snowboard Co.</span>
+        </div>
       </a>
 
       <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
@@ -127,7 +222,7 @@
           <svg class="icon-moon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
         <button class="icon-toggle-btn" id="rtl-toggle" title="Switch text direction" aria-label="Switch text direction">RTL</button>
-        <a href="login.html" class="btn btn-secondary btn-sm">Sign in</a>
+        <a href="login.html" class="btn btn-primary btn-sm">Sign in</a>
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -159,6 +254,7 @@
     <section class="section section-bg-alt" id="profiles">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Shape Guide</span>
           <h2>Camber, rocker and everything between</h2>
           <p>The shape under your feet changes how a ski or board behaves far more than the graphics on top of it.</p>
         </div>
@@ -201,6 +297,7 @@
     <section class="section" id="fleet">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Fleet</span>
           <h2>The 2026 fleet</h2>
           <p>Current season models, stone ground and hot waxed, with bindings set to your numbers at pickup.</p>
         </div>
@@ -308,6 +405,7 @@
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Junior Gear</span>
           <h2>Gear for younger riders</h2>
           <p>Light skis, warm liners and helmets that actually fit. Children under six ride free on a family booking.</p>
         </div>
@@ -365,6 +463,7 @@
     <section class="section">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Accessories</span>
           <h2>Add-ons at the counter</h2>
           <p>The small things people forget, kept in stock in every size at all three depots.</p>
         </div>
@@ -442,6 +541,7 @@
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">Sizing Guide</span>
           <h2>Rough sizing guide</h2>
           <p>A starting point only. The final length is chosen with you at the counter, based on how and where you ride.</p>
         </div>
@@ -463,34 +563,80 @@
       </div>
     </section>
 
-    <!-- SECTION 9: FLEET GALLERY -->
-    <section class="section">
+    <!-- SECTION 9: ON THE MOUNTAIN (redesigned: same card + 16:10 image style as the rest of the page, six unique images) -->
+    <section class="section" id="gallery">
       <div class="container">
         <div class="section-header">
-          <h2>The fleet in use</h2>
-          <p>Shot over one week in February across all three depots.</p>
+          <span class="badge">On the mountain</span>
+          <h2>Where the fleet earns its keep</h2>
+          <p>Six moments from a February week across all three depots, from first chair to last run.</p>
         </div>
-        <div class="gallery-grid fleet-use-grid">
-          <figure class="gallery-item">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lenzerheide%20Ski%20Slope.jpg" alt="Skier carving on a freshly groomed run" loading="lazy">
-            <figcaption class="gallery-caption">Maverick 88 on morning corduroy</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Snowboarder.jpg" alt="Snowboarder in deep powder" loading="lazy">
-            <figcaption class="gallery-caption">Mountain Twin on a storm day</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Skitourers%20beneath%20Rostocker%20Eck.jpg" alt="Touring skis at a high col" loading="lazy">
-            <figcaption class="gallery-caption">Free 97 at the summit gate</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Clamps%20and%20filings%20%282420233104%29.jpg" alt="Boots on the fitting bench" loading="lazy">
-            <figcaption class="gallery-caption">Liners moulding in the lab</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Young%20snowboarder%20on%20the%20slope%20of%20a%20ski%20resort%2C%20with%20a%20panoramic%20view%20of%20the%20mountains%2C%20at%20sunset.jpg" alt="Freeride board on a steep ridge" loading="lazy">
-            <figcaption class="gallery-caption">Flight Attendant above the north bowl</figcaption>
-          </figure>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">First chair</span>
+              <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=900&q=80" alt="Skier carving down a freshly groomed piste in morning light" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Morning corduroy</h3>
+              <p>Carvers come out of the wax room and straight onto freshly groomed snow before the crowds arrive.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Lift line</span>
+              <img src="https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?auto=format&fit=crop&w=900&q=80" alt="Skiers riding a lift up a snowy alpine mountain" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Up to the mid-mountain pod</h3>
+              <p>Riders head up the mountain to swap setups when the snow changes, with no ride back to the valley.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Storm day</span>
+              <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=900&q=80" alt="Skier riding through fresh snow on a mountain slope" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Fresh snow, wide skis</h3>
+              <p>Twenty centimetres overnight is the moment the rockered powder skis in the fleet are made for.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Resort day</span>
+              <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=900&q=80" alt="Skiers gathered on a busy slope at an alpine resort" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Busy slopes, full fleet</h3>
+              <p>Families, groups and solo riders all out at once, each on gear that was tuned the night before.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Summit</span>
+              <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80" alt="Snow-covered alpine peaks under a clear sky" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Above the treeline</h3>
+              <p>Touring setups head for the high ridges, where weight matters as much as edge grip.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Board day</span>
+              <img src="https://images.unsplash.com/photo-1478700485868-972b69dc3fc4?auto=format&fit=crop&w=900&q=80" alt="Snowboarder riding down a snowy mountain run" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Snowboards on the run</h3>
+              <p>Twin and directional boards handle everything from park laps to steep pitches off the main lift.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -499,6 +645,7 @@
     <section class="section section-bg-alt">
       <div class="container">
         <div class="section-header">
+          <span class="badge">FAQ</span>
           <h2>About the gear</h2>
           <p>What riders usually want to know before choosing a package.</p>
         </div>
@@ -532,6 +679,7 @@
       <div class="container">
         <div class="newsletter-box">
           <div class="newsletter-copy">
+            <span class="badge" style="margin-bottom:10px;">Snow Report</span>
             <h3>Get the 6am snow report</h3>
             <p>One short email each morning of the season: overnight snowfall, groomed runs, lift status and which skis our techs are handing out that day.</p>
           </div>
@@ -579,7 +727,10 @@
             <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
           </svg>
             </div>
-            <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+            <span class="footer-brand-text">
+              <span style="color:#ffffff;">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+              <span class="brand-tagline">Ski &amp; Snowboard Co.</span>
+            </span>
           </a>
           <p>Slopeside ski and snowboard rental depots. Precision-tuned gear and custom-fitted boots for mountain riders since 2012.</p>
           <div class="footer-social-cluster">
@@ -673,5 +824,31 @@
   </div>
 
   <script src="main.js"></script>
+
+  <!-- Image safety net: any photo that fails to load is replaced by a built-in mountain illustration instead of a broken-image icon -->
+  <script>
+    (function () {
+      var svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' preserveAspectRatio='xMidYMid slice'>" +
+        "<defs><linearGradient id='g' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0b1d28'/><stop offset='1' stop-color='#2a5d7a'/></linearGradient></defs>" +
+        "<rect width='1200' height='800' fill='url(#g)'/>" +
+        "<polygon points='0,800 260,340 460,620 640,240 900,600 1050,420 1200,640 1200,800' fill='#e8f3f9'/>" +
+        "<polygon points='640,240 720,380 640,330 580,400' fill='#00a4e4' opacity='.6'/></svg>";
+      var fallback = "data:image/svg+xml," + encodeURIComponent(svg);
+      function fix(img) {
+        if (img.getAttribute('data-fallback')) return;
+        img.setAttribute('data-fallback', '1');
+        img.removeAttribute('srcset');
+        img.src = fallback;
+      }
+      document.addEventListener('error', function (e) {
+        if (e.target && e.target.tagName === 'IMG') fix(e.target);
+      }, true);
+      window.addEventListener('load', function () {
+        document.querySelectorAll('img').forEach(function (img) {
+          if (img.complete && img.naturalWidth === 0 && img.src) fix(img);
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
