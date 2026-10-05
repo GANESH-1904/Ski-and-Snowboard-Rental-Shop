@@ -40,6 +40,42 @@
       #profiles .card:nth-child(2) .card-img-wrapper img { object-position: center 55%; }
       #profiles .card:nth-child(3) .card-img-wrapper img { object-position: center 45%; }
 
+      .rental-accessory-grid { align-items:stretch; }
+      .rental-accessory-card .card-img-wrapper {
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        background: #eef5f8;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+      .rental-accessory-card .card-img-wrapper img {
+        width:100%;
+        height:100%;
+        object-fit:contain;
+        object-position:center;
+        display:block;
+      }
+
+      /* Snowfall effect on the Rentals page, matching the Contact page hero */
+      .rentals-intro {
+        position:relative;
+        overflow:hidden;
+      }
+      .rentals-intro > .container {
+        position:relative;
+        z-index:1;
+      }
+      .rentals-intro #snow-canvas {
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        pointer-events:none;
+        z-index:0;
+      }
+
+
       /* ===== Brand tagline + precision alignment refinements ===== */
       .brand-logo { 
         display:flex; 
@@ -233,7 +269,8 @@
   <main id="main-content">
 
     <!-- SECTION 1: FLEET HERO -->
-    <section class="section page-head">
+    <section class="section page-head rentals-intro">
+      <canvas id="snow-canvas" aria-hidden="true"></canvas>
       <div class="container grid-2" style="align-items:center;">
         <div>
           <span class="badge">2026 collection</span>
@@ -463,35 +500,58 @@
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <span class="badge">Accessories</span>
-          <h2>Add-ons at the counter</h2>
-          <p>The small things people forget, kept in stock in every size at all three depots.</p>
+          <span class="badge">Rental Gear</span>
+          <h2>Helmets, goggles, poles and snow gear</h2>
+          <p>Complete your rental with safety and snow gear available at the counter in sizes for adults and younger riders.</p>
         </div>
-        <div class="grid-4">
-          <div class="card pad-card">
-            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <h4 style="margin-bottom:8px;">Helmet with MIPS liner</h4>
-            <p style="margin-bottom:10px;">Sizes XS to XL, cleaned between riders.</p>
-            <strong style="color:var(--primary);">$9 per day</strong>
-          </div>
-          <div class="card pad-card">
-            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/></svg></div>
-            <h4 style="margin-bottom:8px;">Goggles with spare lens</h4>
-            <p style="margin-bottom:10px;">A low-light lens comes with every pair.</p>
-            <strong style="color:var(--primary);">$7 per day</strong>
-          </div>
-          <div class="card pad-card">
-            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20L20 4M9 4h11v11"/></svg></div>
-            <h4 style="margin-bottom:8px;">Poles</h4>
-            <p style="margin-bottom:10px;">Aluminium or carbon, 100 to 135cm.</p>
-            <strong style="color:var(--primary);">$5 per day</strong>
-          </div>
-          <div class="card pad-card">
-            <div class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/></svg></div>
-            <h4 style="margin-bottom:8px;">Avalanche safety set</h4>
-            <p style="margin-bottom:10px;">Transceiver, probe and shovel, checked daily.</p>
-            <strong style="color:var(--primary);">$16 per day</strong>
-          </div>
+        <div class="grid-4 rental-accessory-grid">
+          <article class="card rental-accessory-card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Protection</span>
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2018-01-01%20(208)%20Ski%20helmet.jpg" alt="Snow helmet and protective ski gear ready for a winter day" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h4 style="margin-bottom:8px;">Helmet with MIPS liner</h4>
+              <p style="margin-bottom:10px;">Sizes XS to XL, cleaned and checked between riders.</p>
+              <strong style="color:var(--primary);">$9 per day</strong>
+            </div>
+          </article>
+
+          <article class="card rental-accessory-card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Visibility</span>
+              <img src="https://www.gigasport.at/app/uploads/2019/01/700x700-banner-480x480.jpg" alt="Reflective ski goggles being adjusted in snowy conditions" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h4 style="margin-bottom:8px;">Goggles with spare lens</h4>
+              <p style="margin-bottom:10px;">A low-light lens comes with every pair for changing mountain weather.</p>
+              <strong style="color:var(--primary);">$7 per day</strong>
+            </div>
+          </article>
+
+          <article class="card rental-accessory-card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Poles</span>
+              <img src="https://cdn.absolute-snow.co.uk/fullsize/Salomon_Steep_Pro_S3_Ski_Poles_Black_Nasturtium_526252-2.jpg" alt="Pair of ski poles available for rental" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h4 style="margin-bottom:8px;">Ski poles</h4>
+              <p style="margin-bottom:10px;">Aluminium or carbon options from 100 to 135cm, fitted to your height.</p>
+              <strong style="color:var(--primary);">$5 per day</strong>
+            </div>
+          </article>
+
+          <article class="card rental-accessory-card">
+            <div class="card-img-wrapper">
+              <span class="card-tag">Snow gear</span>
+              <img src="https://www.bigals.co.nz/cdn/shop/products/Adultrental_4480x.png?v=1665977125" alt="Ski jacket, snow pants and insulated gloves available as rental snow gear" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h4 style="margin-bottom:8px;">Snow gear &amp; gloves</h4>
+              <p style="margin-bottom:10px;">Warm jackets, snow pants and insulated gloves for cold-weather days.</p>
+              <strong style="color:var(--primary);">Ask at the counter</strong>
+            </div>
+          </article>
         </div>
       </div>
     </section>

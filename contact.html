@@ -29,6 +29,26 @@ img{display:block;max-width:100%;}
 .img-hover img,.card-img-wrapper img,.gallery-item img,.hero-img-box img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .55s ease;}
 .img-hover:hover img,.card:hover .card-img-wrapper img,.gallery-item:hover img,.hero-img-box:hover img{transform:scale(1.06);filter:saturate(1.12) contrast(1.04);}
 .hero-img-box img { background: linear-gradient(135deg, #dcecf6 0%, #7aa6bd 100%); }
+
+.contact-map-wrap {
+  min-height: 360px;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-md);
+}
+.contact-location-map {
+  display:block;
+  width:100%;
+  min-height:360px;
+  height:100%;
+  border:0;
+}
+@media (max-width: 900px) {
+  .contact-map-wrap, .contact-location-map { min-height:320px; }
+}
 </style>
 </head>
 <body>
@@ -243,8 +263,14 @@ img{display:block;max-width:100%;}
     <!-- SECTION 3: GETTING HERE -->
     <section class="section">
       <div class="container grid-2" style="align-items:center;">
-        <div class="img-hover img-tall">
-          <img src="https://images.unsplash.com/photo-1551524392-9a61031f0246?auto=format&fit=crop&w=1400&q=85" alt="Mountain village at the foot of the snowy slopes where the base depot is located" loading="lazy">
+        <div class="contact-map-wrap" aria-label="Location map for the VÉRTEX ALPS base depot">
+          <iframe
+            class="contact-location-map"
+            title="VÉRTEX ALPS base depot location map"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=6.851%2C45.913%2C6.889%2C45.936&layer=mapnik&marker=45.9237%2C6.8694"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
         <div>
           <span class="badge">Getting to the base station</span>

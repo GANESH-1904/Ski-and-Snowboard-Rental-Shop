@@ -1,0 +1,493 @@
+/* ==========================================================================
+   VÉRTEX ALPS — SHARED AUTH STYLES (login.html + signup.html)
+   Load AFTER style.css. One file = identical look on both pages.
+   ========================================================================== */
+
+body.auth-page {
+  --va-primary: #00a4e4;
+  --va-primary-hover: #0084b8;
+  --va-panel: #f7fafc;
+  --va-surface: #ffffff;
+  --va-text: #0f172a;
+  --va-heading: #0b1d28;
+  --va-muted: #607482;
+  --va-border: #d5e0e7;
+  --va-placeholder: #8a9aa6;
+  --va-link: #0084b8;
+  --va-hover-bg: #f3fbfe;
+  --va-note-bg: #eefaff;
+  --va-note-border: #cfe8f3;
+  --va-note-text: #395767;
+  --va-divider: #dfe8ef;
+  --va-brand-name: #071923;
+
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #071923;
+  color: var(--va-text);
+  overflow-x: hidden;
+}
+
+body.auth-page.dark-mode,
+html.pre-dark body.auth-page {
+  --va-panel: #0a151e;
+  --va-surface: #0f1f2c;
+  --va-text: #f1f6fa;
+  --va-heading: #ffffff;
+  --va-muted: #aebfcb;
+  --va-border: #1c3549;
+  --va-placeholder: #8194a2;
+  --va-link: #38bdf8;
+  --va-hover-bg: #112535;
+  --va-note-bg: #102735;
+  --va-note-border: #1d4960;
+  --va-note-text: #b9cbd6;
+  --va-divider: #1c3549;
+  --va-brand-name: #ffffff;
+  background: #030c12;
+}
+
+/* ------------------------------ Layout --------------------------------- */
+.va-shell {
+  width: 100%;
+  flex: 1;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(400px, 480px);
+}
+
+.va-visual {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #071923;
+  background-image: linear-gradient(180deg, rgba(4, 18, 28, .18), rgba(4, 18, 28, .84)), var(--va-photo);
+  background-size: cover;
+  background-position: center;
+}
+
+.va-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 45%, rgba(3, 12, 18, .82) 100%);
+  pointer-events: none;
+}
+
+[dir="rtl"] .va-visual::after {
+  background: linear-gradient(270deg, transparent 45%, rgba(3, 12, 18, .82) 100%);
+}
+
+.va-visual-content {
+  position: absolute;
+  z-index: 2;
+  left: clamp(28px, 7vw, 110px);
+  right: clamp(28px, 7vw, 110px);
+  bottom: clamp(35px, 8vw, 100px);
+  max-width: 680px;
+  color: #fff;
+}
+
+.va-badge {
+  display: inline-flex;
+  padding: 7px 12px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .10);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  backdrop-filter: blur(10px);
+}
+
+.va-visual-content h2 {
+  margin: 0 0 20px;
+  font-size: clamp(2.5rem, 5vw, 5.4rem);
+  line-height: .95;
+  letter-spacing: -.055em;
+  font-weight: 900;
+}
+
+.va-visual-content p {
+  max-width: 570px;
+  color: rgba(255, 255, 255, .82);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.va-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.va-features span {
+  padding: 9px 13px;
+  border: 1px solid rgba(255, 255, 255, .20);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .09);
+  backdrop-filter: blur(12px);
+  font-size: .78rem;
+  line-height: 1.3;
+}
+
+.va-panel {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 30px;
+  background: var(--va-panel);
+  transition: background-color .25s ease;
+}
+
+.va-card {
+  width: 100%;
+  max-width: 410px;
+}
+
+/* ------------------------- Top controls & brand ------------------------ */
+.va-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.va-icon-btn {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--va-border);
+  border-radius: 50%;
+  background: var(--va-surface);
+  color: var(--va-heading);
+  font-family: inherit;
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: border-color .25s ease, color .25s ease;
+}
+
+.va-icon-btn:hover { border-color: var(--va-primary); color: var(--va-primary); }
+.va-icon-btn .icon-sun { display: block; }
+.va-icon-btn .icon-moon { display: none; }
+body.auth-page.dark-mode .va-icon-btn .icon-sun { display: none; }
+body.auth-page.dark-mode .va-icon-btn .icon-moon { display: block; }
+
+.va-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto 20px;
+}
+
+.va-brand-badge {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--va-primary);
+  border-radius: 10px;
+  background: #0b1d28;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.va-brand-badge svg { width: 30px; height: 30px; display: block; }
+.va-brand:hover .va-brand-badge { transform: rotate(-6deg) scale(1.05); box-shadow: 0 6px 18px rgba(0, 164, 228, .4); }
+
+.va-brand-text { display: flex; flex-direction: column; gap: 3px; }
+
+.va-brand-name {
+  display: flex;
+  gap: .3em;
+  color: var(--va-brand-name);
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -.01em;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.va-brand-name span { color: var(--va-primary); }
+
+.va-brand-tag {
+  color: var(--va-muted);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.va-title {
+  margin: 0 0 6px;
+  color: var(--va-heading);
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-weight: 900;
+  text-align: center;
+}
+
+.va-sub {
+  margin: 0 auto 16px;
+  max-width: 340px;
+  color: var(--va-muted);
+  font-size: .88rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ------------------------------ Login extras --------------------------- */
+.va-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 14px;
+}
+
+.va-stats div {
+  padding: 8px;
+  border: 1px solid var(--va-border);
+  border-radius: 10px;
+  background: var(--va-surface);
+  text-align: center;
+}
+
+.va-stats strong { display: block; color: var(--va-primary); font-size: .92rem; font-weight: 800; }
+.va-stats span { display: block; margin-top: 2px; color: var(--va-muted); font-size: .64rem; }
+
+.va-note {
+  margin-bottom: 14px;
+  padding: 9px 12px;
+  border: 1px solid var(--va-note-border);
+  border-radius: 10px;
+  background: var(--va-note-bg);
+  color: var(--va-note-text);
+  font-size: .8rem;
+  line-height: 1.5;
+}
+
+.va-note strong { color: var(--va-heading); }
+
+/* -------------------------------- Form --------------------------------- */
+.va-field { margin-bottom: 12px; }
+.va-row-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+
+.va-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--va-text);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.va-input {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--va-border);
+  border-radius: 8px;
+  background-color: var(--va-surface);
+  /* stops browser-extension icons from tiling inside the fields */
+  background-image: none !important;
+  color: var(--va-text);
+  font-family: inherit;
+  font-size: .9rem;
+  outline: none;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+.va-input::placeholder { color: var(--va-placeholder); opacity: 1; }
+.va-input:focus { border-color: var(--va-primary); box-shadow: 0 0 0 3px rgba(0, 164, 228, .16); }
+.va-input.invalid { border-color: #dc3545; box-shadow: 0 0 0 3px rgba(220, 53, 69, .12); }
+
+.va-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--va-surface) inset;
+  -webkit-text-fill-color: var(--va-text);
+}
+
+.va-pwd { position: relative; }
+.va-pwd .va-input { padding-right: 48px; }
+
+body.auth-page .va-pwd-toggle {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  left: auto;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--va-muted);
+  cursor: pointer;
+}
+
+body.auth-page .va-pwd-toggle:hover { color: var(--va-primary); }
+[dir="rtl"] .va-pwd .va-input { padding-right: 14px; padding-left: 48px; }
+[dir="rtl"] body.auth-page .va-pwd-toggle { right: auto; left: 7px; }
+
+.va-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 2px 0 14px;
+  font-size: .8rem;
+}
+
+.va-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--va-muted);
+  font-weight: 500;
+  line-height: 1.55;
+  cursor: pointer;
+}
+
+.va-check input { width: 16px; height: 16px; flex: 0 0 16px; margin: 0; accent-color: var(--va-primary); cursor: pointer; }
+.va-check.va-terms { align-items: flex-start; margin: 2px 0 16px; }
+.va-check.va-terms input { margin-top: 3px; }
+
+.va-link { color: var(--va-link); font-weight: 700; }
+.va-link:hover, .va-switch a:hover { text-decoration: underline; }
+
+.va-submit {
+  display: flex;
+  width: 100%;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 8px;
+  background: var(--va-primary);
+  color: #fff;
+  font-family: inherit;
+  font-size: .92rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
+}
+
+.va-submit:hover {
+  background: var(--va-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 164, 228, .28);
+}
+
+.va-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 14px;
+  color: var(--va-muted);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.va-divider::before, .va-divider::after { content: ""; flex: 1; height: 1px; background: var(--va-divider); }
+
+.va-social { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+
+.va-social-btn {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 10px;
+  border: 1px solid var(--va-border);
+  border-radius: 8px;
+  background: var(--va-surface);
+  color: var(--va-text);
+  font-family: inherit;
+  font-size: .82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color .25s ease, background-color .25s ease, transform .25s ease;
+}
+
+.va-social-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+.va-social-btn:hover { border-color: var(--va-primary); background: var(--va-hover-bg); transform: translateY(-2px); }
+
+/* Apple: black button + white logo (white button + black logo in dark mode) */
+.va-social-btn.va-apple { background: #000; border-color: #000; color: #fff; }
+.va-social-btn.va-apple:hover { background: #1c1c1e; border-color: #1c1c1e; }
+body.auth-page.dark-mode .va-social-btn.va-apple { background: #fff; border-color: #fff; color: #000; }
+body.auth-page.dark-mode .va-social-btn.va-apple:hover { background: #e8e8ed; border-color: #e8e8ed; }
+
+.va-switch { margin: 18px 0 0; color: var(--va-muted); font-size: .85rem; text-align: center; }
+.va-switch a { color: var(--va-link); font-weight: 700; }
+
+/* -------------------------------- Toast -------------------------------- */
+body.auth-page #toast {
+  position: fixed;
+  left: 50%;
+  right: auto;
+  bottom: 24px;
+  z-index: 99999;
+  max-width: calc(100vw - 30px);
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #0b1d28;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(20px);
+  transition: all .25s ease;
+}
+
+body.auth-page #toast.show { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+/* ------------------------------ Responsive ----------------------------- */
+@media (max-height: 780px) and (min-width: 901px) {
+  .va-stats, .va-note { display: none; }
+}
+
+@media (max-width: 900px) {
+  .va-shell { grid-template-columns: 1fr; }
+  .va-visual { min-height: 0; }
+  .va-visual-content { position: relative; left: auto; right: auto; bottom: auto; max-width: none; padding: 44px 24px 28px; }
+  .va-visual-content h2 { font-size: 2.2rem; }
+  .va-features { display: none; }
+  .va-panel { min-height: 0; padding: 26px 20px 40px; }
+}
+
+@media (max-width: 520px) {
+  .va-visual-content { padding: 32px 18px 22px; }
+  .va-visual-content h2 { font-size: 1.85rem; margin-bottom: 12px; }
+  .va-visual-content p { font-size: .88rem; }
+  .va-panel { padding: 22px 16px 36px; }
+  .va-row { flex-direction: column; align-items: flex-start; }
+  .va-social { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 440px) {
+  .va-row-2 { grid-template-columns: 1fr; gap: 0; }
+}

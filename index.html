@@ -207,8 +207,308 @@
 </div>
 </div>
 </section>
+<!-- NEW SECTION: RENTAL EQUIPMENT -->
+<section class="section" id="equipment">
+<div class="container">
+<div class="section-header">
+<span class="badge">Rental Equipment</span>
+<h2>Everything you need, beyond the skis</h2>
+<p>Add helmets, poles, goggles and safety gear to any booking. Every item is checked, cleaned and serviced between riders.</p>
+</div>
+
+<style>
+/* Rental Equipment — same visual structure as Featured Packages */
+#equipment .gear-card {
+  overflow: hidden;
+}
+
+#equipment .gear-card .card-img-wrapper {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#equipment .gear-card .card-img-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 12px;
+  transition: transform 0.45s var(--ease-out), filter 0.35s ease;
+}
+
+#equipment .gear-card:hover .card-img-wrapper img {
+  transform: scale(1.045);
+  filter: brightness(1.04);
+}
+
+#equipment .gear-card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+#equipment .gear-card .card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#equipment .gear-card .card-meta span {
+  display: inline-block;
+}
+
+#equipment .gear-card .card-price {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+#equipment .gear-card .card-footer {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  #equipment .gear-card .card-img-wrapper {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  #equipment .gear-card .card-img-wrapper {
+    height: 200px;
+  }
+}
+</style>
+
+<div class="grid-3">
+
+<!-- MIPS HELMET -->
+<article class="card gear-card">
+<div class="card-img-wrapper">
+<span class="card-tag">Safety</span>
+<img
+alt="MIPS ski helmet"
+loading="lazy"
+decoding="async"
+src="https://contents.mediadecathlon.com/p2557889/k%24d600c881551242d5cf3b5125f5072cb7/1000x0/3480pt1999/4000xcr4000/default.jpg?format=auto"/>
+</div>
+
+<div class="card-body">
+<h3 class="card-title">MIPS ski helmets</h3>
+
+<p class="card-meta">
+<span>XS to XL</span>
+<span>Junior friendly</span>
+</p>
+
+<p>
+Adjustable MIPS helmets with goggle clips and a secure fit. Free with every junior package.
+</p>
+
+<div class="card-price">$9 <span>per day</span></div>
+
+<div class="card-footer">
+<button
+class="btn btn-primary btn-block add-to-cart-btn"
+data-price="9"
+data-title="MIPS ski helmets">
+Add to gear bag
+</button>
+</div>
+</div>
+</article>
+
+<!-- GOGGLES -->
+<article class="card gear-card">
+<div class="card-img-wrapper">
+<span class="card-tag">Visibility</span>
+<img
+alt="Anti-fog ski goggles with UV400 protection"
+loading="lazy"
+decoding="async"
+src="https://i5.walmartimages.com/asr/2e36598f-6d6a-467c-baa8-64186c043313.0803363d8401627f827f24d1b007139e.jpeg?odnBg=FFFFFF&amp;odnHeight=768&amp;odnWidth=768"/>
+</div>
+
+<div class="card-body">
+<h3 class="card-title">Anti-fog goggles</h3>
+
+<p class="card-meta">
+<span>UV400 protection</span>
+<span>Double lens</span>
+</p>
+
+<p>
+Double-lens goggles with anti-fog treatment, plus lens options for both low-light and bright conditions.
+</p>
+
+<div class="card-price">$7 <span>per day</span></div>
+
+<div class="card-footer">
+<button
+class="btn btn-primary btn-block add-to-cart-btn"
+data-price="7"
+data-title="Anti-fog goggles">
+Add to gear bag
+</button>
+</div>
+</div>
+</article>
+
+<!-- SKI POLES -->
+<article class="card gear-card">
+<div class="card-img-wrapper">
+<span class="card-tag">Essential</span>
+<img
+alt="Lightweight aluminium ski and trekking poles"
+loading="lazy"
+decoding="async"
+src="https://cdn.absolute-snow.co.uk/fullsize/Salomon_Steep_Pro_S3_Ski_Poles_Black_Nasturtium_526252-2.jpg"/>
+</div>
+
+<div class="card-body">
+<h3 class="card-title">Ski and trekking poles</h3>
+
+<p class="card-meta">
+<span>Lightweight aluminium</span>
+<span>Touring ready</span>
+</p>
+
+<p>
+Lightweight poles available in multiple lengths, with adjustable touring options and durable snow baskets.
+</p>
+
+<div class="card-price">$5 <span>per day</span></div>
+
+<div class="card-footer">
+<button
+class="btn btn-primary btn-block add-to-cart-btn"
+data-price="5"
+data-title="Ski and trekking poles">
+Add to gear bag
+</button>
+</div>
+</div>
+</article>
+
+<!-- GLOVES -->
+<article class="card gear-card">
+<div class="card-img-wrapper">
+<span class="card-tag">Snow Gear</span>
+<img
+alt="Waterproof insulated ski gloves"
+loading="lazy"
+decoding="async"
+src="https://www.sportsonline.ch/media/5f/g0/2a/1700951324/reusch-marco-schwarz-skihandschuhe-6301119-770.jpg"/>
+</div>
+
+<div class="card-body">
+<h3 class="card-title">Waterproof gloves</h3>
+
+<p class="card-meta">
+<span>Adults &amp; juniors</span>
+<span>XS to XL</span>
+</p>
+
+<p>
+Insulated waterproof shell gloves and mittens designed to keep hands warm during long days on the mountain.
+</p>
+
+<div class="card-price">$6 <span>per day</span></div>
+
+<div class="card-footer">
+<button
+class="btn btn-primary btn-block add-to-cart-btn"
+data-price="6"
+data-title="Waterproof gloves">
+Add to gear bag
+</button>
+</div>
+</div>
+</article>
+
+<!-- AVALANCHE SAFETY SET -->
+<article class="card gear-card">
+<div class="card-img-wrapper">
+<span class="card-tag">Backcountry</span>
+<img
+alt="Avalanche safety beacon, collapsible probe and aluminium shovel set"
+loading="lazy"
+decoding="async"
+src="https://www.skitreff.de/media/22/bb/4a/1702127688/pieps-set-pro-ips-lawinen-notfallset-1128930000all.jpg"/>
+</div>
+
+<div class="card-body">
+<h3 class="card-title">Avalanche safety set</h3>
+
+<p class="card-meta">
+<span>Beacon</span>
+<span>Probe + shovel</span>
+</p>
+
+<p>
+Digital avalanche beacon, collapsible probe and aluminium shovel for riders heading into touring and backcountry terrain.
+</p>
+
+<div class="card-price">$14 <span>per day</span></div>
+
+<div class="card-footer">
+<button
+class="btn btn-primary btn-block add-to-cart-btn"
+data-price="14"
+data-title="Avalanche safety set">
+Add to gear bag
+</button>
+</div>
+</div>
+</article>
+
+<!-- BACK PROTECTOR -->
+<article class="card gear-card">
+<div class="card-img-wrapper">
+<span class="card-tag">Protection</span>
+<img
+alt="CE-rated ski back protector"
+loading="lazy"
+decoding="async"
+src="https://lockwoods.com/cdn/shop/products/back_protect_txt_2018.jpg?v=1571722988&amp;width=1024"/>
+</div>
+
+<div class="card-body">
+<h3 class="card-title">Back protector and pack</h3>
+
+<p class="card-meta">
+<span>CE-rated protection</span>
+<span>20L pack option</span>
+</p>
+
+<p>
+Flexible back protection or a practical 20L day pack for carrying water, extra layers and mountain essentials.
+</p>
+
+<div class="card-price">$8 <span>per day</span></div>
+
+<div class="card-footer">
+<button
+class="btn btn-primary btn-block add-to-cart-btn"
+data-price="8"
+data-title="Back protector and pack">
+Add to gear bag
+</button>
+</div>
+</div>
+</article>
+
+</div>
+
+<p class="gear-note">All rental equipment is inspected, cleaned and checked between every customer.</p>
+</div>
+</section>
 <!-- SECTION 5: HOW IT WORKS -->
-<section class="section">
+<section class="section section-bg-alt">
 <div class="container">
 <div class="section-header">
 <span class="badge">Simple Process</span>
@@ -240,7 +540,7 @@
 </div>
 </section>
 <!-- SECTION 6: BOOTFITTING LAB -->
-<section class="section section-bg-alt">
+<section class="section">
 <div class="container grid-2" style="align-items:center;">
 <div>
 <span class="badge">Bootfitting lab</span>
@@ -259,8 +559,9 @@
 </div>
 </div>
 </section>
+</section>
 <!-- SECTION 7: NUMBERS -->
-<section class="section">
+<section class="section section-bg-alt">
 <div class="container">
 <div class="stats-strip">
 <div class="stat-item">
@@ -283,7 +584,7 @@
 </div>
 </section>
 <!-- SECTION 8: GALLERY -->
-<section class="section section-bg-alt">
+<section class="section">
 <div class="container">
 <div class="section-header">
 <span class="badge">Gallery</span>
@@ -315,7 +616,7 @@
 </div>
 </section>
 <!-- SECTION 9: SAFETY -->
-<section class="section">
+<section class="section section-bg-alt">
 <div class="container">
 <div class="section-header">
 <span class="badge">Safety First</span>
@@ -339,7 +640,7 @@
 </div>
 </section>
 <!-- SECTION 10: RIDER FEEDBACK -->
-<section class="section section-bg-alt">
+<section class="section">
 <div class="container">
 <div class="section-header">
 <span class="badge">Testimonials</span>
@@ -351,7 +652,7 @@
 <div class="testimonial-stars">★★★★★</div>
 <p class="testimonial-quote">We landed late and still skied at nine the next morning. The locker key was on my phone before we reached the hotel, and the boots actually fitted.</p>
 <div class="testimonial-author">
-<div class="testimonial-avatar">MR</div>
+<div class="testimonial-avatar"><img alt="Portrait of Marta Reyes" height="42" loading="lazy" src="https://randomuser.me/api/portraits/women/44.jpg" width="42"/></div>
 <div><strong>Marta Reyes</strong><span>Four day trip from Madrid</span></div>
 </div>
 </div>
@@ -359,7 +660,7 @@
 <div class="testimonial-stars">★★★★★</div>
 <p class="testimonial-quote">Storm rolled in at lunch so I swapped my carvers for 106mm skis at the mid-mountain pod. Took four minutes and cost nothing.</p>
 <div class="testimonial-author">
-<div class="testimonial-avatar">TK</div>
+<div class="testimonial-avatar"><img alt="Portrait of Tom Keller" height="42" loading="lazy" src="https://randomuser.me/api/portraits/men/32.jpg" width="42"/></div>
 <div><strong>Tom Keller</strong><span>Season pass holder</span></div>
 </div>
 </div>
@@ -367,7 +668,7 @@
 <div class="testimonial-stars">★★★★☆</div>
 <p class="testimonial-quote">Three kids, three sets of gear, one booking. The junior boots came with warm liners and nobody complained about their feet all week.</p>
 <div class="testimonial-author">
-<div class="testimonial-avatar">AL</div>
+<div class="testimonial-avatar"><img alt="Portrait of Aisha Lund" height="42" loading="lazy" src="https://randomuser.me/api/portraits/women/68.jpg" width="42"/></div>
 <div><strong>Aisha Lund</strong><span>Family of five</span></div>
 </div>
 </div>
@@ -375,7 +676,7 @@
 </div>
 </section>
 <!-- SECTION 11: FAQ -->
-<section class="section">
+<section class="section section-bg-alt">
 <div class="container">
 <div class="section-header">
 <span class="badge">FAQ</span>

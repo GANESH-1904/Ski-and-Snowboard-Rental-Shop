@@ -101,6 +101,24 @@ img{display:block;max-width:100%;}
   .gallery-grid{grid-template-columns:1fr;gap:16px;}
   .gallery-grid .gallery-item{aspect-ratio:16/10;}
 }
+
+/* Snowfall effect on the Lessons page, matching the Rentals page */
+.lessons-intro {
+  position:relative;
+  overflow:hidden;
+}
+.lessons-intro > .container {
+  position:relative;
+  z-index:1;
+}
+.lessons-intro #snow-canvas {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:0;
+}
 </style>
 </head>
 <body>
@@ -170,7 +188,8 @@ img{display:block;max-width:100%;}
   <main id="main-content">
 
     <!-- SECTION 1: ACADEMY HERO -->
-    <section class="section page-head">
+    <section class="section page-head lessons-intro">
+      <canvas id="snow-canvas" aria-hidden="true"></canvas>
       <div class="container grid-2" style="align-items:center;">
         <div>
           <span class="badge">Partner ski and snowboard school</span>
@@ -333,7 +352,7 @@ img{display:block;max-width:100%;}
     <section class="section section-bg-alt">
       <div class="container grid-2" style="align-items:center;">
         <div class="img-hover img-tall">
-          <img src="https://images.unsplash.com/photo-1611270629569-8b357cb88da9?auto=format&fit=crop&w=1400&q=85" alt="Children learning to ski with an instructor" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1711066444066-c7edf6ee7092?auto=format&fit=crop&w=1400&q=85" alt="Ski instructor teaching a child on a snowy mountain slope" loading="lazy">
         </div>
         <div>
           <span class="badge">Children's academy</span>

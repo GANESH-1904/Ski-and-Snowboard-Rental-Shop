@@ -760,6 +760,107 @@ body.dark-mode .card-price { color: #38bdf8; }
   color: #ffffff;
 }
 
+
+/* ---- Home page update: Featured packages — align text across all three cards ---- */
+.card-body .card-title { min-height: 2.6rem; }          /* titles reserve 2 lines */
+.card-body .card-meta  { min-height: 2.6rem; align-content: flex-start; }
+.card-body > p         { flex: 1; min-height: 4.8rem; } /* description absorbs slack */
+.card-body .card-price { margin: 14px 0 0; }            /* price now sits on one line */
+.card-body .card-footer { margin-top: 16px; }           /* buttons share one baseline */
+
+/* ---- Home page update: Rental equipment section ----------------------- */
+.gear-card { position: relative; overflow: hidden; }
+.gear-card-head {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+}
+.gear-card-head .icon-circle { margin-bottom: 0; flex-shrink: 0; }
+.gear-image {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+}
+.gear-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.45s var(--ease-out), filter 0.35s ease;
+}
+.gear-card:hover .gear-image img {
+  transform: scale(1.045);
+  filter: brightness(1.04);
+}
+.gear-rate {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(5, 18, 29, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--secondary);
+  text-align: right;
+  line-height: 1.1;
+}
+body.dark-mode .gear-rate { color: #38bdf8; }
+.gear-rate small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #d7e5ee;
+}
+.gear-card h4 { margin-bottom: 8px; }
+.gear-card > p { flex: 1; }
+.gear-care {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: var(--primary-soft);
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--text-main);
+}
+.gear-care strong {
+  color: var(--primary);
+  display: block;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+.gear-card .btn { margin-top: 16px; }
+.gear-note {
+  text-align: center;
+  margin-top: 30px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+[dir="rtl"] .gear-rate { text-align: left; right: auto; left: 12px; }
+[dir="rtl"] .gear-care {
+  border-left: none;
+  border-right: 3px solid var(--primary);
+}
+@media (max-width: 768px) {
+  .gear-image { height: 190px; }
+}
+@media (max-width: 480px) {
+  .gear-image { height: 170px; }
+  .gear-rate { top: 10px; right: 10px; padding: 7px 10px; }
+}
+
 /* ========================== 8. PRICING CARDS =========================== */
 .pricing-card {
   background: var(--bg-card);
@@ -1389,6 +1490,22 @@ body.dark-mode .form-textarea {
 .testimonial-author span {
   font-size: 0.78rem;
   color: var(--text-muted);
+}
+
+
+/* ---- Home page update: Testimonials — profile photos ------------------ */
+.testimonial-avatar {
+  overflow: hidden;
+  padding: 0;
+  background: var(--bg-surface);
+  border: 2px solid var(--primary);
+}
+.testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: none;
 }
 
 /* ========================== 15. FAQ ACCORDION ========================== */
@@ -2456,4 +2573,256 @@ body.dark-mode .illus-snow-cap { fill: #dceaf4; }
 
 @media (max-width: 640px) {
   .profile-picker-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   RESPONSIVE FIXES — 360px / 1024px
+   Only targets the issues requested:
+   1) 360px: remove side overflow/uneven spacing and keep every page aligned
+   2) 1024px: align the navigation links and header controls
+   3) 1024px: make the Home dropdown reliable on touch/tablet widths
+   ========================================================================== */
+
+/* Keep the page locked to the viewport on very small screens. */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  /* Tablet navigation: keep logo, links and actions on one clean baseline. */
+  .nav-bar {
+    min-height: 72px;
+    padding: 8px 0;
+    gap: 14px;
+  }
+
+  .brand-logo {
+    gap: 8px;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .brand-badge {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-badge svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-menu {
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+  }
+
+  .nav-link {
+    font-size: 0.82rem;
+    padding: 6px 0;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .header-actions {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .header-actions .btn {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .icon-toggle-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Keep the dropdown attached to the Home link so the hover/tap area
+     does not develop a gap at tablet widths. */
+  .nav-dropdown-menu {
+    top: calc(100% - 1px);
+  }
+}
+
+@media (max-width: 360px) {
+  /* Remove the extra horizontal breathing room that becomes visible as
+     an uneven right-side strip at 360px. */
+  .container {
+    width: 100%;
+    max-width: none;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .header {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .nav-bar {
+    width: 100%;
+    min-height: 64px;
+    padding: 6px 0;
+  }
+
+  .brand-logo {
+    min-width: 0;
+    gap: 7px;
+    font-size: 0.95rem;
+  }
+
+  .brand-badge {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand-badge svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .brand-text-group {
+    min-width: 0;
+  }
+
+  .brand-tagline {
+    font-size: 0.48rem;
+    letter-spacing: 0.06em;
+  }
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .icon-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .header-actions .btn {
+    min-height: 36px;
+    padding: 5px 10px;
+    font-size: 0.78rem;
+  }
+
+  .mobile-toggle {
+    padding: 6px;
+  }
+
+  .nav-menu {
+    top: 64px;
+    width: 100%;
+    padding: 16px 14px;
+    max-height: calc(100vh - 64px);
+  }
+
+  .hero {
+    padding: 44px 0;
+  }
+
+  .hero-title {
+    font-size: 1.7rem;
+    line-height: 1.12;
+  }
+
+  .hero-desc {
+    font-size: 0.98rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+
+  .hero-cta-group {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .section-header {
+    margin-bottom: 34px;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+  }
+
+  .grid-3,
+  .grid-2,
+  .grid-4 {
+    gap: 18px;
+  }
+
+  .card-body {
+    padding: 18px;
+  }
+
+  .card-img-wrapper {
+    height: 210px;
+  }
+
+  .gear-image {
+    height: 180px;
+  }
+
+  .page-head {
+    padding: 44px 0 8px;
+  }
+
+  .footer-grid {
+    gap: 28px;
+  }
+
+  .dash-content,
+  .dash-topbar {
+    padding: 16px;
+  }
+
+  .split-panel {
+    padding: 18px;
+  }
+
+  .modal-window {
+    width: calc(100% - 28px);
+    padding: 20px;
+  }
+
+  .table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .img-tall img,
+  .img-wide img {
+    height: 240px;
+  }
+
+  .toast-msg {
+    left: 12px;
+    right: 12px;
+  }
 }

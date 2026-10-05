@@ -1,1531 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Create an account | VÉRTEX ALPS</title>
-
-  <meta
-    name="description"
-    content="Create your VÉRTEX ALPS rider account and manage ski and snowboard rentals, lessons and reservations."
-  >
-
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- Main website stylesheet -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- =========================================================
-       SIGNUP PAGE OVERRIDE
-       This CSS intentionally uses !important on critical
-       properties so the existing style.css cannot hide
-       the signup page.
-       ========================================================= -->
-  <style>
-
-    /* =========================================================
-       RESET FOR SIGNUP PAGE
-       ========================================================= */
-
-    html.signup-page {
-      min-height: 100%;
-      background: #071923 !important;
-    }
-
-    html.signup-page,
-    html.signup-page body {
-      margin: 0 !important;
-      padding: 0 !important;
-      width: 100% !important;
-      min-height: 100% !important;
-    }
-
-    body.signup-page-body {
-      margin: 0 !important;
-      padding: 0 !important;
-
-      min-height: 100vh !important;
-      min-height: 100svh !important;
-
-      width: 100% !important;
-
-      overflow-x: hidden !important;
-
-      font-family: "Inter", Arial, sans-serif !important;
-
-      /*
-       * IMPORTANT:
-       * Hard-coded background instead of relying on
-       * --bg-main / --bg-surface from style.css.
-       */
-      background-color: #071923 !important;
-
-      background-image:
-        linear-gradient(
-          135deg,
-          rgba(3, 20, 30, 0.86),
-          rgba(4, 51, 72, 0.68)
-        ),
-        url("https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=2200&q=85") !important;
-
-      background-position: center center !important;
-      background-size: cover !important;
-      background-repeat: no-repeat !important;
-      background-attachment: fixed !important;
-
-      color: #0f172a !important;
-    }
-
-
-    /* =========================================================
-       PAGE WRAPPER
-       ========================================================= */
-
-    body.signup-page-body .signup-auth-wrapper {
-      position: relative !important;
-
-      width: 100% !important;
-      min-height: 100vh !important;
-      min-height: 100svh !important;
-
-      box-sizing: border-box !important;
-
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-
-      padding: 40px 20px !important;
-
-      background: transparent !important;
-
-      isolation: isolate !important;
-    }
-
-
-    /* =========================================================
-       BACKGROUND OVERLAY
-       ========================================================= */
-
-    body.signup-page-body .signup-auth-wrapper::before {
-      content: "" !important;
-
-      position: fixed !important;
-      inset: 0 !important;
-
-      z-index: -1 !important;
-
-      pointer-events: none !important;
-
-      background:
-        radial-gradient(
-          circle at 15% 15%,
-          rgba(0, 164, 228, 0.20),
-          transparent 35%
-        ),
-        radial-gradient(
-          circle at 85% 85%,
-          rgba(255, 255, 255, 0.10),
-          transparent 35%
-        ) !important;
-    }
-
-
-    /* =========================================================
-       SIGNUP CARD
-       ========================================================= */
-
-    body.signup-page-body .signup-auth-card {
-      position: relative !important;
-      z-index: 10 !important;
-
-      display: block !important;
-
-      width: 100% !important;
-      max-width: 500px !important;
-
-      box-sizing: border-box !important;
-
-      margin: 0 auto !important;
-      padding: 38px !important;
-
-      /*
-       * HARD-CODED WHITE CARD
-       */
-      background: #ffffff !important;
-
-      color: #0f172a !important;
-
-      border: 1px solid #e1e8ed !important;
-      border-radius: 20px !important;
-
-      box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.42),
-        0 8px 30px rgba(0, 0, 0, 0.20) !important;
-    }
-
-
-    /* Blue top accent */
-
-    body.signup-page-body .signup-auth-card::before {
-      content: "" !important;
-
-      position: absolute !important;
-
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-
-      height: 5px !important;
-
-      background: linear-gradient(
-        90deg,
-        #00a4e4,
-        #5bd7ff,
-        #00a4e4
-      ) !important;
-
-      border-radius: 20px 20px 0 0 !important;
-    }
-
-
-    /* =========================================================
-       TOP CONTROLS
-       ========================================================= */
-
-    body.signup-page-body .signup-top-controls {
-      width: 100% !important;
-
-      display: flex !important;
-      align-items: center !important;
-      justify-content: flex-end !important;
-
-      gap: 8px !important;
-
-      margin: 0 0 8px !important;
-
-      position: relative !important;
-      z-index: 20 !important;
-    }
-
-
-    body.signup-page-body .signup-top-controls .icon-toggle-btn {
-      width: 40px !important;
-      height: 40px !important;
-
-      min-width: 40px !important;
-
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-
-      padding: 0 !important;
-
-      border: 1px solid #d8e3ea !important;
-      border-radius: 50% !important;
-
-      background: #f5f9fc !important;
-
-      color: #0b1d28 !important;
-
-      cursor: pointer !important;
-
-      font-family: inherit !important;
-      font-weight: 700 !important;
-    }
-
-    body.signup-page-body
-    .signup-top-controls
-    .icon-toggle-btn:hover {
-      background: #e8f6fc !important;
-      border-color: #00a4e4 !important;
-      color: #0084b8 !important;
-    }
-
-
-    /* =========================================================
-       LOGO
-       ========================================================= */
-
-    body.signup-page-body .signup-logo {
-      width: 100% !important;
-
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-
-      margin: 4px 0 22px !important;
-
-      color: #0b1d28 !important;
-
-      text-align: center !important;
-    }
-
-    body.signup-page-body .signup-logo svg {
-      display: block !important;
-
-      width: 250px !important;
-      max-width: 100% !important;
-
-      height: auto !important;
-
-      overflow: visible !important;
-    }
-
-
-    /* =========================================================
-       HEADING
-       ========================================================= */
-
-    body.signup-page-body .signup-heading {
-      display: block !important;
-
-      width: 100% !important;
-
-      margin: 0 0 28px !important;
-
-      text-align: center !important;
-    }
-
-    body.signup-page-body .signup-heading h1 {
-      display: block !important;
-
-      margin: 0 0 10px !important;
-
-      color: #0b1d28 !important;
-
-      font-family: "Inter", Arial, sans-serif !important;
-
-      font-size: 2rem !important;
-      line-height: 1.2 !important;
-
-      font-weight: 900 !important;
-
-      letter-spacing: -0.035em !important;
-    }
-
-    body.signup-page-body .signup-heading p {
-      display: block !important;
-
-      max-width: 410px !important;
-
-      margin: 0 auto !important;
-
-      color: #4a5f70 !important;
-
-      font-size: 0.93rem !important;
-      line-height: 1.7 !important;
-
-      font-weight: 400 !important;
-    }
-
-
-    /* =========================================================
-       FORM
-       ========================================================= */
-
-    body.signup-page-body .signup-form {
-      display: block !important;
-
-      width: 100% !important;
-
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-
-
-    body.signup-page-body .signup-form .form-row {
-      display: grid !important;
-
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr)) !important;
-
-      gap: 14px !important;
-
-      width: 100% !important;
-
-      margin: 0 !important;
-    }
-
-
-    body.signup-page-body .signup-form .form-group {
-      display: block !important;
-
-      width: 100% !important;
-
-      margin: 0 0 16px !important;
-    }
-
-
-    body.signup-page-body
-    .signup-form
-    .form-group
-    .form-label {
-      display: block !important;
-
-      margin: 0 0 7px !important;
-
-      color: #0f172a !important;
-
-      font-size: 0.86rem !important;
-
-      font-weight: 700 !important;
-
-      line-height: 1.4 !important;
-    }
-
-
-    /* =========================================================
-       INPUTS
-       ========================================================= */
-
-    body.signup-page-body
-    .signup-form
-    .form-input {
-      display: block !important;
-
-      width: 100% !important;
-
-      min-height: 46px !important;
-
-      box-sizing: border-box !important;
-
-      margin: 0 !important;
-
-      padding: 12px 14px !important;
-
-      border: 1px solid #d5e0e7 !important;
-
-      border-radius: 8px !important;
-
-      background: #ffffff !important;
-
-      color: #0f172a !important;
-
-      font-family: "Inter", Arial, sans-serif !important;
-
-      font-size: 0.9rem !important;
-
-      outline: none !important;
-
-      -webkit-appearance: none !important;
-      appearance: none !important;
-    }
-
-
-    body.signup-page-body
-    .signup-form
-    .form-input::placeholder {
-      color: #8a9aa6 !important;
-
-      opacity: 1 !important;
-    }
-
-
-    body.signup-page-body
-    .signup-form
-    .form-input:focus {
-      border-color: #00a4e4 !important;
-
-      background: #ffffff !important;
-
-      color: #0f172a !important;
-
-      outline: none !important;
-
-      box-shadow:
-        0 0 0 3px rgba(0, 164, 228, 0.13) !important;
-    }
-
-
-    /* =========================================================
-       PASSWORD
-       ========================================================= */
-
-    body.signup-page-body .signup-password-wrapper {
-      position: relative !important;
-
-      display: block !important;
-
-      width: 100% !important;
-    }
-
-
-    body.signup-page-body
-    .signup-password-wrapper
-    .form-input {
-      padding-right: 48px !important;
-    }
-
-
-    body.signup-page-body
-    .signup-password-wrapper
-    .pwd-toggle-btn {
-      position: absolute !important;
-
-      top: 50% !important;
-      right: 7px !important;
-
-      transform: translateY(-50%) !important;
-
-      width: 36px !important;
-      height: 36px !important;
-
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-
-      padding: 0 !important;
-
-      border: 0 !important;
-
-      background: transparent !important;
-
-      color: #607482 !important;
-
-      cursor: pointer !important;
-
-      z-index: 5 !important;
-    }
-
-
-    body.signup-page-body
-    .signup-password-wrapper
-    .pwd-toggle-btn:hover {
-      color: #00a4e4 !important;
-    }
-
-
-    /* =========================================================
-       TERMS
-       ========================================================= */
-
-    body.signup-page-body .signup-terms {
-      display: flex !important;
-
-      align-items: flex-start !important;
-
-      gap: 10px !important;
-
-      width: 100% !important;
-
-      margin: 2px 0 20px !important;
-
-      color: #4a5f70 !important;
-
-      font-size: 0.82rem !important;
-
-      line-height: 1.6 !important;
-    }
-
-
-    body.signup-page-body .signup-terms input {
-      width: 17px !important;
-      height: 17px !important;
-
-      flex: 0 0 17px !important;
-
-      margin: 2px 0 0 !important;
-
-      accent-color: #00a4e4 !important;
-
-      cursor: pointer !important;
-    }
-
-
-    body.signup-page-body .signup-terms label {
-      display: block !important;
-
-      margin: 0 !important;
-
-      color: #4a5f70 !important;
-
-      cursor: pointer !important;
-    }
-
-
-    body.signup-page-body .signup-terms a {
-      color: #0084b8 !important;
-
-      font-weight: 700 !important;
-
-      text-decoration: underline !important;
-    }
-
-
-    /* =========================================================
-       CREATE ACCOUNT BUTTON
-       ========================================================= */
-
-    body.signup-page-body .signup-submit {
-      width: 100% !important;
-
-      min-height: 50px !important;
-
-      display: flex !important;
-
-      align-items: center !important;
-      justify-content: center !important;
-
-      box-sizing: border-box !important;
-
-      margin: 0 !important;
-      padding: 12px 18px !important;
-
-      border: 0 !important;
-
-      border-radius: 8px !important;
-
-      background: #00a4e4 !important;
-
-      color: #ffffff !important;
-
-      font-family: "Inter", Arial, sans-serif !important;
-
-      font-size: 0.95rem !important;
-
-      font-weight: 800 !important;
-
-      cursor: pointer !important;
-
-      transition:
-        transform 0.25s ease,
-        background-color 0.25s ease,
-        box-shadow 0.25s ease !important;
-    }
-
-
-    body.signup-page-body .signup-submit:hover {
-      background: #0084b8 !important;
-
-      transform: translateY(-2px) !important;
-
-      box-shadow:
-        0 10px 25px rgba(0, 164, 228, 0.32) !important;
-    }
-
-
-    body.signup-page-body .signup-submit:active {
-      transform: translateY(0) !important;
-    }
-
-
-    /* =========================================================
-       DIVIDER
-       ========================================================= */
-
-    body.signup-page-body .signup-divider {
-      display: flex !important;
-
-      align-items: center !important;
-
-      gap: 12px !important;
-
-      width: 100% !important;
-
-      margin: 22px 0 16px !important;
-
-      color: #82919c !important;
-
-      font-size: 0.75rem !important;
-
-      font-weight: 700 !important;
-
-      text-transform: uppercase !important;
-
-      letter-spacing: 0.08em !important;
-    }
-
-
-    body.signup-page-body
-    .signup-divider::before,
-    body.signup-page-body
-    .signup-divider::after {
-      content: "" !important;
-
-      flex: 1 !important;
-
-      height: 1px !important;
-
-      background: #dfe8ef !important;
-    }
-
-
-    /* =========================================================
-       SOCIAL BUTTONS
-       ========================================================= */
-
-    body.signup-page-body .signup-social-grid {
-      display: grid !important;
-
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr)) !important;
-
-      gap: 10px !important;
-
-      width: 100% !important;
-
-      margin: 0 !important;
-    }
-
-
-    body.signup-page-body .signup-social-btn {
-      width: 100% !important;
-
-      height: 46px !important;
-
-      display: flex !important;
-
-      align-items: center !important;
-      justify-content: center !important;
-
-      gap: 9px !important;
-
-      box-sizing: border-box !important;
-
-      padding: 0 12px !important;
-
-      border: 1px solid #d5e0e7 !important;
-
-      border-radius: 8px !important;
-
-      background: #ffffff !important;
-
-      color: #0f172a !important;
-
-      font-family: "Inter", Arial, sans-serif !important;
-
-      font-size: 0.88rem !important;
-
-      font-weight: 700 !important;
-
-      cursor: pointer !important;
-
-      transition: all 0.25s ease !important;
-    }
-
-
-    body.signup-page-body .signup-social-btn:hover {
-      border-color: #00a4e4 !important;
-
-      background: #f3fbfe !important;
-
-      transform: translateY(-2px) !important;
-    }
-
-
-    body.signup-page-body .signup-social-icon {
-      display: inline-flex !important;
-
-      align-items: center !important;
-      justify-content: center !important;
-
-      font-size: 1rem !important;
-
-      font-weight: 900 !important;
-
-      color: #0b1d28 !important;
-    }
-
-
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-
-    body.signup-page-body .signup-footer {
-      display: block !important;
-
-      width: 100% !important;
-
-      margin: 22px 0 0 !important;
-
-      text-align: center !important;
-
-      color: #607482 !important;
-
-      font-size: 0.84rem !important;
-
-      line-height: 1.7 !important;
-    }
-
-
-    body.signup-page-body .signup-footer p {
-      margin: 0 0 8px !important;
-
-      color: #607482 !important;
-    }
-
-
-    body.signup-page-body .signup-footer a {
-      color: #0084b8 !important;
-
-      font-weight: 700 !important;
-
-      text-decoration: none !important;
-    }
-
-
-    body.signup-page-body .signup-footer a:hover {
-      text-decoration: underline !important;
-    }
-
-
-    body.signup-page-body .signup-home-link {
-      display: inline-block !important;
-
-      margin-top: 4px !important;
-
-      color: #0084b8 !important;
-
-      font-size: 0.78rem !important;
-    }
-
-
-    /* =========================================================
-       TOAST
-       ========================================================= */
-
-    body.signup-page-body .signup-toast {
-      position: fixed !important;
-
-      left: 50% !important;
-      bottom: 24px !important;
-
-      z-index: 99999 !important;
-
-      transform:
-        translateX(-50%)
-        translateY(20px) !important;
-
-      opacity: 0 !important;
-
-      visibility: hidden !important;
-
-      box-sizing: border-box !important;
-
-      max-width: calc(100vw - 30px) !important;
-
-      padding: 12px 18px !important;
-
-      border-radius: 8px !important;
-
-      background: #0b1d28 !important;
-
-      color: #ffffff !important;
-
-      box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.3) !important;
-
-      font-size: 0.84rem !important;
-
-      white-space: normal !important;
-
-      text-align: center !important;
-
-      transition: all 0.25s ease !important;
-
-      pointer-events: none !important;
-    }
-
-
-    body.signup-page-body .signup-toast.show {
-      opacity: 1 !important;
-
-      visibility: visible !important;
-
-      transform:
-        translateX(-50%)
-        translateY(0) !important;
-    }
-
-
-    /* =========================================================
-       DARK MODE
-       ========================================================= */
-
-    body.signup-page-body.dark-mode {
-      background-color: #030c12 !important;
-
-      background-image:
-        linear-gradient(
-          135deg,
-          rgba(3, 12, 18, 0.94),
-          rgba(7, 35, 49, 0.84)
-        ),
-        url("https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=2200&q=85") !important;
-
-      background-position: center center !important;
-      background-size: cover !important;
-      background-repeat: no-repeat !important;
-      background-attachment: fixed !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-auth-card {
-      background: #0f1f2c !important;
-
-      border-color: #1c3549 !important;
-
-      color: #f1f6fa !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-heading h1 {
-      color: #ffffff !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-heading p {
-      color: #b6c6d3 !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-logo {
-      color: #ffffff !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-logo svg text {
-      fill: #ffffff !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-logo svg path {
-      stroke: #ffffff !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-form
-    .form-group
-    .form-label {
-      color: #f1f6fa !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-form
-    .form-input {
-      background: #0a151e !important;
-
-      color: #f1f6fa !important;
-
-      border-color: #1c3549 !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-form
-    .form-input::placeholder {
-      color: #8194a2 !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-terms,
-    body.signup-page-body.dark-mode
-    .signup-terms label {
-      color: #b6c6d3 !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-divider {
-      color: #8ea2b0 !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-divider::before,
-    body.signup-page-body.dark-mode
-    .signup-divider::after {
-      background: #1c3549 !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-social-btn {
-      background: #0a151e !important;
-
-      border-color: #1c3549 !important;
-
-      color: #f1f6fa !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-social-btn:hover {
-      background: #112535 !important;
-
-      border-color: #00a4e4 !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-social-icon {
-      color: #ffffff !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-footer,
-    body.signup-page-body.dark-mode
-    .signup-footer p {
-      color: #9fb3c2 !important;
-    }
-
-
-    body.signup-page-body.dark-mode
-    .signup-top-controls
-    .icon-toggle-btn {
-      background: #0a151e !important;
-
-      border-color: #1c3549 !important;
-
-      color: #ffffff !important;
-    }
-
-
-    /* =========================================================
-       MOBILE
-       ========================================================= */
-
-    @media (max-width: 600px) {
-
-      body.signup-page-body .signup-auth-wrapper {
-        align-items: flex-start !important;
-
-        padding: 20px 12px 30px !important;
-      }
-
-
-      body.signup-page-body .signup-auth-card {
-        max-width: 500px !important;
-
-        padding: 30px 20px 25px !important;
-
-        border-radius: 16px !important;
-      }
-
-
-      body.signup-page-body
-      .signup-form
-      .form-row {
-        grid-template-columns: 1fr !important;
-
-        gap: 0 !important;
-      }
-
-
-      body.signup-page-body
-      .signup-social-grid {
-        grid-template-columns: 1fr !important;
-      }
-
-
-      body.signup-page-body
-      .signup-heading h1 {
-        font-size: 1.65rem !important;
-      }
-
-
-      body.signup-page-body
-      .signup-logo svg {
-        width: 235px !important;
-      }
-    }
-
-
-    @media (max-width: 380px) {
-
-      body.signup-page-body .signup-auth-wrapper {
-        padding: 12px 8px 24px !important;
-      }
-
-
-      body.signup-page-body .signup-auth-card {
-        padding: 26px 16px 22px !important;
-      }
-
-
-      body.signup-page-body
-      .signup-heading h1 {
-        font-size: 1.45rem !important;
-      }
-    }
-
-  </style>
-
-
-  <!-- =========================================================
-       THEME / RTL INITIALIZATION
-       ========================================================= -->
-  <script>
-    (function () {
-      try {
-        var savedTheme = localStorage.getItem("vertex_theme");
-        var savedRTL = localStorage.getItem("vertex_rtl");
-
-        if (savedTheme === "dark") {
-          document.documentElement.classList.add("pre-dark");
-        }
-
-        document.documentElement.setAttribute(
-          "dir",
-          savedRTL === "true" ? "rtl" : "ltr"
-        );
-
-      } catch (error) {
-        document.documentElement.setAttribute("dir", "ltr");
-      }
-    })();
-  </script>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create an account | VÉRTEX ALPS</title>
+<meta name="description" content="Create your VÉRTEX ALPS rider account and manage ski and snowboard rentals, lessons and reservations.">
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b1d28'/%3E%3Cpolygon points='50,18 84,80 66,80 50,50 34,80 16,80' fill='%2300a4e4'/%3E%3Cpolygon points='50,18 66,80 50,50' fill='%23ffffff'/%3E%3Cpath d='M20,72 Q50,92 80,72' stroke='%2300a4e4' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="auth.css">
+<script>
+(function(){
+  try{
+    if(localStorage.getItem("vertex_theme")==="dark"){document.documentElement.classList.add("pre-dark")}
+    document.documentElement.setAttribute("dir",localStorage.getItem("vertex_rtl")==="true"?"rtl":"ltr");
+  }catch(e){document.documentElement.setAttribute("dir","ltr")}
+})();
+</script>
 </head>
 
+<body class="auth-page">
+<div class="va-shell">
 
-<body class="signup-page-body">
+  <!-- Photo panel -->
+  <section class="va-visual" style="--va-photo:url('https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=1800&q=90')">
+    <div class="va-visual-content">
+      <div class="va-badge">VÉRTEX ALPS · 2026 SEASON</div>
+      <h2>Join the crew. Ride the mountain.</h2>
+      <p>Create your rider account to reserve gear, book lessons and keep your boot and ski sizes saved for every visit.</p>
+      <div class="va-features">
+        <span>✓ Online gear reservations</span>
+        <span>✓ Mountain lessons</span>
+        <span>✓ Saved rider profile</span>
+        <span>✓ Digital locker key</span>
+      </div>
+    </div>
+  </section>
 
-  <!-- =======================================================
-       SIGNUP PAGE
-       ======================================================= -->
+  <!-- Form panel -->
+  <main class="va-panel">
+    <div class="va-card">
 
-  <main class="signup-auth-wrapper">
-
-    <section class="signup-auth-card">
-
-      <!-- =================================================
-           TOP CONTROLS
-           ================================================= -->
-
-      <div class="signup-top-controls">
-
-        <button
-          type="button"
-          class="icon-toggle-btn"
-          id="theme-toggle"
-          aria-label="Toggle dark mode"
-          title="Toggle dark mode"
-        >
-          <span class="icon-sun">☀</span>
-          <span class="icon-moon">☾</span>
+      <div class="va-controls">
+        <button type="button" class="va-icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
         </button>
-
-
-        <button
-          type="button"
-          class="icon-toggle-btn"
-          id="rtl-toggle"
-          aria-label="Toggle right-to-left layout"
-          title="Toggle text direction"
-        >
-          RTL
-        </button>
-
+        <button type="button" class="va-icon-btn" id="rtl-toggle" aria-label="Toggle right-to-left layout" title="Toggle text direction">RTL</button>
       </div>
 
+      <!-- Brand (same markup on login + signup) — links to home page -->
+      <a class="va-brand" href="index.html" aria-label="VÉRTEX ALPS home page">
+        <span class="va-brand-badge">
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <polygon points="50,15 88,82 68,82 50,48 32,82 12,82" fill="#00a4e4"/>
+            <polygon points="50,15 68,82 50,48" fill="#ffffff"/>
+            <path d="M18,74 Q50,96 82,74" stroke="#00a4e4" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="va-brand-text">
+          <span class="va-brand-name">VÉRTEX<span>ALPS</span></span>
+          <span class="va-brand-tag">Ski &amp; Snowboard Co.</span>
+        </span>
+      </a>
 
-      <!-- =================================================
-           LOGO
-           ================================================= -->
+      <h1 class="va-title">Create your rider account</h1>
+      <p class="va-sub">Manage your rentals, lessons, reservations and rider details from one place.</p>
 
-      <div class="signup-logo">
+      <form id="signup-form" novalidate autocomplete="on">
 
-        <svg
-          viewBox="0 0 360 110"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="VÉRTEX ALPS SKI & SNOWBOARD CO."
-        >
-
-          <g
-            fill="none"
-            stroke="#0b1d28"
-            stroke-width="5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M20 50 L55 0 L90 50"></path>
-            <path d="M38 50 L61 20 L82 50"></path>
-          </g>
-
-
-          <text
-            x="108"
-            y="39"
-            font-family="Inter, Arial, sans-serif"
-            font-size="31"
-            font-weight="900"
-            letter-spacing="3"
-            fill="#0b1d28"
-          >
-            VÉRTEX
-          </text>
-
-
-          <text
-            x="218"
-            y="39"
-            font-family="Inter, Arial, sans-serif"
-            font-size="31"
-            font-weight="900"
-            letter-spacing="3"
-            fill="#00a4e4"
-          >
-            ALPS
-          </text>
-
-
-          <text
-            x="109"
-            y="72"
-            font-family="Inter, Arial, sans-serif"
-            font-size="12"
-            font-weight="700"
-            letter-spacing="4.5"
-            fill="#607482"
-          >
-            SKI & SNOWBOARD CO.
-          </text>
-
-        </svg>
-
-      </div>
-
-
-      <!-- =================================================
-           HEADING
-           ================================================= -->
-
-      <div class="signup-heading">
-
-        <h1>Create your rider account</h1>
-
-        <p>
-          Join VÉRTEX ALPS and manage your ski and snowboard
-          rentals, lessons, reservations and rider details
-          from one place.
-        </p>
-
-      </div>
-
-
-      <!-- =================================================
-           SIGNUP FORM
-           ================================================= -->
-
-      <form
-        class="signup-form"
-        id="signup-form"
-        action="dashboard.html"
-        method="get"
-      >
-
-        <!-- FIRST + LAST NAME -->
-
-        <div class="form-row">
-
-          <div class="form-group">
-
-            <label
-              class="form-label"
-              for="first-name"
-            >
-              First name
-            </label>
-
-            <input
-              class="form-input"
-              type="text"
-              id="first-name"
-              name="first_name"
-              placeholder="e.g. Alex"
-              autocomplete="given-name"
-              required
-            >
-
+        <div class="va-row-2">
+          <div class="va-field">
+            <label class="va-label" for="first-name">First name</label>
+            <input class="va-input" type="text" id="first-name" name="first_name" placeholder="e.g. Alex" autocomplete="given-name" required>
           </div>
-
-
-          <div class="form-group">
-
-            <label
-              class="form-label"
-              for="last-name"
-            >
-              Last name
-            </label>
-
-            <input
-              class="form-input"
-              type="text"
-              id="last-name"
-              name="last_name"
-              placeholder="e.g. Morgan"
-              autocomplete="family-name"
-              required
-            >
-
+          <div class="va-field">
+            <label class="va-label" for="last-name">Last name</label>
+            <input class="va-input" type="text" id="last-name" name="last_name" placeholder="e.g. Morgan" autocomplete="family-name" required>
           </div>
-
         </div>
 
-
-        <!-- EMAIL -->
-
-        <div class="form-group">
-
-          <label
-            class="form-label"
-            for="email"
-          >
-            Email address
-          </label>
-
-          <input
-            class="form-input"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="you@example.com"
-            autocomplete="email"
-            required
-          >
-
+        <div class="va-field">
+          <label class="va-label" for="email">Email address</label>
+          <input class="va-input" type="text" inputmode="email" id="email" name="email" placeholder="you@example.com"
+                 autocomplete="email" autocapitalize="off" spellcheck="false" required>
         </div>
 
-
-        <!-- PASSWORD -->
-
-        <div class="form-group">
-
-          <label
-            class="form-label"
-            for="password"
-          >
-            Password
-          </label>
-
-
-          <div class="signup-password-wrapper">
-
-            <input
-              class="form-input"
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Create a secure password"
-              autocomplete="new-password"
-              minlength="8"
-              required
-            >
-
-
-            <button
-              type="button"
-              class="pwd-toggle-btn"
-              aria-label="Show password"
-              title="Show password"
-            >
-              ◉
+        <div class="va-field">
+          <label class="va-label" for="password">Password</label>
+          <div class="va-pwd">
+            <input class="va-input" type="password" id="password" name="password" placeholder="Create a secure password"
+                   autocomplete="new-password" minlength="8" required>
+            <button type="button" class="pwd-toggle-btn va-pwd-toggle" aria-label="Show password" title="Show password">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
             </button>
-
           </div>
-
         </div>
 
+        <label class="va-check va-terms" for="rental-terms">
+          <input type="checkbox" id="rental-terms" name="rental_terms" required>
+          <span>I agree to the VÉRTEX ALPS rental terms, equipment policies and account conditions.</span>
+        </label>
 
-        <!-- TERMS -->
-
-        <div class="signup-terms">
-
-          <input
-            type="checkbox"
-            id="rental-terms"
-            name="rental_terms"
-            required
-          >
-
-
-          <label for="rental-terms">
-            I agree to the VÉRTEX ALPS rental terms,
-            equipment policies and account conditions.
-          </label>
-
-        </div>
-
-
-        <!-- CREATE ACCOUNT -->
-
-        <button
-          type="submit"
-          class="signup-submit"
-        >
-          Create rider account
-        </button>
-
+        <button type="submit" class="va-submit" id="signup-submit">Create rider account</button>
       </form>
 
+      <div class="va-divider"><span>or continue with</span></div>
 
-      <!-- =================================================
-           SOCIAL SIGNUP
-           ================================================= -->
-
-      <div class="signup-divider">
-        <span>or continue with</span>
-      </div>
-
-
-      <div class="signup-social-grid">
-
-        <button
-          type="button"
-          class="signup-social-btn"
-          id="google-signup"
-        >
-
-          <span
-            class="signup-social-icon"
-            aria-hidden="true"
-          >
-            G
-          </span>
-
-          <span>Google</span>
-
+      <div class="va-social">
+        <button type="button" class="va-social-btn" data-social="Google">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.52 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.46a5.52 5.52 0 0 1-2.4 3.62v3h3.88c2.27-2.09 3.58-5.17 3.58-8.81z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.88-3c-1.07.72-2.45 1.15-4.06 1.15-3.12 0-5.77-2.11-6.71-4.94H1.28v3.09A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.29 14.3A7.2 7.2 0 0 1 4.91 12c0-.8.14-1.57.38-2.3V6.61H1.28A12 12 0 0 0 0 12c0 1.94.46 3.77 1.28 5.39l4.01-3.09z"/><path fill="#EA4335" d="M12 4.75c1.76 0 3.34.61 4.59 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 0 0 1.28 6.61l4.01 3.09C6.23 6.86 8.88 4.75 12 4.75z"/></svg>
+          <span>Sign up with Google</span>
         </button>
-
-
-        <button
-          type="button"
-          class="signup-social-btn"
-          id="apple-signup"
-        >
-
-          <span
-            class="signup-social-icon"
-            aria-hidden="true"
-          >
-            ●
-          </span>
-
-          <span>Apple</span>
-
+        <button type="button" class="va-social-btn va-apple" data-social="Apple">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+          <span>Sign up with Apple</span>
         </button>
-
       </div>
 
+      <p class="va-switch">Already have an account? <a href="login.html">Sign in</a></p>
 
-      <!-- =================================================
-           FOOTER LINKS
-           ================================================= -->
-
-      <div class="signup-footer">
-
-        <p>
-          Already have an account?
-
-          <a href="login.html">
-            Sign in
-          </a>
-        </p>
-
-
-        <a
-          href="index.html"
-          class="signup-home-link"
-        >
-          ← Back to VÉRTEX ALPS
-        </a>
-
-      </div>
-
-    </section>
-
+    </div>
   </main>
+</div>
 
+<div class="toast-msg" id="toast" role="status" aria-live="polite">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+  <span id="toast-text">Saved</span>
+</div>
 
-  <!-- =======================================================
-       TOAST
-       main.js expects #toast and #toast-text
-       ======================================================= -->
+<!-- main.js handles theme, RTL and the show/hide password button -->
+<script src="main.js"></script>
 
-  <div
-    id="toast"
-    class="toast-msg signup-toast"
-    role="status"
-    aria-live="polite"
-  >
-    <span id="toast-text"></span>
-  </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("signup-form");
+  var first = document.getElementById("first-name");
+  var last = document.getElementById("last-name");
+  var email = document.getElementById("email");
+  var password = document.getElementById("password");
+  var terms = document.getElementById("rental-terms");
 
+  function toast(msg) {
+    if (typeof window.vertexToast === "function") window.vertexToast(msg);
+  }
 
-  <!-- =======================================================
-       SOCIAL BUTTONS
-       ======================================================= -->
+  function fail(field, msg) {
+    if (field.classList) field.classList.add("invalid");
+    toast(msg);
+    field.focus();
+  }
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-      var googleButton =
-        document.getElementById("google-signup");
-
-      var appleButton =
-        document.getElementById("apple-signup");
-
-
-      if (googleButton) {
-
-        googleButton.addEventListener("click", function () {
-
-          if (typeof window.vertexToast === "function") {
-
-            window.vertexToast(
-              "Google sign-up will be available when authentication is connected"
-            );
-
-          }
-
-        });
-
-      }
-
-
-      if (appleButton) {
-
-        appleButton.addEventListener("click", function () {
-
-          if (typeof window.vertexToast === "function") {
-
-            window.vertexToast(
-              "Apple sign-up will be available when authentication is connected"
-            );
-
-          }
-
-        });
-
-      }
-
+  document.querySelectorAll("[data-social]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      toast(button.dataset.social + " sign-up will be available when authentication is connected");
     });
-  </script>
+  });
 
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-  <!-- Existing site engine -->
-  <script src="main.js"></script>
+      if (!first.value.trim()) { return fail(first, "Enter your first name"); }
+      if (!last.value.trim()) { return fail(last, "Enter your last name"); }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())) { return fail(email, "Enter a valid email address"); }
+      if (password.value.length < 8) { return fail(password, "Password must contain at least 8 characters"); }
+      if (!terms.checked) { return fail(terms, "Accept the rental terms to create your account"); }
 
+      try {
+        localStorage.setItem("vertex_logged_in", "true");
+        localStorage.setItem("vertex_user_email", email.value.trim());
+      } catch (e) {}
+
+      toast("Account created — taking you to your dashboard");
+      setTimeout(function () { window.location.href = "dashboard.html"; }, 700);
+    });
+  }
+
+  [first, last, email, password].forEach(function (field) {
+    field.addEventListener("input", function () { field.classList.remove("invalid"); });
+  });
+});
+</script>
 </body>
 </html>
