@@ -41,8 +41,8 @@
 </svg>
 </div>
 <div class="brand-text-group">
-          <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
-          <span class="brand-tagline">Ski &amp; Snowboard Co.</span>
+         <span class="brand-text">V&Eacute;RTEX<span style="color:var(--primary)">ALPS</span></span>
+         <span class="brand-tagline">Ski &amp; Snowboard Co.</span>
         </div>
 </a>
 <nav aria-label="Main navigation" class="nav-menu" id="nav-menu">
@@ -217,34 +217,38 @@
 </div>
 
 <style>
-/* Rental Equipment — same visual structure as Featured Packages */
+/* Rental Equipment — full-image, no-crop presentation */
 #equipment .gear-card {
   overflow: hidden;
 }
 
 #equipment .gear-card .card-img-wrapper {
   position: relative;
-  height: 250px;
+  height: 300px;
+  min-height: 300px;
   overflow: hidden;
-  background: var(--bg-surface);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 #equipment .gear-card .card-img-wrapper img {
   display: block;
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   object-position: center;
-  padding: 12px;
-  transition: transform 0.45s var(--ease-out), filter 0.35s ease;
+  border: 0;
+  transition: filter 0.3s ease;
 }
 
 #equipment .gear-card:hover .card-img-wrapper img {
-  transform: scale(1.045);
-  filter: brightness(1.04);
+  filter: brightness(1.03);
 }
 
 #equipment .gear-card .card-body {
@@ -273,13 +277,16 @@
 
 @media (max-width: 768px) {
   #equipment .gear-card .card-img-wrapper {
-    height: 220px;
+    height: 270px;
+    min-height: 270px;
   }
 }
 
 @media (max-width: 480px) {
   #equipment .gear-card .card-img-wrapper {
-    height: 200px;
+    height: 240px;
+    min-height: 240px;
+    padding: 8px;
   }
 }
 </style>
@@ -294,7 +301,8 @@
 alt="MIPS ski helmet"
 loading="lazy"
 decoding="async"
-src="https://contents.mediadecathlon.com/p2557889/k%24d600c881551242d5cf3b5125f5072cb7/1000x0/3480pt1999/4000xcr4000/default.jpg?format=auto"/>
+src="https://dainese-cdn.thron.com/api/v1/content-delivery/shares/lxnwxt/contents/dea94f60-bc78-4494-8c31-dd6d082b12d4/image/image?format=webp&h=960&q_auto=high&w=960"
+/>
 </div>
 
 <div class="card-body">
@@ -330,7 +338,8 @@ Add to gear bag
 alt="Anti-fog ski goggles with UV400 protection"
 loading="lazy"
 decoding="async"
-src="https://i5.walmartimages.com/asr/2e36598f-6d6a-467c-baa8-64186c043313.0803363d8401627f827f24d1b007139e.jpeg?odnBg=FFFFFF&amp;odnHeight=768&amp;odnWidth=768"/>
+src="https://snowsport.pl/hpeciai/d9696e6c97403ad33b91dcd61099c284/pol_pl_Gogle-Arctica-G-119A-78744_1.jpg"
+onerror="this.onerror=null;this.src='https://placehold.co/900x650/f4f8fb/0b1d28?text=Anti-Fog+Ski+Goggles';"/>
 </div>
 
 <div class="card-body">
@@ -366,7 +375,8 @@ Add to gear bag
 alt="Lightweight aluminium ski and trekking poles"
 loading="lazy"
 decoding="async"
-src="https://cdn.absolute-snow.co.uk/fullsize/Salomon_Steep_Pro_S3_Ski_Poles_Black_Nasturtium_526252-2.jpg"/>
+src="https://cdn.shopify.com/s/files/1/0580/7410/3867/files/Untitled-1-Recovered_6af26b50-119f-4b23-92bc-a077416bb1bc_grande.jpg?v=1763401245"
+onerror="this.onerror=null;this.src='https://placehold.co/900x650/f4f8fb/0b1d28?text=Ski+Poles';"/>
 </div>
 
 <div class="card-body">
@@ -402,7 +412,8 @@ Add to gear bag
 alt="Waterproof insulated ski gloves"
 loading="lazy"
 decoding="async"
-src="https://www.sportsonline.ch/media/5f/g0/2a/1700951324/reusch-marco-schwarz-skihandschuhe-6301119-770.jpg"/>
+src="https://contents.mediadecathlon.com/p2910775/k%2476388a3731450f39fab5236f956f00ea/picture.jpg?f=3000x0&format=auto"
+/>
 </div>
 
 <div class="card-body">
@@ -438,7 +449,8 @@ Add to gear bag
 alt="Avalanche safety beacon, collapsible probe and aluminium shovel set"
 loading="lazy"
 decoding="async"
-src="https://www.skitreff.de/media/22/bb/4a/1702127688/pieps-set-pro-ips-lawinen-notfallset-1128930000all.jpg"/>
+src="https://www.bfgcdn.com/1500_1500_90/410-0070/black-diamond-bd-guide-avy-safety-set-avalanche-transceiver-set.jpg"
+onerror="this.onerror=null;this.src='https://placehold.co/900x650/f4f8fb/0b1d28?text=Avalanche+Safety+Set';"/>
 </div>
 
 <div class="card-body">
@@ -474,7 +486,8 @@ Add to gear bag
 alt="CE-rated ski back protector"
 loading="lazy"
 decoding="async"
-src="https://lockwoods.com/cdn/shop/products/back_protect_txt_2018.jpg?v=1571722988&amp;width=1024"/>
+src="https://billeder.skisport.dk/shop/billeder/kit/1917_ortovox-free-rider-28-spine-protector-black-raven.jpg"
+onerror="this.onerror=null;this.src='https://placehold.co/900x650/f4f8fb/0b1d28?text=Back+Protector+%26+Pack';"/>
 </div>
 
 <div class="card-body">
@@ -624,7 +637,7 @@ Add to gear bag
 <p>Every ski, board and helmet passes the same checklist, whether it is going out for a day or a fortnight.</p>
 </div>
 <div class="grid-3">
-<div class="card pad-card"><div class="img-hover safety-card-image" style="height:180px;margin:-24px -24px 18px;border-radius:var(--radius-md) var(--radius-md) 0 0;"><img alt="Ski helmet with MIPS rotational protection" loading="lazy" src="https://contents.mediadecathlon.com/p2557889/k%24d600c881551242d5cf3b5125f5072cb7/1000x0/3480pt1999/4000xcr4000/default.jpg?format=auto" style="width:100%;height:100%;object-fit:cover;"/></div>
+<div class="card pad-card"><div class="img-hover safety-card-image" style="height:180px;margin:-24px -24px 18px;border-radius:var(--radius-md) var(--radius-md) 0 0;"><img alt="Ski helmet with MIPS rotational protection" loading="lazy" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNjUwIiB2aWV3Qm94PSIwIDAgOTAwIDY1MCI+PHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2NTAiIHJ4PSIyOCIgZmlsbD0iI2Y0ZjhmYiIvPjxlbGxpcHNlIGN4PSI0NTAiIGN5PSI1NTUiIHJ4PSIyNTAiIHJ5PSIyOCIgZmlsbD0iI2RmZThlZiIvPjxwYXRoIGQ9Ik0yNTAgNDEwYzAtMTcwIDkwLTI2MCAyMDUtMjYwIDEyNiAwIDE5NiA5OCAxOTYgMjQ4djU1SDI1MHoiIGZpbGw9IiMxODJiMzYiLz48cGF0aCBkPSJNMjc4IDM5MGMxMi0xMjUgNzYtMTk1IDE3NC0xOTUgODggMCAxNDUgNTcgMTYzIDE2NC01NC0yOC0xMTEtNDItMTcxLTQyLTU5IDAtMTE1IDIyLTE2NiA3M3oiIGZpbGw9IiMyNjNmNGMiLz48cGF0aCBkPSJNMjUzIDQxOGgzOTJ2NTVjMCAzMS0yNSA1Ni01NiA1NkgzMDljLTMxIDAtNTYtMjUtNTYtNTZ6IiBmaWxsPSIjMTAxYzI0Ii8+PGNpcmNsZSBjeD0iNDUwIiBjeT0iNDQ5IiByPSI2MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDBhNGU0IiBzdHJva2Utd2lkdGg9IjE4Ii8+PHBhdGggZD0iTTM4OCA0NDloMTI0IiBzdHJva2U9IiMwMGE0ZTQiIHN0cm9rZS13aWR0aD0iOCIvPjxwYXRoIGQ9Ik00NTAgMzg3djEyNCIgc3Ryb2tlPSIjMDBhNGU0IiBzdHJva2Utd2lkdGg9IjgiLz48Y2lyY2xlIGN4PSIzMDUiIGN5PSIzNjAiIHI9IjE1IiBmaWxsPSIjMDBhNGU0Ii8+PGNpcmNsZSBjeD0iNTk1IiBjeT0iMzYwIiByPSIxNSIgZmlsbD0iIzAwYTRlNCIvPjx0ZXh0IHg9IjQ1MCIgeT0iMTA1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzBiMWQyOCI+TUlQUyBTS0kgSEVMTUVUPC90ZXh0Pjx0ZXh0IHg9IjQ1MCIgeT0iNTk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZmlsbD0iIzRhNWY3MCI+RnVsbCBwcm9kdWN0IHZpZXcg4oCiIEFscGluZSBwcm90ZWN0aW9uPC90ZXh0Pjwvc3ZnPg==" style="width:100%;height:100%;object-fit:cover;"/></div>
 <h4 style="margin-bottom:10px;">Helmets with rotational protection</h4>
 <p>The whole helmet fleet uses MIPS liners, and any helmet that takes a hard knock is retired the same day.</p>
 </div>
@@ -831,22 +844,22 @@ Add to gear bag
 <svg aria-hidden="true" class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
 <div class="address-item-content">
 <strong>Base depot alpha</strong>
-                Gondola Plaza Level 1, Suite 104
-              </div>
+             Gondola Plaza Level 1, Suite 104
+             </div>
 </div>
 <div class="address-item">
 <svg aria-hidden="true" class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11"></path></svg>
 <div class="address-item-content">
 <strong>Mountain passway</strong>
-                Glacier Peak Way 402, Summit Gateway
-              </div>
+             Glacier Peak Way 402, Summit Gateway
+             </div>
 </div>
 <div class="address-item">
 <svg aria-hidden="true" class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
 <div class="address-item-content">
 <strong>Coordinates &amp; altitude</strong>
-                39.5801° N, 105.9438° W — 3,450m
-              </div>
+             39.5801° N, 105.9438° W — 3,450m
+             </div>
 </div>
 <div class="address-item">
 <svg aria-hidden="true" class="address-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
