@@ -632,23 +632,94 @@ Add to gear bag
 </section>
 <!-- SECTION 9: SAFETY -->
 <section class="section section-bg-alt">
+<style>
+/* Safety First — consistent, aligned image frames */
+.safety-grid .card {
+  overflow: hidden;
+}
+
+.safety-grid .safety-card-image {
+  width: calc(100% + 56px);
+  height: 260px;
+  margin: -28px -28px 20px -28px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: #f4f8fb;
+  overflow: hidden;
+  position: relative;
+}
+
+/* The whole image is always visible (no cropping). A blurred copy of the same
+   image fills any leftover space so the frame never shows empty bars. */
+.safety-grid .safety-card-image {
+  isolation: isolate;
+}
+
+.safety-grid .safety-card-image::before {
+  content: '';
+  position: absolute;
+  inset: -24px;
+  z-index: 0;
+  background-image: var(--img-url, none);
+  background-size: cover;
+  background-position: center;
+  filter: blur(18px) saturate(1.1);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.safety-grid .safety-card-image img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.safety-grid .safety-card-image:hover img {
+  transform: none;
+  filter: none;
+}
+
+.safety-grid .card h4 {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .safety-grid .safety-card-image {
+    height: 230px;
+  }
+}
+
+@media (max-width: 480px) {
+  .safety-grid .safety-card-image {
+    height: 210px;
+  }
+}
+</style>
 <div class="container">
 <div class="section-header">
 <span class="badge">Safety First</span>
 <h2>What we check before gear leaves the depot</h2>
 <p>Every ski, board and helmet passes the same checklist, whether it is going out for a day or a fortnight.</p>
 </div>
-<div class="grid-3">
-<div class="card pad-card"><div class="img-hover safety-card-image" style="height:200px;margin:-24px -24px 18px;border-radius:var(--radius-md) var(--radius-md) 0 0;background:#f4f8fb;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img alt="White and black MIPS ski helmet with protective ear pads and chin strap" loading="lazy" decoding="async" src="https://contents.mediadecathlon.com/p2977629/k%24bebb4c2f2968487d41f894a00c1cb167/skihelm-pst-900-mips-schwarz.jpg" style="width:100%;height:100%;object-fit:contain;object-position:center;padding:8px;box-sizing:border-box;display:block;"/></div>
-<h4 style="margin-bottom:10px;">Helmets with rotational protection</h4>
+<div class="grid-3 safety-grid">
+<div class="card pad-card">
+<div class="img-hover safety-card-image"><img alt="White and black MIPS ski helmet with protective ear pads and chin strap" loading="lazy" decoding="async" src="https://contents.mediadecathlon.com/p2977629/k%24bebb4c2f2968487d41f894a00c1cb167/skihelm-pst-900-mips-schwarz.jpg"/></div>
+<h4>Helmets with rotational protection</h4>
 <p>The whole helmet fleet uses MIPS liners, and any helmet that takes a hard knock is retired the same day.</p>
 </div>
-<div class="card pad-card"><div class="img-hover safety-card-image" style="height:180px;margin:-24px -24px 18px;border-radius:var(--radius-md) var(--radius-md) 0 0;"><img alt="Ski technician calibrating a binding on a professional test machine" loading="lazy" src="https://images.squarespace-cdn.com/content/v1/5783c4cf2e69cfb0b30e8e33/1468945130213-FQYS424MJ8IXGZ8J2ZEK/image-asset.jpeg" style="width:100%;height:100%;object-fit:cover;"/></div>
-<h4 style="margin-bottom:10px;">Bindings on the test bench</h4>
+<div class="card pad-card">
+<div class="img-hover safety-card-image"><img alt="Ski technician calibrating a binding on a professional test machine" loading="lazy" decoding="async" src="https://images.squarespace-cdn.com/content/v1/5783c4cf2e69cfb0b30e8e33/1468945130213-FQYS424MJ8IXGZ8J2ZEK/image-asset.jpeg"/></div>
+<h4>Bindings on the test bench</h4>
 <p>Release values are measured on a calibrated Montana bench against the ISO standard, not set by eye.</p>
 </div>
-<div class="card pad-card"><div class="img-hover safety-card-image" style="height:180px;margin:-24px -24px 18px;border-radius:var(--radius-md) var(--radius-md) 0 0;"><img alt="Skier wearing a fitted MIPS helmet and goggles in alpine conditions" loading="lazy" src="https://contents.mediadecathlon.com/p2764782/k%248434a8d7743ddf69ea18429b96f36a1f/1800x0/3000pt1999/6000xcr3998/default.jpg?format=auto" style="width:100%;height:100%;object-fit:cover;"/></div>
-<h4 style="margin-bottom:10px;">Boots and helmets cleaned</h4>
+<div class="card pad-card">
+<div class="img-hover safety-card-image"><img alt="Skier wearing a fitted MIPS helmet and goggles in alpine conditions" loading="lazy" decoding="async" src="https://contents.mediadecathlon.com/p2764782/k%248434a8d7743ddf69ea18429b96f36a1f/1800x0/3000pt1999/6000xcr3998/default.jpg?format=auto"/></div>
+<h4>Boots and helmets cleaned</h4>
 <p>Everything that touches skin runs through an ozone cabinet between riders, then dries in the pod overnight.</p>
 </div>
 </div>
@@ -892,5 +963,18 @@ Add to gear bag
 <span id="toast-text">Added to your gear bag</span>
 </div>
 <script src="main.js"></script>
+<script>
+(function () {
+  function apply(img) {
+    var box = img.closest('.safety-card-image');
+    var url = img.currentSrc || img.src;
+    if (box && url) box.style.setProperty('--img-url', 'url("' + url.replace(/"/g, '%22') + '")');
+  }
+  document.querySelectorAll('.safety-card-image img').forEach(function (img) {
+    img.addEventListener('load', function () { apply(img); });
+    if (img.complete && img.naturalWidth) apply(img);
+  });
+})();
+</script>
 </body>
 </html>
